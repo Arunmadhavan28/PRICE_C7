@@ -15,7 +15,7 @@ Set up and run the Retail AI Lab in under five minutes.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Arunmadhavanevr/PRICE_C7.git
+git clone https://github.com/Arunmadhavan28/PRICE_C7.git
 cd PRICE_C7
 ```
 

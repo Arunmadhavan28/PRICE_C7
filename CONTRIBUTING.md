@@ -7,7 +7,7 @@ Follow this guide to set up your repository, develop your team application, test
 ## Step-by-Step Student Workflow
 
 ### Step 1: Fork the Repository
-1. Navigate to the main repository: https://github.com/Arunmadhavanevr/PRICE_C7
+1. Navigate to the main repository: https://github.com/Arunmadhavan28/PRICE_C7
 2. Click the Fork button in the top-right corner.
 3. Create the fork under your personal GitHub account.
 
@@ -93,7 +93,7 @@ git push origin team-01-submission
 
 ### Step 8: Open the Pull Request on GitHub
 1. Go to your fork on GitHub and click "Compare & pull request".
-2. Target the base repository: Arunmadhavanevr/PRICE_C7 (branch: main).
+2. Target the base repository: Arunmadhavan28/PRICE_C7 (branch: main).
 3. Fill out the Pull Request Template.
 4. Submit the PR.
 

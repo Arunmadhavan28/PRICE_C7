@@ -3,7 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![Google Gemini API](https://img.shields.io/badge/LLM-Google%20Gemini%20(Free%20Tier)-8E75C4.svg)](https://aistudio.google.com/)
-[![Autograder CI](https://github.com/Arunmadhavanevr/PRICE_C7/workflows/Retail%20AI%20Autograder/badge.svg)](https://github.com/Arunmadhavanevr/PRICE_C7/actions)
+[![Autograder CI](https://github.com/Arunmadhavan28/PRICE_C7/workflows/Retail%20AI%20Autograder/badge.svg)](https://github.com/Arunmadhavan28/PRICE_C7/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Retail AI Lab is an educational engineering repository hosting nine modular retail AI applications. 
@@ -75,7 +75,7 @@ See [EVALUATION_RUBRIC.md](EVALUATION_RUBRIC.md) for details.
 
 ### 1. Clone and Set Up Environment
 ```bash
-git clone https://github.com/Arunmadhavanevr/PRICE_C7.git
+git clone https://github.com/Arunmadhavan28/PRICE_C7.git
 cd PRICE_C7
 
 python3 -m venv venv
