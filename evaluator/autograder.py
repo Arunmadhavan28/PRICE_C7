@@ -336,19 +336,26 @@ def evaluate_team(team_id: int) -> dict:
 
 def detect_modified_team() -> list:
     """Detects which team folder was modified using git diff."""
-    try:
-        res = subprocess.run(["git", "diff", "--name-only", "HEAD~1", "HEAD"], capture_output=True, text=True)
-        if res.returncode != 0:
-            res = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        files = res.stdout.splitlines()
-        detected = set()
-        for f in files:
-            for team_id, spec in TEAM_SPECS.items():
-                if f"teams/{spec['folder']}" in f:
-                    detected.add(team_id)
-        return sorted(list(detected)) if detected else [1]
-    except Exception:
-        return [1]
+    detected = set()
+    commands = [
+        ["git", "diff", "--name-only", "origin/main...HEAD"],
+        ["git", "diff", "--name-only", "HEAD~1", "HEAD"],
+        ["git", "status", "--porcelain"]
+    ]
+    for cmd in commands:
+        try:
+            res = subprocess.run(cmd, capture_output=True, text=True)
+            if res.returncode == 0 and res.stdout.strip():
+                for line in res.stdout.splitlines():
+                    f = line.strip().split()[-1]
+                    for team_id, spec in TEAM_SPECS.items():
+                        if f"teams/{spec['folder']}" in f:
+                            detected.add(team_id)
+                if detected:
+                    return sorted(list(detected))
+        except Exception:
+            continue
+    return list(range(1, 10))
 
 
 def format_markdown_summary(reports: list) -> str:
@@ -403,6 +410,7 @@ def main():
     parser.add_argument("--all", action="store_true", help="Grade all 9 teams")
     parser.add_argument("--detect", action="store_true", help="Detect modified team from git changes")
     parser.add_argument("--json", action="store_true", help="Output raw JSON results")
+    parser.add_argument("--json-output", type=str, help="Save JSON results to file path")
     parser.add_argument("--github-summary", action="store_true", help="Write summary to $GITHUB_STEP_SUMMARY")
     parser.add_argument("--output", type=str, help="Save report to file path")
 
@@ -419,6 +427,10 @@ def main():
         teams_to_grade = list(range(1, 10))
 
     reports = [evaluate_team(t) for t in teams_to_grade]
+
+    if args.json_output:
+        with open(args.json_output, "w", encoding="utf-8") as f:
+            json.dump(reports, f, indent=2)
 
     if args.json:
         print(json.dumps(reports, indent=2))

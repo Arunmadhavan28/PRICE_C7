@@ -99,8 +99,10 @@ git push origin team-01-submission
 
 ---
 
-## Automated Grading
+## Autonomous Grading, Review, and Auto-Merge
 Once your PR is submitted:
 - The Retail AI Autograder workflow runs automatically.
-- A bot comment will appear on your PR with your scorecard (out of 100 points and 25 marks).
-- To make corrections, push additional commits to your branch. The autograder will update automatically.
+- A bot comment will appear on your PR with your detailed diagnostic scorecard (100 raw points converted to 25.0 academic marks).
+- If your score is 100/100 (25.0/25 marks), the bot automatically submits an official GitHub approval review and executes an autonomous squash merge into `main`.
+- Once merged, consult the [Submission and Grading Guide](SUBMISSION_AND_GRADING_GUIDE.md) for the exact notification checklist and message template to claim your marks with ARUNMADHAVAN.
+- If your score is less than 100, make the necessary corrections and push additional commits to your branch. The autograder updates automatically.

@@ -168,15 +168,23 @@ python evaluator/autograder.py --all
 
 ---
 
-## Pull Request Submission Guide
+## Pull Request Submission and Autonomous Grading
 
+This repository features a 100% autonomous evaluation, PR review, and auto-merge system.
+
+For step-by-step instructions, expected bot scorecard comments, and the exact protocol for when to claim full credit:
+- See the complete [Submission, Grading, and Completion Guide](SUBMISSION_AND_GRADING_GUIDE.md).
+- See the [Contributing Guide](CONTRIBUTING.md).
+
+### Quick Summary of the Submission Workflow:
 1. Fork the repository to your personal GitHub account.
 2. Create a feature branch: `git checkout -b team-01-submission`.
 3. Work inside your designated `teams/team0X_.../` folder.
-4. Run `python evaluator/autograder.py --team X` and ensure your score is 100/100 (25/25 Marks).
+4. Verify locally: `python evaluator/autograder.py --team X` (must report 100/100 points, 25.0/25 marks).
 5. Push to your fork: `git push origin team-01-submission`.
-6. Open a Pull Request targeting `main`. Fill in the PR template.
-7. GitHub Actions will evaluate the submission and post the scorecard comment.
+6. Open a Pull Request targeting `main`.
+7. Within 60 seconds, the Retail AI Autograder bot runs automatically, posts your scorecard comment, officially reviews (`APPROVE`), and squash-merges your PR into `main`.
+8. Once the PR is merged, follow the checklist in [SUBMISSION_AND_GRADING_GUIDE.md](SUBMISSION_AND_GRADING_GUIDE.md) to notify ARUNMADHAVAN and record your 25 marks.
 
 ---
 

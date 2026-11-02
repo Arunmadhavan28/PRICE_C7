@@ -3,24 +3,26 @@ name: Retail AI Autograder
 on:
   push:
     branches: [ main ]
-  pull_request:
+  pull_request_target:
     branches: [ main ]
+    types: [ opened, synchronize, reopened ]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
   issues: write
 
 jobs:
-  evaluate-submissions:
-    name: Grade Submission (100 pts to 25 Marks)
+  grade-and-process:
+    name: Grade and Autonomous Review (100 pts / 25 Marks)
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
 
       - name: Set up Python 3.10
@@ -35,51 +37,127 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Pytest Test Suites
-        id: pytest_run
         run: |
           python -m pytest teams/ -v || true
 
-      - name: Run Automated Evaluator and Scorecard
-        id: autograde
+      - name: Run Automated Evaluator
         run: |
-          python evaluator/autograder.py --all --github-summary --output scorecard.md || true
+          python evaluator/autograder.py --detect --github-summary --output scorecard.md --json-output scorecard.json || true
           cat scorecard.md
 
-      - name: Post Scorecard Comment on Pull Request
-        if: github.event_name == 'pull_request'
+      - name: Autonomous PR Processing (Review, Comment, and Auto-Merge)
+        if: github.event_name == 'pull_request_target'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            if (fs.existsSync('scorecard.md')) {
-              const body = fs.readFileSync('scorecard.md', 'utf8');
-              const header = "### Retail AI Autograder Results\n\n";
-              
-              const { data: comments } = await github.rest.issues.listComments({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
+            const prNumber = context.payload.pull_request.number;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+
+            if (!fs.existsSync('scorecard.md') || !fs.existsSync('scorecard.json')) {
+              core.setFailed("Scorecard files missing");
+              return;
+            }
+
+            const markdownBody = fs.readFileSync('scorecard.md', 'utf8');
+            const reports = JSON.parse(fs.readFileSync('scorecard.json', 'utf8'));
+
+            const evaluatedCount = reports.length;
+            const fullScoreCount = reports.filter(r => r.raw_score === 100).length;
+            const isPerfect = evaluatedCount > 0 && fullScoreCount === evaluatedCount;
+            const allPassed = evaluatedCount > 0 && reports.every(r => r.passed);
+
+            // 1. Post or update the sticky scorecard comment
+            const header = "### Retail AI Autograder Results\n\n";
+            let commentFooter = "\n\n---\n";
+            if (isPerfect) {
+              commentFooter += "**Status: 100% Complete (25.0 / 25 Marks)**\n\nAll rubric checks and automated unit tests passed. This pull request qualifies for automated merge. You are ready to notify ARUNMADHAVAN to claim your completion.";
+            } else {
+              commentFooter += "**Status: Incomplete**\n\nReview the diagnostic checks above. Make the necessary code or documentation adjustments, then push your updates to this branch to trigger re-evaluation.";
+            }
+
+            const fullCommentBody = header + markdownBody + commentFooter;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: repoOwner,
+              repo: repoName,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(c => c.body && c.body.includes("Retail AI Autograder Results"));
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: repoOwner,
+                repo: repoName,
+                comment_id: botComment.id,
+                body: fullCommentBody,
               });
-              
-              const botComment = comments.find(c => c.body.includes("Retail AI Autograder Results"));
-              
-              if (botComment) {
-                await github.rest.issues.updateComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  comment_id: botComment.id,
-                  body: header + body
+            } else {
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: prNumber,
+                body: fullCommentBody,
+              });
+            }
+
+            // 2. Submit Autonomous PR Review
+            if (isPerfect) {
+              try {
+                await github.rest.pulls.createReview({
+                  owner: repoOwner,
+                  repo: repoName,
+                  pull_number: prNumber,
+                  event: 'APPROVE',
+                  body: 'Automated Review: 100/100 points (25.0/25.0 marks) verified. All architectural checks, unit tests, UI validations, schemas, and prompt documentation passed.'
                 });
-              } else {
+                console.log("Autonomous PR Review: APPROVED");
+              } catch (e) {
+                console.log("Could not post approval review:", e.message);
+              }
+
+              // 3. Autonomous Auto-Merge
+              try {
+                const mergeRes = await github.rest.pulls.merge({
+                  owner: repoOwner,
+                  repo: repoName,
+                  pull_number: prNumber,
+                  merge_method: 'squash',
+                  commit_title: `Auto-Merge PR #${prNumber}: Verified 100% Score (25/25 Marks)`,
+                  commit_message: `Autonomous merge executed by Retail AI Autograder for PR #${prNumber}. Full score 100/100 achieved.`
+                });
+                console.log("Autonomous PR Merge result:", mergeRes.data);
+
                 await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: context.issue.number,
-                  body: header + body
+                  owner: repoOwner,
+                  repo: repoName,
+                  issue_number: prNumber,
+                  body: "### Pull Request Successfully Merged\n\nYour submission scored 100/100 (25.0/25 marks) and has been automatically merged into `main`.\n\nYou are now officially certified for 100% completion. You may notify ARUNMADHAVAN with your PR link to record your marks."
                 });
+              } catch (mergeError) {
+                console.log("Auto-merge note:", mergeError.message);
+                await github.rest.issues.createComment({
+                  owner: repoOwner,
+                  repo: repoName,
+                  issue_number: prNumber,
+                  body: `### Auto-Merge Notice\n\nYour score is 100/100 (25.0/25 marks). Automated approval was granted. Direct merge status: ${mergeError.message}. Please notify ARUNMADHAVAN with this PR link.`
+                });
+              }
+            } else {
+              try {
+                await github.rest.pulls.createReview({
+                  owner: repoOwner,
+                  repo: repoName,
+                  pull_number: prNumber,
+                  event: 'COMMENT',
+                  body: 'Automated Review: Submission requires updates before it can be merged. Refer to the diagnostic scorecard above for missing points.'
+                });
+              } catch (e) {
+                console.log("Could not post comment review:", e.message);
               }
             }
 
-      - name: Final Status Check
+      - name: Final Status Summary
         run: |
-          python -c "print('Evaluation completed successfully. Check Job Summary and PR Comments for scorecard.')"
+          python -c "print('Grading and evaluation workflow executed successfully.')"
