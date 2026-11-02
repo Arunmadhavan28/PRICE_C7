@@ -3,7 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![Google Gemini API](https://img.shields.io/badge/LLM-Google%20Gemini%20(Free%20Tier)-8E75C4.svg)](https://aistudio.google.com/)
-[![Autograder CI](https://img.shields.io/badge/CI-Automated%20Scorecard%20(100%20pts%20%E2%9E%94%2025%20Marks)-green.svg)](https://github.com/Arunmadhavanevr/PRICE_C7/actions)
+[![Autograder CI](https://github.com/Arunmadhavanevr/PRICE_C7/workflows/%F0%9F%8E%93%20Retail%20AI%20Vibe-Coding%20Autograder/badge.svg)](https://github.com/Arunmadhavanevr/PRICE_C7/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Welcome to the **Retail AI Vibe-Coding Challenge**! This repository is a turnkey, production-grade educational platform hosting **nine distinct AI-driven retail applications** built with a modern **vibe-coding** paradigm.
