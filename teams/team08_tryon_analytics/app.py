@@ -1,5 +1,5 @@
 """
-Streamlit Web Application for Team 8: The Virtual Try-On Feedback Loop.
+Streamlit Web Application for Team 8: Virtual Try-On Analytics.
 Funnel visualization and conversion lift analytics for AR virtual try-on.
 """
 
@@ -12,19 +12,18 @@ from funnel_engine import load_session_logs, calculate_funnel_metrics
 
 st.set_page_config(
     page_title="AR Try-On Analytics | Retail AI",
-    page_icon="👓",
     layout="wide"
 )
 
-st.title("👓 The Virtual Try-On Feedback Loop")
-st.caption("Measuring the Direct Business Impact & Funnel Lift of AR Experiences | Target: E-commerce Product Managers")
+st.title("Virtual Try-On Analytics")
+st.caption("Measuring the Business Impact and Funnel Lift of AR Experiences | Target: E-commerce Product Managers")
 
 # Load Session Logs
 data_path = Path(__file__).parent / "data" / "session_logs.csv"
 logs_df = load_session_logs(str(data_path))
 
 # Sidebar Controls
-st.sidebar.header("🎯 Cohort & Device Filters")
+st.sidebar.header("Cohort and Device Filters")
 devices = ["All Devices"] + sorted(logs_df["Device_Type"].unique().tolist())
 selected_device = st.sidebar.selectbox("Device Segment", devices)
 
@@ -80,7 +79,7 @@ st.markdown("---")
 col_funnel, col_bar = st.columns([1.2, 1])
 
 with col_funnel:
-    st.subheader("🔻 Comparative Conversion Funnel")
+    st.subheader("Comparative Conversion Funnel")
     fig_funnel = go.Figure()
 
     # AR Funnel
@@ -109,7 +108,7 @@ with col_funnel:
     st.plotly_chart(fig_funnel, use_container_width=True)
 
 with col_bar:
-    st.subheader("📊 Conversion Rate & Basket Size Comparison")
+    st.subheader("Conversion Rate and Basket Size Comparison")
     comp_df = pd.DataFrame([
         {"Cohort": "AR Users", "Metric": "Conversion Rate (%)", "Value": metrics["cr_ar"]},
         {"Cohort": "Non-AR Users", "Metric": "Conversion Rate (%)", "Value": metrics["cr_non_ar"]},
@@ -127,6 +126,5 @@ with col_bar:
     fig_comp.update_layout(template="plotly_dark", height=420)
     st.plotly_chart(fig_comp, use_container_width=True)
 
-# Data Table Expander
-with st.expander("🔍 View Raw User Session Logs"):
+with st.expander("View Raw User Session Logs"):
     st.dataframe(filtered_df, use_container_width=True)

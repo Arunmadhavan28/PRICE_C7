@@ -51,30 +51,30 @@ def apply_pricing_rules(
     # Rule 1: Happy Hour Clearance (> 5 PM and surplus stock)
     if hour_of_day >= 17 and stock > 20:
         modifier -= 0.15
-        rules_triggered.append("🌙 Happy Hour Surplus Clearance (-15%)")
+        rules_triggered.append("Happy Hour Surplus Clearance (-15%)")
 
     # Rule 2: Rain Weather Surge for Hot Comfort Items
     if weather.lower() == "raining" and any(k in name.lower() for k in ["hot", "coffee", "chai", "espresso"]):
         modifier += 0.10
-        rules_triggered.append("🌧️ Rainy Day Warmth Surge (+10%)")
+        rules_triggered.append("Rainy Day Warmth Surge (+10%)")
 
     # Rule 3: Heatwave Surge for Chilled Items
     if weather.lower() == "heatwave" and any(k in name.lower() for k in ["cold", "iced", "nitro", "matcha"]):
         modifier += 0.15
-        rules_triggered.append("☀️ Heatwave Refreshment Surge (+15%)")
+        rules_triggered.append("Heatwave Refreshment Surge (+15%)")
 
     # Rule 4: Scarcity Premium (Low stock rush)
     if 0 < stock < 5:
         modifier += 0.10
-        rules_triggered.append("🔥 High-Demand Scarcity Premium (+10%)")
+        rules_triggered.append("High-Demand Scarcity Premium (+10%)")
 
     # Rule 5: Morning Commute Rush (7 AM - 9 AM)
     if 7 <= hour_of_day <= 9 and category == "Beverages":
         modifier += 0.05
-        rules_triggered.append("☕ Morning Rush Surge (+5%)")
+        rules_triggered.append("Morning Rush Surge (+5%)")
 
     if not rules_triggered:
-        rules_triggered.append("⚖️ Standard Base Rate (0%)")
+        rules_triggered.append("Standard Base Rate (0%)")
 
     return round(modifier, 4), rules_triggered
 
@@ -102,7 +102,7 @@ def calculate_dynamic_price(
     floor_hit = final_price == cost_price and raw_price < cost_price
 
     if floor_hit:
-        rules.append("🛡️ Cost Basis Floor Guardrail Activated")
+        rules.append("Cost Basis Floor Guardrail Activated")
 
     delta_pct = ((final_price - base_price) / base_price) * 100
     margin_dollar = final_price - cost_price

@@ -52,11 +52,10 @@ def test_grounding_guarantee(catalog):
         assert rec["Product_Name"] in catalog_names, f"Hallucinated item: {rec['Product_Name']}"
 
 
-def test_sassy_response_generation(catalog):
-    """Ensures sassy response produces witty text and item list even offline."""
+def test_stylist_response_generation(catalog):
+    """Ensures stylist response produces coherent recommendations and item list."""
     response_text, items = get_sassy_stylist_response("cocktail party", catalog=catalog)
     assert len(response_text) > 20
     assert len(items) > 0
-    # Must have personality indicators
-    personality_hints = ["honey", "darling", "chic", "runway", "vibe", "style", "taste"]
-    assert any(h in response_text.lower() for h in personality_hints)
+    keywords = ["curated", "outfit", "style", "selection", "catalog", "recommended"]
+    assert any(k in response_text.lower() for k in keywords)

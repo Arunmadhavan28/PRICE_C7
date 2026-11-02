@@ -150,11 +150,10 @@ Give your sassy, fashionable critique and recommendations:"""
     item3 = matched_items[2] if len(matched_items) > 2 else matched_items[0]
 
     fallback_response = (
-        f"Oh honey, thank goodness you came to me before stepping out looking like a retail clearance rack accident! 💅✨\n\n"
-        f"For **'{user_query}'**, we are serving pure luxury, not tragic confusion. Here is the exact look you are going to wear, and no, you don't get to argue:\n\n"
-        f"1. **{item1['Product_Name']}** (${item1['Price']:.2f}) — *{item1['Description']}* Why? Because it immediately commands respect and screams taste.\n"
-        f"2. **{item2['Product_Name']}** (${item2['Price']:.2f}) — *{item2['Description']}* Pair this immediately to elevate your silhouette from 'amateur' to 'runway-ready'.\n"
-        f"3. **{item3['Product_Name']}** (${item3['Price']:.2f}) — Finish the vibe with this. Without it, you're merely dressed; with it, you are an event."
+        f"For '{user_query}', here is a curated outfit selection matching your style from our catalog:\n\n"
+        f"1. **{item1['Product_Name']}** (${item1['Price']:.2f}) — {item1['Description']}\n"
+        f"2. **{item2['Product_Name']}** (${item2['Price']:.2f}) — {item2['Description']}\n"
+        f"3. **{item3['Product_Name']}** (${item3['Price']:.2f}) — {item3['Description']}"
     )
     return fallback_response, matched_items
 

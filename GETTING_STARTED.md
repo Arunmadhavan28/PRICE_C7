@@ -1,17 +1,17 @@
-# ⚡ 5-Minute Quickstart Guide
+# Quickstart Guide
 
-Get up and running with the **Retail AI Vibe-Coding Challenge** in under five minutes.
-
----
-
-## 💻 Prerequisites
-- **Python 3.10, 3.11, or 3.12** installed on your system.
-- **Git** configured with your GitHub account.
-- An AI code assistant (Cursor, VS Code with GitHub Copilot / Gemini Code Assist, ChatGPT, or Claude).
+Set up and run the Retail AI Lab in under five minutes.
 
 ---
 
-## 🚀 Setup Instructions
+## Prerequisites
+- Python 3.10, 3.11, or 3.12 installed on your system.
+- Git configured with your GitHub account.
+- An editor or IDE of your choice.
+
+---
+
+## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -42,33 +42,33 @@ pip install -r requirements.txt
 
 ---
 
-## 🔑 Set Up Free Google Gemini API (Zero Cost)
-The conversational and emotion intelligence tracks (Team 2 & Team 5) feature Google Gemini API integration.
-1. Visit **[Google AI Studio](https://aistudio.google.com/)**.
-2. Sign in with any standard Google account.
-3. Click **Get API key** ➔ **Create API key** (free tier has massive context and zero billing setup).
-4. Configure your `.env` file:
+## Google Gemini API Setup (Free Tier)
+Tracks utilizing language models (Team 2 and Team 5) support Google Gemini API integration:
+1. Visit Google AI Studio at https://aistudio.google.com/
+2. Sign in with a standard Google account.
+3. Click "Get API key" -> "Create API key".
+4. Configure your .env file:
    ```bash
    cp .env.example .env
    ```
-5. Open `.env` and set:
+5. Open .env and add:
    ```env
-   GEMINI_API_KEY=AIzaSy...your_actual_key...
+   GEMINI_API_KEY=your_key_here
    ```
-*(Note: If you don't configure an API key, all apps will automatically fall back to their built-in offline rules and run seamlessly!)*
+Note: If no API key is provided, all applications use built-in offline rules and run normally.
 
 ---
 
-## 🎮 Launch the Master Dashboard
-You can preview all 9 team applications from the root launcher:
+## Launch the Master Dashboard
+Preview all team applications from the root launcher:
 ```bash
 streamlit run app.py
 ```
-Open your browser at `http://localhost:8501` to test the apps or run the live autograder!
+Open your browser at http://localhost:8501.
 
 ---
 
-## 🧪 Run Tests & Pre-Submission Autograder
+## Run Tests and Pre-Submission Autograder
 ```bash
 # Run all unit tests
 pytest teams/ -v

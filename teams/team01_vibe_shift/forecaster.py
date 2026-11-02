@@ -107,7 +107,7 @@ def forecast_demand(
 
     metrics = {
         "current_social_score": current_social_score,
-        "social_trend_direction": "Rising 🔥" if social_slope > 0.2 else ("Falling 📉" if social_slope < -0.2 else "Stable ⚖️"),
+        "social_trend_direction": "Rising" if social_slope > 0.2 else ("Falling" if social_slope < -0.2 else "Stable"),
         "total_forecasted_units": int(np.sum(forecast_values)),
         "avg_daily_projected": round(float(np.mean(forecast_values)), 1),
         "peak_forecast_day": forecast_df.loc[forecast_df["Forecast_Demand"].idxmax()]["Date"].strftime("%Y-%m-%d"),

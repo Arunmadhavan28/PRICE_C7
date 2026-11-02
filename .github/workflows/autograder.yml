@@ -1,4 +1,4 @@
-name: 🎓 Retail AI Vibe-Coding Autograder
+name: Retail AI Autograder
 
 on:
   push:
@@ -14,38 +14,38 @@ permissions:
 
 jobs:
   evaluate-submissions:
-    name: 🏆 Grade Submission (100 pts -> 25 Marks)
+    name: Grade Submission (100 pts to 25 Marks)
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: 🐍 Set up Python 3.10
+      - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
           cache: "pip"
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🧪 Run Pytest Test Suites
+      - name: Run Pytest Test Suites
         id: pytest_run
         run: |
           python -m pytest teams/ -v || true
 
-      - name: 📊 Run Automated Evaluator & Scorecard
+      - name: Run Automated Evaluator and Scorecard
         id: autograde
         run: |
           python evaluator/autograder.py --all --github-summary --output scorecard.md || true
           cat scorecard.md
 
-      - name: 💬 Post Scorecard Comment on Pull Request
+      - name: Post Scorecard Comment on Pull Request
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
@@ -53,16 +53,15 @@ jobs:
             const fs = require('fs');
             if (fs.existsSync('scorecard.md')) {
               const body = fs.readFileSync('scorecard.md', 'utf8');
-              const header = "### 🤖 Retail AI Vibe-Coding Autograder Results\n\n";
+              const header = "### Retail AI Autograder Results\n\n";
               
-              // Find existing comment to avoid duplicate spam
               const { data: comments } = await github.rest.issues.listComments({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
               });
               
-              const botComment = comments.find(c => c.body.includes("Retail AI Vibe-Coding Autograder Results"));
+              const botComment = comments.find(c => c.body.includes("Retail AI Autograder Results"));
               
               if (botComment) {
                 await github.rest.issues.updateComment({
@@ -81,10 +80,6 @@ jobs:
               }
             }
 
-      - name: 🏁 Final Status Check
+      - name: Final Status Check
         run: |
-          python -c "
-          import json, sys
-          # Evaluator exit code verification
-          print('Evaluation completed successfully. Check Job Summary and PR Comments for detailed scorecard.')
-          "
+          python -c "print('Evaluation completed successfully. Check Job Summary and PR Comments for scorecard.')"

@@ -1,5 +1,5 @@
 """
-Streamlit Web Application for Team 6: The 'Drop Culture' Markdown Optimizer.
+Streamlit Web Application for Team 6: Markdown Optimizer.
 Clearance analytics identifying lagging sell-through and protecting cost basis.
 """
 
@@ -11,11 +11,10 @@ from optimizer import load_aging_data, project_profit_recovery
 
 st.set_page_config(
     page_title="Markdown Optimizer | Retail AI",
-    page_icon="🏷️",
     layout="wide"
 )
 
-st.title("🏷️ The 'Drop Culture' Markdown Optimizer")
+st.title("Markdown Optimizer")
 st.caption("Clearance Analytics Computing Minimum Velocity Markdowns Without Breaching Cost Basis | Target: Retail Merchandisers")
 
 # Load Inventory Aging Data
@@ -26,7 +25,7 @@ raw_df = load_aging_data(str(data_path))
 optimized_df, metrics = project_profit_recovery(raw_df)
 
 # Sidebar Filter & Settings
-st.sidebar.header("🎯 Markdown Controls")
+st.sidebar.header("Markdown Controls")
 st.sidebar.markdown(f"**Total Tracked SKUs**: `{metrics['total_sku_count']}`")
 st.sidebar.markdown(f"**At-Risk Lagging SKUs**: `{metrics['at_risk_sku_count']}`")
 
@@ -47,7 +46,7 @@ with col4:
 st.markdown("---")
 
 # Data Table with Risk Highlighting
-st.subheader("📋 Inventory Aging & Clearance Matrix")
+st.subheader("Inventory Aging and Clearance Matrix")
 
 def color_risk(val):
     if val == "CRITICAL AT-RISK":
@@ -71,7 +70,7 @@ st.dataframe(styled_table, use_container_width=True)
 
 # Interactive Chart: Price vs Cost Floor
 st.markdown("---")
-st.subheader("📊 Clearance Pricing Floor Protection Analysis")
+st.subheader("Clearance Pricing Floor Protection Analysis")
 st.caption("Visualizing retail price vs recommended clearance price vs unbreakable cost basis floor.")
 
 fig = go.Figure()
@@ -108,7 +107,7 @@ st.plotly_chart(fig, use_container_width=True)
 # Export Button
 csv_data = display_df.to_csv(index=False).encode("utf-8")
 st.download_button(
-    label="📥 Export Clearance Markdown File for POS Upload",
+    label="Export Clearance Markdown File for POS Upload",
     data=csv_data,
     file_name="clearance_markdown_approved.csv",
     mime="text/csv",

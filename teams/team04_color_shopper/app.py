@@ -15,19 +15,18 @@ from color_engine import (
 
 st.set_page_config(
     page_title="Color-Palette Shopper | Retail AI",
-    page_icon="🎨",
     layout="wide"
 )
 
-st.title("🎨 Color-Palette Personal Shopper")
-st.caption("Visual Commerce Engine Matching Real-World Spaces & Wardrobes to Catalog Products | Target: Home Decor & Apparel Shoppers")
+st.title("Color-Palette Personal Shopper")
+st.caption("Visual Commerce Engine Matching Real-World Spaces to Catalog Products | Target: Home Decor and Apparel Shoppers")
 
 # Load Catalog
 catalog_path = Path(__file__).parent / "data" / "catalog.csv"
 catalog_df = pd.read_csv(catalog_path)
 
 # Sidebar Controls
-st.sidebar.header("📸 Image & Palette Inputs")
+st.sidebar.header("Image and Palette Inputs")
 
 sample_dir = Path(__file__).parent / "data" / "sample_images"
 sample_files = list(sample_dir.glob("*.png")) if sample_dir.exists() else []
@@ -39,7 +38,6 @@ uploaded_file = st.sidebar.file_uploader("Or Upload Room / Outfit Photo", type=[
 manual_hex = st.sidebar.color_picker("Or Pick Exact Hex Shade", "#C85A32")
 top_n = st.sidebar.slider("Number of Matches to Show", min_value=2, max_value=8, value=4)
 
-# Determine active image
 active_image = None
 if uploaded_file is not None:
     active_image = Image.open(uploaded_file)
@@ -51,7 +49,7 @@ elif sample_files:
 col_left, col_right = st.columns([1, 1.2])
 
 with col_left:
-    st.subheader("🖼️ Selected Visual Space")
+    st.subheader("Selected Visual Space")
     if active_image:
         st.image(active_image, caption="Active Image for Color Extraction", use_container_width=True)
         with st.spinner("Extracting dominant color swatches..."):
@@ -60,7 +58,7 @@ with col_left:
         st.info("No image selected. Using manual color picker.")
         palette = [{"hex": manual_hex, "rgb": hex_to_rgb(manual_hex), "share_pct": 100.0}]
 
-    st.markdown("#### 🎨 Extracted Dominant Palette")
+    st.markdown("#### Extracted Dominant Palette")
     pal_cols = st.columns(len(palette))
     selected_swatch = palette[0]["hex"]
 
@@ -75,7 +73,7 @@ with col_left:
             """, unsafe_allow_html=True)
 
 with col_right:
-    st.subheader("🛍️ Closest Matching Catalog Pieces")
+    st.subheader("Closest Matching Catalog Pieces")
     st.caption(f"Ranked via 3D Euclidean Color Distance against **{palette[0]['hex']}**")
 
     matched_products = find_closest_products(palette[0]["hex"], catalog_df, top_n=top_n)
@@ -94,7 +92,7 @@ with col_right:
                 <div style="font-size: 0.8em; color: #aaa;">Match Score: <b>{prod['Match_Confidence']}%</b> (Dist: {prod['Distance']:.1f})</div>
             </div>
             """, unsafe_allow_html=True)
-            st.button("Add to Mood Board 🛒", key=f"match_{idx}")
+            st.button("Add to Mood Board", key=f"match_{idx}")
 
-with st.expander("🔍 View Complete Catalog Dataset"):
+with st.expander("View Complete Catalog Dataset"):
     st.dataframe(catalog_df, use_container_width=True)

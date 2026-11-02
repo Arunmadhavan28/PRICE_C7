@@ -1,5 +1,5 @@
 """
-Streamlit Web Application for Team 3: The 'Happy Hour' Dynamic Pricing Engine.
+Streamlit Web Application for Team 3: Dynamic Pricing Engine.
 Interactive price board with sliders for time, weather, and inventory.
 """
 
@@ -10,19 +10,18 @@ from pricing_engine import load_inventory, calculate_dynamic_price
 
 st.set_page_config(
     page_title="Dynamic Pricing Engine | Retail AI",
-    page_icon="⚡",
     layout="wide"
 )
 
-st.title("⚡ The 'Happy Hour' Dynamic Pricing Engine")
-st.caption("Real-Time Algorithmic Pricing Modifiers for Cafes & Boutique Retailers | Target: Store & Revenue Managers")
+st.title("Dynamic Pricing Engine")
+st.caption("Real-Time Algorithmic Pricing Modifiers for Cafes and Retailers | Target: Store and Revenue Managers")
 
 # Load Inventory
 inventory_path = Path(__file__).parent / "data" / "inventory.json"
 inventory = load_inventory(str(inventory_path))
 
 # Sidebar Controls
-st.sidebar.header("🕹️ Environmental Simulation Controls")
+st.sidebar.header("Environmental Simulation Controls")
 
 hour = st.sidebar.slider(
     "Time of Day (24-Hour Clock)",
@@ -78,7 +77,7 @@ with col4:
 st.markdown("---")
 
 # Live-Updating Price Board
-st.subheader("📋 Real-Time Dynamic Price Board")
+st.subheader("Real-Time Dynamic Price Board")
 
 display_data = []
 for _, r in df_results.iterrows():
@@ -97,7 +96,7 @@ for _, r in df_results.iterrows():
 
 st.dataframe(pd.DataFrame(display_data), use_container_width=True)
 
-# Visual Comparison of Margin & Base vs Dynamic
-with st.expander("📊 Price Delta Comparison View"):
+# Visual Comparison of Margin and Base vs Dynamic
+with st.expander("Price Delta Comparison View"):
     chart_df = df_results[["Item", "Base_Price", "Dynamic_Price"]].set_index("Item")
     st.bar_chart(chart_df)

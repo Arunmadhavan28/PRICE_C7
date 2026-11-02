@@ -15,19 +15,18 @@ from empathy_engine import (
 
 st.set_page_config(
     page_title="Empathy Engine | Retail AI",
-    page_icon="💡",
     layout="wide"
 )
 
-st.title("💡 The Empathy Engine: Retail Emotion Analytics")
-st.caption("Quantifying Qualitative Customer Reviews into Distinct Emotional Dimensions | Target: CX & Retail Ops Directors")
+st.title("The Empathy Engine: Retail Emotion Analytics")
+st.caption("Quantifying Qualitative Customer Reviews into Distinct Emotional Dimensions | Target: CX and Retail Ops Directors")
 
 # Load Default Reviews
 reviews_path = Path(__file__).parent / "data" / "customer_reviews.txt"
 default_reviews = load_reviews(str(reviews_path)) if reviews_path.exists() else []
 
 # Sidebar Controls
-st.sidebar.header("📝 Customer Feedback Input")
+st.sidebar.header("Customer Feedback Input")
 
 st.sidebar.markdown(f"**Loaded Samples**: `{len(default_reviews)} customer reviews`")
 
@@ -57,7 +56,7 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.metric("Total Reviews Analyzed", f"{metrics['total_reviews']}")
 with col2:
-    st.metric("Customer Joy & Satisfaction", f"{metrics['satisfaction_rate']}%", delta="Positive Sentiment")
+    st.metric("Customer Joy and Satisfaction", f"{metrics['satisfaction_rate']}%", delta="Positive Sentiment")
 with col3:
     st.metric("Friction Index", f"{metrics['friction_index']}%", delta="Frustration + Confusion", delta_color="inverse")
 with col4:
@@ -77,7 +76,7 @@ color_map = {
 }
 
 with chart_col1:
-    st.subheader("🥧 Emotional Share Distribution")
+    st.subheader("Emotional Share Distribution")
     fig_pie = px.pie(
         dist_df,
         values="Count",
@@ -90,7 +89,7 @@ with chart_col1:
     st.plotly_chart(fig_pie, use_container_width=True)
 
 with chart_col2:
-    st.subheader("📊 Emotional Volume Breakdown")
+    st.subheader("Emotional Volume Breakdown")
     fig_bar = px.bar(
         dist_df,
         x="Emotion",
@@ -106,7 +105,7 @@ with chart_col2:
 st.markdown("---")
 
 # Drill-Down Review Inspector
-st.subheader("🔍 Emotion Drill-Down Inspector")
+st.subheader("Emotion Drill-Down Inspector")
 selected_filter = st.selectbox(
     "Filter by Emotion Category",
     ["All Reviews", "Frustration", "Confusion", "Joy", "Satisfaction", "Neutral"]

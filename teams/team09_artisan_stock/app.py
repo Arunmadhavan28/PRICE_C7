@@ -14,12 +14,11 @@ from stock_engine import (
 
 st.set_page_config(
     page_title="Artisan Stock Planner | Retail AI",
-    page_icon="📦",
     layout="wide"
 )
 
-st.title("📦 The Artisan Safety-Stock Planner")
-st.caption("Visual Kanban Inventory Tracking & Automated Purchase Orders | Target: Independent Makers & Artisans")
+st.title("The Artisan Safety-Stock Planner")
+st.caption("Visual Kanban Inventory Tracking and Automated Purchase Orders | Target: Independent Makers and Artisans")
 
 # Load Raw Materials Data
 data_path = Path(__file__).parent / "data" / "artisan_materials.csv"
@@ -40,17 +39,17 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.metric("Materials Tracked", f"{len(evaluations)} items", delta="Boutique Workshop")
 with col2:
-    st.metric("Critical Stockouts (Red)", f"{len(critical_items)} alerts", delta="Lead Time Exceeded", delta_color="inverse")
+    st.metric("Critical Stockouts", f"{len(critical_items)} alerts", delta="Lead Time Exceeded", delta_color="inverse")
 with col3:
-    st.metric("Warning Reorder (Yellow)", f"{len(warning_items)} items", delta="Approaching ROP", delta_color="inverse")
+    st.metric("Warning Reorder", f"{len(warning_items)} items", delta="Approaching ROP", delta_color="inverse")
 with col4:
-    st.metric("Total Replenishment Capital", f"${total_po_capital:,.2f}", delta="For 30-Day Runway")
+    st.metric("Replenishment Capital", f"${total_po_capital:,.2f}", delta="For 30-Day Runway")
 
 st.markdown("---")
 
 # Kanban Grid Layout
-st.subheader("📋 Visual Material Runway Grid")
-st.caption("Cards automatically transition from Green ➔ Yellow ➔ Red as runway days drop below supplier lead times.")
+st.subheader("Visual Material Runway Grid")
+st.caption("Cards indicate inventory status relative to supplier lead times.")
 
 # Display in a 3-column responsive grid
 grid_cols = st.columns(3)
@@ -80,14 +79,14 @@ for idx, mat in enumerate(evaluations):
 
 # Purchase Order Generator
 st.markdown("---")
-st.subheader("📝 One-Click Automated Purchase Order Generator")
+st.subheader("Automated Purchase Order Generator")
 st.caption("Consolidates all Critical and Warning inventory items into an itemized purchase order for vendors.")
 
-if st.button("⚡ Generate Purchase Order for Vendors", type="primary", use_container_width=True):
+if st.button("Generate Purchase Order for Vendors", type="primary", use_container_width=True):
     po_text = generate_purchase_order(items_needing_po)
     st.text_area("Purchase Order Transmission Preview", value=po_text, height=260)
     st.download_button(
-        label="📥 Download Purchase Order as Plain Text (.txt)",
+        label="Download Purchase Order as Plain Text (.txt)",
         data=po_text,
         file_name="purchase_order_artisan.txt",
         mime="text/plain",

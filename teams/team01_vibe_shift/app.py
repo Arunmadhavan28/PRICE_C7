@@ -10,8 +10,7 @@ import plotly.graph_objects as go
 from forecaster import load_trend_data, forecast_demand
 
 st.set_page_config(
-    page_title="Vibe-Shift Forecaster | Retail AI",
-    page_icon="🔮",
+    page_title="Trend Forecaster | Retail AI",
     layout="wide"
 )
 
@@ -37,11 +36,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🔮 The 'Vibe-Shift' Trend Forecaster")
-st.caption("AI-Powered Demand Surge Prediction Blending Sales Velocity & Cultural Signals | Target: Boutique Retail Buyers & Inventory Planners")
+st.title("The Trend Forecaster")
+st.caption("Demand Surge Prediction Blending Sales Velocity and Cultural Signals | Target: Boutique Retail Buyers and Planners")
 
 # Sidebar Controls
-st.sidebar.header("⚙️ Forecasting Parameters")
+st.sidebar.header("Forecasting Parameters")
 
 default_data_path = Path(__file__).parent / "data" / "trend_sales_data.csv"
 
@@ -102,7 +101,7 @@ with col4:
 st.markdown("---")
 
 # Interactive Demand & Cultural Signal Chart
-st.subheader("📈 Demand Projection with Cultural Wave Overlay")
+st.subheader("Demand Projection with Cultural Wave Overlay")
 
 fig = go.Figure()
 
@@ -151,7 +150,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 # Mood Board Image Gallery
 st.markdown("---")
-st.subheader("🎨 Trend Aesthetic & Visual Mood Board")
+st.subheader("Trend Aesthetic and Visual Mood Board")
 st.caption("Curated visual aesthetics and mood board signals representing the cultural shift for this trend.")
 
 mood_boards = {
@@ -191,5 +190,5 @@ for i, mood in enumerate(category_moods):
         """, unsafe_allow_html=True)
 
 # Data Table Expander
-with st.expander("🔍 View Forecast Data Table"):
+with st.expander("View Forecast Data Table"):
     st.dataframe(forecast_df, use_container_width=True)
