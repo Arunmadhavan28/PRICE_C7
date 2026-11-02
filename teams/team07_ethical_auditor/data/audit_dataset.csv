@@ -1,0 +1,121 @@
+Customer_ZipCode,Income_Bracket,Customer_Income_Proxy,Recommended_Item_Price,Opt_in_Status,Item_Category,Recommendation_Algorithm
+30310,$45k Avg,45,46.75,False,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,62.73,True,Accessories,PricingEngine_v2.1
+30310,$45k Avg,45,24.84,True,Accessories,PricingEngine_v2.1
+10021,$210k Avg,210,255.36,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,42.27,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,36.87,False,Accessories,PricingEngine_v2.1
+10021,$210k Avg,210,291.1,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,32.78,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,47.12,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,64.95,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,275.06,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,38.48,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,48.79,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,244.78,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,52.36,True,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,340.04,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,51.43,False,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,73.87,False,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,260.74,True,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,243.87,True,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,238.04,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,38.7,True,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,281.88,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,65.17,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,52.48,True,Accessories,PricingEngine_v2.1
+30310,$45k Avg,45,72.47,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,31.39,True,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,268.71,False,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,197.98,True,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,275.29,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,210.96,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,38.63,True,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,294.88,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,29.66,False,Accessories,PricingEngine_v2.1
+30310,$45k Avg,45,65.57,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,256.24,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,37.02,False,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,210.06,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,51.13,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,47.53,True,Accessories,PricingEngine_v2.1
+30310,$45k Avg,45,56.91,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,36.26,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,47.75,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,214.36,True,Footwear,PricingEngine_v2.1
+48206,$38k Avg,38,51.81,False,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,192.54,False,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,237.1,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,255.52,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,155.06,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,59.76,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,65.92,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,249.05,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,36.69,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,257.02,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,65.77,False,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,30.58,True,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,259.26,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,15.0,False,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,83.08,True,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,299.82,False,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,42.75,False,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,262.57,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,43.3,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,43.27,False,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,49.84,True,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,335.13,False,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,195.66,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,28.87,False,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,239.78,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,37.4,False,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,258.82,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,26.7,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,279.43,False,Accessories,PricingEngine_v2.1
+10021,$210k Avg,210,300.67,True,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,52.2,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,60.92,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,159.75,False,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,229.06,False,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,335.35,False,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,78.2,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,53.33,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,28.76,False,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,28.23,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,349.48,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,258.84,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,44.08,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,207.02,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,248.79,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,35.33,False,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,40.47,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,37.0,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,294.06,True,Footwear,PricingEngine_v2.1
+10021,$210k Avg,210,297.72,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,155.39,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,294.47,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,52.73,True,Luxury Goods,PricingEngine_v2.1
+48206,$38k Avg,38,26.31,False,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,150.42,True,Footwear,PricingEngine_v2.1
+30310,$45k Avg,45,81.72,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,209.52,True,Luxury Goods,PricingEngine_v2.1
+10021,$210k Avg,210,289.19,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,63.67,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,56.3,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,213.32,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,227.37,False,Apparel,PricingEngine_v2.1
+48206,$38k Avg,38,34.75,True,Footwear,PricingEngine_v2.1
+48206,$38k Avg,38,35.41,True,Apparel,PricingEngine_v2.1
+30310,$45k Avg,45,71.45,True,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,225.4,True,Accessories,PricingEngine_v2.1
+10021,$210k Avg,210,306.23,True,Luxury Goods,PricingEngine_v2.1
+90210,$180k Avg,180,283.77,False,Footwear,PricingEngine_v2.1
+90210,$180k Avg,180,309.5,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,64.12,True,Apparel,PricingEngine_v2.1
+90210,$180k Avg,180,286.46,True,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,291.17,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,47.36,True,Luxury Goods,PricingEngine_v2.1
+30310,$45k Avg,45,48.72,True,Accessories,PricingEngine_v2.1
+90210,$180k Avg,180,234.99,True,Apparel,PricingEngine_v2.1
+10021,$210k Avg,210,223.75,True,Accessories,PricingEngine_v2.1
+48206,$38k Avg,38,57.38,False,Footwear,PricingEngine_v2.1

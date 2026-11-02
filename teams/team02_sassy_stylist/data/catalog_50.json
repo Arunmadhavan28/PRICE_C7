@@ -1,0 +1,452 @@
+[
+  {
+    "id": "SKU-001",
+    "Product_Name": "Oversized Sunset Linen Blazer",
+    "Category": "Outerwear",
+    "Price": 145.0,
+    "Vibe_Tags": ["beach wedding", "smart casual", "resort", "coastal chic"],
+    "Image_URL": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&auto=format&fit=crop&q=60",
+    "Description": "Effortlessly tailored terracotta linen blazer with horn buttons. Breathes like a seaside breeze."
+  },
+  {
+    "id": "SKU-002",
+    "Product_Name": "Champagne Silk Slip Dress",
+    "Category": "Dresses",
+    "Price": 180.0,
+    "Vibe_Tags": ["beach wedding", "cocktail", "date night", "glam"],
+    "Image_URL": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop&q=60",
+    "Description": "Bias-cut 100% mulberry silk midi dress that flows with your silhouette without ever clinging."
+  },
+  {
+    "id": "SKU-003",
+    "Product_Name": "Woven Leather Mule Sandals",
+    "Category": "Footwear",
+    "Price": 120.0,
+    "Vibe_Tags": ["beach wedding", "brunch", "vacation", "resort"],
+    "Image_URL": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+    "Description": "Handcrafted woven tan leather slides with an artisanal block heel safe for sand and boardwalks."
+  },
+  {
+    "id": "SKU-004",
+    "Product_Name": "Pleated Wide-Leg Palazzo Trousers",
+    "Category": "Bottoms",
+    "Price": 115.0,
+    "Vibe_Tags": ["beach wedding", "chic", "coastal", "art gallery"],
+    "Image_URL": "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=500&auto=format&fit=crop&q=60",
+    "Description": "Dramatic billowing ivory trousers featuring double pleats and an ultra-flattering high waist."
+  },
+  {
+    "id": "SKU-005",
+    "Product_Name": "Tortoiseshell Cat-Eye Sunglasses",
+    "Category": "Accessories",
+    "Price": 65.0,
+    "Vibe_Tags": ["resort", "beach wedding", "vintage", "sunny"],
+    "Image_URL": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60",
+    "Description": "Italian acetate cat-eye frames that deliver instant celebrity anonymity and 100% UV protection."
+  },
+  {
+    "id": "SKU-006",
+    "Product_Name": "Heavyweight Boxy Graphic Tee",
+    "Category": "Tops",
+    "Price": 55.0,
+    "Vibe_Tags": ["streetwear", "casual", "rave", "weekend"],
+    "Image_URL": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop&q=60",
+    "Description": "280 GSM combed cotton vintage wash tee with understated brutalist back typography."
+  },
+  {
+    "id": "SKU-007",
+    "Product_Name": "Cobalt Blue Satin Trench Coat",
+    "Category": "Outerwear",
+    "Price": 240.0,
+    "Vibe_Tags": ["statement", "fashion week", "night out", "bold"],
+    "Image_URL": "https://images.unsplash.com/photo-1544441893-675973e31985?w=500&auto=format&fit=crop&q=60",
+    "Description": "Electric blue fluid trench coat for when entering a room quietly simply isn't an option."
+  },
+  {
+    "id": "SKU-008",
+    "Product_Name": "Chunky Platform Loafers",
+    "Category": "Footwear",
+    "Price": 160.0,
+    "Vibe_Tags": ["preppy", "academia", "workwear", "edgy"],
+    "Image_URL": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500&auto=format&fit=crop&q=60",
+    "Description": "High-shine leather loafers with a 2-inch lugged platform sole and polished gold horsebit."
+  },
+  {
+    "id": "SKU-009",
+    "Product_Name": "Cropped Boucle Tweed Jacket",
+    "Category": "Outerwear",
+    "Price": 195.0,
+    "Vibe_Tags": ["business casual", "french chic", "dinner party", "luxurious"],
+    "Image_URL": "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=500&auto=format&fit=crop&q=60",
+    "Description": "Parisian-inspired textured cream jacket with antique pearl buttons and contrast piped trim."
+  },
+  {
+    "id": "SKU-010",
+    "Product_Name": "Distressed Raw-Hem Baggy Jeans",
+    "Category": "Bottoms",
+    "Price": 98.0,
+    "Vibe_Tags": ["streetwear", "y2k", "casual", "concert"],
+    "Image_URL": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&auto=format&fit=crop&q=60",
+    "Description": "Non-stretch 13oz Japanese denim cut in a 90s skater relaxed fit with authentic knee blowout."
+  },
+  {
+    "id": "SKU-011",
+    "Product_Name": "Emerald Velvet Wrap Dress",
+    "Category": "Dresses",
+    "Price": 210.0,
+    "Vibe_Tags": ["holiday party", "cocktail", "formal", "winter wedding"],
+    "Image_URL": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&auto=format&fit=crop&q=60",
+    "Description": "Plush emerald green velvet tailored with a self-tie sash and graceful tulip hem."
+  },
+  {
+    "id": "SKU-012",
+    "Product_Name": "Chunky Silver Chainlink Choker",
+    "Category": "Accessories",
+    "Price": 48.0,
+    "Vibe_Tags": ["edgy", "rave", "streetwear", "night out"],
+    "Image_URL": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60",
+    "Description": "Rhodium-plated stainless steel industrial Cuban link chain with custom lobster clasp."
+  },
+  {
+    "id": "SKU-013",
+    "Product_Name": "Structured Mini Crossbody Box Bag",
+    "Category": "Accessories",
+    "Price": 130.0,
+    "Vibe_Tags": ["minimalist", "date night", "brunch", "cocktail"],
+    "Image_URL": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60",
+    "Description": "Architectural structured silhouette crafted from smooth Italian calfskin in deep saddle tan."
+  },
+  {
+    "id": "SKU-014",
+    "Product_Name": "Asymmetric Ribbed Knit Tank",
+    "Category": "Tops",
+    "Price": 62.0,
+    "Vibe_Tags": ["date night", "summer", "minimalist", "dinner"],
+    "Image_URL": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=60",
+    "Description": "One-shoulder sculpt knit top spun from eco-viscose with subtle side ruched details."
+  },
+  {
+    "id": "SKU-015",
+    "Product_Name": "Tailored High-Waist Bermuda Shorts",
+    "Category": "Bottoms",
+    "Price": 85.0,
+    "Vibe_Tags": ["summer office", "smart casual", "resort", "european summer"],
+    "Image_URL": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop&q=60",
+    "Description": "Crisp linen-cotton blend knee-length tailored shorts with pressed creases and front welt pockets."
+  },
+  {
+    "id": "SKU-016",
+    "Product_Name": "Sheer Organza Puff-Sleeve Blouse",
+    "Category": "Tops",
+    "Price": 110.0,
+    "Vibe_Tags": ["romantic", "high tea", "date night", "art opening"],
+    "Image_URL": "https://images.unsplash.com/photo-1551803091-e20673f15770?w=500&auto=format&fit=crop&q=60",
+    "Description": "Ethereal translucent organza blouse with exaggerated balloon sleeves and inner camisole."
+  },
+  {
+    "id": "SKU-017",
+    "Product_Name": "Cashmere Cable-Knit Crewneck",
+    "Category": "Tops",
+    "Price": 220.0,
+    "Vibe_Tags": ["old money", "quiet luxury", "autumn", "casual luxury"],
+    "Image_URL": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&auto=format&fit=crop&q=60",
+    "Description": "Grade-A Mongolian cashmere knitted in heirloom honeycomb cables in heather oatmeal."
+  },
+  {
+    "id": "SKU-018",
+    "Product_Name": "Strappy Metallic Stiletto Sandals",
+    "Category": "Footwear",
+    "Price": 175.0,
+    "Vibe_Tags": ["party", "cocktail", "new years", "red carpet"],
+    "Image_URL": "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=500&auto=format&fit=crop&q=60",
+    "Description": "Minimalist liquid gold leather 90mm stilettos engineered with cushioned insoles for dancing."
+  },
+  {
+    "id": "SKU-019",
+    "Product_Name": "Cargo Utility Midi Skirt",
+    "Category": "Bottoms",
+    "Price": 92.0,
+    "Vibe_Tags": ["y2k", "streetwear", "casual", "festival"],
+    "Image_URL": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500&auto=format&fit=crop&q=60",
+    "Description": "Khaki nylon utility skirt with adjustable bungee toggles and deep gusseted 3D pockets."
+  },
+  {
+    "id": "SKU-020",
+    "Product_Name": "Floral Tiered Bohemian Maxi Skirt",
+    "Category": "Bottoms",
+    "Price": 105.0,
+    "Vibe_Tags": ["cottagecore", "beach wedding", "brunch", "vacation"],
+    "Image_URL": "https://images.unsplash.com/photo-1582142407894-ec85a1260a46?w=500&auto=format&fit=crop&q=60",
+    "Description": "Swirling botanical print rayon skirt with elastic smocked waistline and feminine micro-ruffles."
+  },
+  {
+    "id": "SKU-021",
+    "Product_Name": "Structured Double-Breasted Peacoat",
+    "Category": "Outerwear",
+    "Price": 290.0,
+    "Vibe_Tags": ["winter", "formal", "office", "timeless"],
+    "Image_URL": "https://images.unsplash.com/photo-1539533018447-63fcce667823?w=500&auto=format&fit=crop&q=60",
+    "Description": "Heavyweight Italian Melton wool coat in midnight navy with anchor-embossed pewter buttons."
+  },
+  {
+    "id": "SKU-022",
+    "Product_Name": "Faux Leather Straight Leg Pants",
+    "Category": "Bottoms",
+    "Price": 125.0,
+    "Vibe_Tags": ["night out", "edgy", "date night", "concert"],
+    "Image_URL": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&auto=format&fit=crop&q=60",
+    "Description": "Supple vegan leather trousers with butter-soft fleece lining and tailored straight leg silhouette."
+  },
+  {
+    "id": "SKU-023",
+    "Product_Name": "Retro Contrast Trim Cardigan",
+    "Category": "Tops",
+    "Price": 95.0,
+    "Vibe_Tags": ["preppy", "casual", "work", "coffee run"],
+    "Image_URL": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&auto=format&fit=crop&q=60",
+    "Description": "V-neck boxy knit cardigan in cream with black contrast tipped ribbing and tortoiseshell buttons."
+  },
+  {
+    "id": "SKU-024",
+    "Product_Name": "Minimalist Leather Tennis Sneakers",
+    "Category": "Footwear",
+    "Price": 140.0,
+    "Vibe_Tags": ["everyday", "smart casual", "travel", "commute"],
+    "Image_URL": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&auto=format&fit=crop&q=60",
+    "Description": "Monochrome white Nappa leather low-tops with vulcanized rubber sole and gold-foil heel stamp."
+  },
+  {
+    "id": "SKU-025",
+    "Product_Name": "Ruffled Off-Shoulder Sundress",
+    "Category": "Dresses",
+    "Price": 135.0,
+    "Vibe_Tags": ["beach wedding", "vacation", "resort", "garden party"],
+    "Image_URL": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=60",
+    "Description": "Sun-drenched yellow cotton eyelet sundress featuring flirty tiered sleeves and a fit-and-flare skirt."
+  },
+  {
+    "id": "SKU-026",
+    "Product_Name": "Sculptural Brass Drop Earrings",
+    "Category": "Accessories",
+    "Price": 52.0,
+    "Vibe_Tags": ["statement", "art gallery", "dinner party", "beach wedding"],
+    "Image_URL": "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=500&auto=format&fit=crop&q=60",
+    "Description": "Hand-hammered organic fluid teardrop earrings in 18k brushed gold plating."
+  },
+  {
+    "id": "SKU-027",
+    "Product_Name": "Waterproof Technical Anorak",
+    "Category": "Outerwear",
+    "Price": 185.0,
+    "Vibe_Tags": ["gorpcore", "outdoor", "streetwear", "rain"],
+    "Image_URL": "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=500&auto=format&fit=crop&q=60",
+    "Description": "Three-layer seam-sealed ripstop windbreaker with storm hood and reflective zip pulls."
+  },
+  {
+    "id": "SKU-028",
+    "Product_Name": "Silk Charmeuse Button-Down Shirt",
+    "Category": "Tops",
+    "Price": 165.0,
+    "Vibe_Tags": ["office", "chic", "interview", "elevated basic"],
+    "Image_URL": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&auto=format&fit=crop&q=60",
+    "Description": "Fluid silk shirt in French lavender with concealed mother-of-pearl button placket."
+  },
+  {
+    "id": "SKU-029",
+    "Product_Name": "Pleated Tennis Mini Skort",
+    "Category": "Bottoms",
+    "Price": 58.0,
+    "Vibe_Tags": ["sporty chic", "summer", "festival", "casual"],
+    "Image_URL": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format&fit=crop&q=60",
+    "Description": "Crisp knife-pleated performance skort with built-in compression shorts and ball pocket."
+  },
+  {
+    "id": "SKU-030",
+    "Product_Name": "Suede Western Ankle Boots",
+    "Category": "Footwear",
+    "Price": 210.0,
+    "Vibe_Tags": ["festival", "boho", "autumn", "concert"],
+    "Image_URL": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+    "Description": "Cacao brown oiled suede booties with pointed toe, Cuban heel, and tonal Western embroidery."
+  },
+  {
+    "id": "SKU-031",
+    "Product_Name": "Corset Seamed Bodysuit",
+    "Category": "Tops",
+    "Price": 75.0,
+    "Vibe_Tags": ["date night", "clubwear", "night out", "bold"],
+    "Image_URL": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=60",
+    "Description": "Smoothing compression mesh bodysuit with flexible boning channels and sweetheart neckline."
+  },
+  {
+    "id": "SKU-032",
+    "Product_Name": "Oversized Flannel Shacket",
+    "Category": "Outerwear",
+    "Price": 88.0,
+    "Vibe_Tags": ["grunge", "fall", "casual", "cabin trip"],
+    "Image_URL": "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&auto=format&fit=crop&q=60",
+    "Description": "Thick brushed plaid shirt-jacket featuring deep chest patch pockets and drop shoulders."
+  },
+  {
+    "id": "SKU-033",
+    "Product_Name": "Satin Cargo Joggers",
+    "Category": "Bottoms",
+    "Price": 105.0,
+    "Vibe_Tags": ["high-low fashion", "lounge", "dinner", "streetwear"],
+    "Image_URL": "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=500&auto=format&fit=crop&q=60",
+    "Description": "Glamorous liquid satin track pants with ruched elasticated cuffs and utility flap accents."
+  },
+  {
+    "id": "SKU-034",
+    "Product_Name": "Embellished Fringe Evening Bag",
+    "Category": "Accessories",
+    "Price": 89.0,
+    "Vibe_Tags": ["cocktail", "gatsby", "wedding guest", "party"],
+    "Image_URL": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&auto=format&fit=crop&q=60",
+    "Description": "Cascading glass beaded fringe pouch with kiss-lock closure and detachable chain strap."
+  },
+  {
+    "id": "SKU-035",
+    "Product_Name": "Monochrome Wool Fedora",
+    "Category": "Accessories",
+    "Price": 72.0,
+    "Vibe_Tags": ["autumn", "resort", "boho chic", "travel"],
+    "Image_URL": "https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=500&auto=format&fit=crop&q=60",
+    "Description": "100% Australian wool felt wide-brim hat finished with a tonal grosgrain band."
+  },
+  {
+    "id": "SKU-036",
+    "Product_Name": "Lace-Trimmed Camisole Top",
+    "Category": "Tops",
+    "Price": 45.0,
+    "Vibe_Tags": ["layering", "romantic", "date night", "casual"],
+    "Image_URL": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=60",
+    "Description": "Delicate V-neck cami with eyelash lace border and adjustable skinny shoulder straps."
+  },
+  {
+    "id": "SKU-037",
+    "Product_Name": "High-Waist Tailored Cigarette Pants",
+    "Category": "Bottoms",
+    "Price": 110.0,
+    "Vibe_Tags": ["office", "minimalist", "dinner", "conference"],
+    "Image_URL": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop&q=60",
+    "Description": "Ankle-grazing tailored trousers with stretch twill weave and discreet invisible zip."
+  },
+  {
+    "id": "SKU-038",
+    "Product_Name": "Open-Back Halter Jumpsuit",
+    "Category": "One-Piece",
+    "Price": 190.0,
+    "Vibe_Tags": ["beach wedding", "cocktail", "summer formal", "statement"],
+    "Image_URL": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500&auto=format&fit=crop&q=60",
+    "Description": "Floor-length cobalt blue crepe jumpsuit featuring an alluring low cowl back and wide legs."
+  },
+  {
+    "id": "SKU-039",
+    "Product_Name": "Chunky Knit Balaclava Hood",
+    "Category": "Accessories",
+    "Price": 42.0,
+    "Vibe_Tags": ["winter", "apres-ski", "avant-garde", "streetwear"],
+    "Image_URL": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&auto=format&fit=crop&q=60",
+    "Description": "Merino wool ribbed balaclava with drawstring cinch for biting winter urban commutes."
+  },
+  {
+    "id": "SKU-040",
+    "Product_Name": "Distressed Denim Mini Skirt",
+    "Category": "Bottoms",
+    "Price": 68.0,
+    "Vibe_Tags": ["y2k", "festival", "summer", "casual"],
+    "Image_URL": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500&auto=format&fit=crop&q=60",
+    "Description": "Low-slung vintage faded denim skirt with raw frayed hemline and authentic whiskering."
+  },
+  {
+    "id": "SKU-041",
+    "Product_Name": "Cropped Moto Biker Jacket",
+    "Category": "Outerwear",
+    "Price": 260.0,
+    "Vibe_Tags": ["rocker", "night out", "cool girl", "concert"],
+    "Image_URL": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=60",
+    "Description": "Grainy matte leather motorcycle jacket with chunky asymmetrical zips and snap lapels."
+  },
+  {
+    "id": "SKU-042",
+    "Product_Name": "Puff-Sleeve Linen Babydoll Dress",
+    "Category": "Dresses",
+    "Price": 128.0,
+    "Vibe_Tags": ["cottagecore", "picnic", "brunch", "casual"],
+    "Image_URL": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format&fit=crop&q=60",
+    "Description": "Flirty sage green linen dress with empire waist and square neckline."
+  },
+  {
+    "id": "SKU-043",
+    "Product_Name": "Pewter Metallic Leather Boots",
+    "Category": "Footwear",
+    "Price": 230.0,
+    "Vibe_Tags": ["party", "festival", "cyberpunk", "bold"],
+    "Image_URL": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format&fit=crop&q=60",
+    "Description": "Knee-high shimmering gunmetal boots with pointed chisel toe and sculptural angled heel."
+  },
+  {
+    "id": "SKU-044",
+    "Product_Name": "Structured Canvas Tote Bag",
+    "Category": "Accessories",
+    "Price": 78.0,
+    "Vibe_Tags": ["work", "market", "commute", "travel"],
+    "Image_URL": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&auto=format&fit=crop&q=60",
+    "Description": "Heavyweight 24oz duck canvas carryall with bridle leather handles and key clip."
+  },
+  {
+    "id": "SKU-045",
+    "Product_Name": "Sheer Mesh Long-Sleeve Top",
+    "Category": "Tops",
+    "Price": 50.0,
+    "Vibe_Tags": ["rave", "layering", "festival", "y2k"],
+    "Image_URL": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=60",
+    "Description": "Psychedelic green marble swirl print in featherlight second-skin power mesh."
+  },
+  {
+    "id": "SKU-046",
+    "Product_Name": "Silk Scarf Neck-Tie Blouse",
+    "Category": "Tops",
+    "Price": 155.0,
+    "Vibe_Tags": ["vintage", "office chic", "formal", "dinner"],
+    "Image_URL": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&auto=format&fit=crop&q=60",
+    "Description": "Cream silk crepe blouse with dramatic attached pussy-bow scarf tie that can be draped or bowed."
+  },
+  {
+    "id": "SKU-047",
+    "Product_Name": "Quilted Oversized Puffer Vest",
+    "Category": "Outerwear",
+    "Price": 135.0,
+    "Vibe_Tags": ["streetwear", "layering", "fall", "sporty"],
+    "Image_URL": "https://images.unsplash.com/photo-1544441893-675973e31985?w=500&auto=format&fit=crop&q=60",
+    "Description": "Matte black boxy down-alternative puffer vest with high stand collar and thermal fleece pockets."
+  },
+  {
+    "id": "SKU-048",
+    "Product_Name": "Linen Wrap Front Sarong Skirt",
+    "Category": "Bottoms",
+    "Price": 95.0,
+    "Vibe_Tags": ["beach wedding", "resort", "vacation", "summer"],
+    "Image_URL": "https://images.unsplash.com/photo-1582142407894-ec85a1260a46?w=500&auto=format&fit=crop&q=60",
+    "Description": "Wrap midi skirt with knotted side sash and sensual thigh-high walking slit in sun-bleached sand."
+  },
+  {
+    "id": "SKU-049",
+    "Product_Name": "Beaded Pearl Choker Necklace",
+    "Category": "Accessories",
+    "Price": 58.0,
+    "Vibe_Tags": ["beach wedding", "elegant", "preppy", "bridal"],
+    "Image_URL": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60",
+    "Description": "Organic baroque freshwater pearls strung on silk thread with 14k gold-filled toggle clasp."
+  },
+  {
+    "id": "SKU-050",
+    "Product_Name": "Strappy Back Ribbed Knit Bodysuit",
+    "Category": "Tops",
+    "Price": 56.0,
+    "Vibe_Tags": ["date night", "casual", "beach wedding", "resort"],
+    "Image_URL": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=60",
+    "Description": "Terracotta knit bodysuit with crisscross multi-strap back design and thong snap bottom."
+  }
+]

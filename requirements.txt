@@ -1,0 +1,29 @@
+# ==============================================================================
+# Master Requirements for Retail AI Vibe-Coding Challenge
+# Compatible with Python 3.9, 3.10, 3.11, 3.12, 3.13
+# ==============================================================================
+
+# Core Web Application & Dashboarding
+streamlit>=1.32.0
+
+# Data Manipulation & Numerical Computations
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Interactive Visualizations
+plotly>=5.18.0
+
+# Image Processing (Team 4 Color-Palette Shopper)
+pillow>=10.0.0
+
+# Google Gemini API (Free Tier with High Context Window)
+google-genai>=1.0.0
+google-generativeai>=0.8.0
+
+# HTTP & Environment Management
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Automated Testing & Autograding Suite
+pytest>=7.4.0

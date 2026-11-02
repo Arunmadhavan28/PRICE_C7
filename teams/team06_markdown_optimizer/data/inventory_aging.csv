@@ -1,0 +1,13 @@
+Item_SKU,Item_Name,Category,Days_on_Shelf,Target_Sell_Through_Rate,Actual_Sell_Through_Rate,Retail_Price,Cost_Basis,Current_Units
+SKU-FL-101,Neon Acid Wash Denim Jacket,Outerwear,72,0.80,0.35,160.00,55.00,120
+SKU-FL-102,Oversized Distressed Graphic Tee,Tops,64,0.75,0.40,55.00,18.00,210
+SKU-FL-103,Embroidered Western Boots,Footwear,48,0.70,0.45,210.00,85.00,65
+SKU-FL-104,Cropped Ribbed Knit Cami,Tops,22,0.60,0.42,42.00,12.00,90
+SKU-FL-105,High-Waist Faux Leather Skirt,Bottoms,38,0.65,0.30,85.00,28.00,140
+SKU-FL-106,Cashmere Wool Scarf,Accessories,14,0.50,0.52,75.00,25.00,50
+SKU-FL-107,Vintage Floral Sun Hat,Accessories,85,0.85,0.22,48.00,15.00,180
+SKU-FL-108,Tailored Linen Trousers,Bottoms,35,0.60,0.58,110.00,38.00,45
+SKU-FL-109,Velvet Evening Jumpsuit,One-Piece,78,0.85,0.28,195.00,70.00,88
+SKU-FL-110,Minimalist Canvas Backpack,Accessories,18,0.50,0.48,68.00,22.00,75
+SKU-FL-111,Sequined Party Mini Dress,Dresses,92,0.90,0.20,180.00,65.00,150
+SKU-FL-112,Chunky Platform Sneakers,Footwear,41,0.70,0.38,140.00,50.00,110

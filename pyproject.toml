@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --ignore=venv --ignore=.venv"
+testpaths = [
+    "teams",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Item": "Hot Coffee (Artisanal Drip)",
+    "Category": "Beverages",
+    "Base_Price": 4.50,
+    "Cost_Price": 1.20,
+    "Current_Stock": 35
+  },
+  {
+    "Item": "Cold Brew Nitro",
+    "Category": "Beverages",
+    "Base_Price": 5.50,
+    "Cost_Price": 1.50,
+    "Current_Stock": 18
+  },
+  {
+    "Item": "Fresh Baked Almond Croissant",
+    "Category": "Pastry",
+    "Base_Price": 4.25,
+    "Cost_Price": 1.80,
+    "Current_Stock": 25
+  },
+  {
+    "Item": "Avocado & Sourdough Toast",
+    "Category": "Food",
+    "Base_Price": 9.50,
+    "Cost_Price": 3.40,
+    "Current_Stock": 12
+  },
+  {
+    "Item": "Matcha Iced Latte",
+    "Category": "Beverages",
+    "Base_Price": 6.00,
+    "Cost_Price": 2.00,
+    "Current_Stock": 22
+  },
+  {
+    "Item": "Hot Spiced Chai",
+    "Category": "Beverages",
+    "Base_Price": 5.00,
+    "Cost_Price": 1.40,
+    "Current_Stock": 15
+  },
+  {
+    "Item": "Organic Blueberry Muffin",
+    "Category": "Pastry",
+    "Base_Price": 3.75,
+    "Cost_Price": 1.10,
+    "Current_Stock": 28
+  },
+  {
+    "Item": "Artisanal Espresso Double",
+    "Category": "Beverages",
+    "Base_Price": 3.50,
+    "Cost_Price": 0.80,
+    "Current_Stock": 40
+  }
+]
