@@ -1,7 +1,7 @@
 """
 Unit tests for Team 7: Ethical AI Auditor for Retail.
 Evaluates algorithmic precision, schema validity, disparate impact math,
-and GDPR/CCPA privacy quarantine logic.
+GDPR/CCPA privacy quarantine logic, and Groq Qwen 3.8 27B AI integration.
 """
 
 import sys
@@ -16,7 +16,8 @@ from auditor import (
     audit_bias_correlation,
     generate_compliance_report,
     scrub_privacy_violations,
-    generate_audit_certificate_metadata
+    generate_audit_certificate_metadata,
+    query_qwen_compliance_intelligence
 )
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "audit_dataset.csv"
@@ -93,3 +94,17 @@ def test_audit_certificate_generation(audit_df):
     assert "standard_alignment" in cert
     assert len(cert["standard_alignment"]) >= 3
     assert cert["records_audited"] == len(audit_df)
+
+
+def test_qwen_compliance_intelligence_fallback(audit_df):
+    """Ensures AI intelligence layer returns structured insights and handles offline cases gracefully."""
+    report = generate_compliance_report(audit_df)
+    # Test with empty key to verify deterministic fallback
+    res_offline = query_qwen_compliance_intelligence(
+        "Summarize compliance findings",
+        report,
+        api_key=""
+    )
+    assert "content" in res_offline
+    assert "source" in res_offline
+    assert len(res_offline["content"]) > 50

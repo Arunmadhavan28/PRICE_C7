@@ -75,10 +75,17 @@ $$\text{Breach Rate (\%)} = \left( \frac{\sum \mathbb{I}(\text{Opt\_in\_Status} 
 
 ```
 teams/team07_ethical_auditor/
-├── app.py                      # Executive Streamlit dashboard with Royal Blue & Gold theme
+├── app.py                      # Python application host embedding React frontend & fallback
 ├── auditor.py                  # Core algorithmic engine for correlation, privacy, & compliance
 ├── README.md                   # Complete architectural, mathematical, & prompt documentation
 ├── requirements.txt            # Isolated dependency specifications
+├── frontend/                   # Complete React + TypeScript + Vite + Tailwind frontend
+│   ├── dist/                   # Compiled production build served by Streamlit
+│   │   ├── index.html
+│   │   └── assets/
+│   ├── src/                    # React source (components, hooks, types)
+│   ├── package.json
+│   └── vite.config.ts
 ├── data/
 │   ├── audit_dataset.csv       # 120 validated production recommender inference logs
 │   └── generate_biased_data.py # Synthetic data generation utility for red-teaming
@@ -101,6 +108,22 @@ teams/team07_ethical_auditor/
 
 ### Prompt 4: GDPR Right-to-Erasure Scrub & Cryptographic Verification
 > "Implement an automated data scrubbing function that purges non-consented logs, re-runs the audit report to transition status to COMPLIANT & AUDITED, and outputs a cryptographic SHA-256 certificate ID with downloadable JSON and CSV reports."
+
+### Prompt 5: Groq Qwen 3.8 27B AI Compliance Intelligence Engine
+> "Integrate Groq's high-efficiency Qwen 3.8 27B model (qwen/qwen3.8-27b) into the Ethical AI Auditor. Provide one-click executive legal briefings under EU AI Act and GDPR, engineering debiasing playbooks, and interactive regulatory Q&A with seamless offline fallback."
+
+### Prompt 6: React + TypeScript Architecture Migration
+> "Re-architect frontend into a premium React + TypeScript + Vite + Tailwind CSS application embedded via streamlit.components.v1.declare_component(). React owns the entire visual experience, layout, radar motion graphics, and interactive tabs, while Streamlit acts purely as the Python host with full bidirectional communication and functional fallback."
+
+---
+
+## 7. AI Engine Configuration (Groq Qwen 3.8 27B)
+
+The system includes native enterprise LLM integration powered by **Groq LPU Ultra-Low Latency Inference**:
+- **Model**: `qwen/qwen3.8-27b` (Qwen 3.8 27B Parameters)
+- **Use Case**: Real-time legal analysis of Pearson $r$ bias metrics, penalty liability estimation under GDPR Article 83 & EU AI Act Title VIII, and engineering debiasing roadmaps.
+- **Resilience**: Zero external pip dependencies (built on Python standard library `urllib.request`). If network access is restricted or no key is provided, the engine automatically switches to a deterministic compliance matrix with 0ms latency.
+
 
 ---
 

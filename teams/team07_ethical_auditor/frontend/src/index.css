@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --royal-navy: #0B2545;
+    --royal-blue: #134074;
+    --royal-light: #1D4ED8;
+    --royal-subtle: #EEF4F8;
+    --cream-bg: #FCFBF9;
+    --cream-surface: #FFFFFF;
+    --cream-tint: #FAF7F2;
+    --gold-primary: #C5A059;
+    --gold-bright: #D4AF37;
+    --gold-light: #F4EBD9;
+    --gold-border: rgba(197, 160, 89, 0.35);
+  }
+
+  body {
+    background-color: #FCFBF9;
+    color: #0B2545;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-royal {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+}
+
+@keyframes goldShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.3; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-shimmer {
+  animation: goldShimmer 4s infinite linear;
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 3.5s infinite linear;
+}
+
+.animate-radar-pulse {
+  animation: radarPulse 2s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: floatGentle 4s infinite ease-in-out;
+}
+
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 89, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.7);
+}
