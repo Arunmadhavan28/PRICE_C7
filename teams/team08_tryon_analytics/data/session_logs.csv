@@ -1,251 +1,301 @@
-Session_ID,AR_TryOn_Used,Time_in_AR,Purchase_Made,Cart_Value,Device_Type
-SES-1000,True,43,True,154.57,Android Mobile
-SES-1001,False,0,False,0.0,iOS Mobile
-SES-1002,False,0,False,0.0,iOS Mobile
-SES-1003,True,64,False,0.0,iOS Mobile
-SES-1004,False,0,True,86.9,iOS Mobile
-SES-1005,True,204,False,0.0,Android Mobile
-SES-1006,True,81,True,126.98,Android Mobile
-SES-1007,False,0,True,102.71,iOS Mobile
-SES-1008,True,80,True,156.68,iOS Mobile
-SES-1009,False,0,False,0.0,Desktop Chrome
-SES-1010,False,0,False,0.0,Android Mobile
-SES-1011,False,0,False,0.0,iOS Mobile
-SES-1012,True,86,True,135.97,Android Mobile
-SES-1013,True,114,False,0.0,iOS Mobile
-SES-1014,False,0,False,0.0,iOS Mobile
-SES-1015,True,24,False,0.0,Android Mobile
-SES-1016,False,0,True,89.02,Android Mobile
-SES-1017,False,0,False,0.0,iOS Mobile
-SES-1018,True,76,False,0.0,Android Mobile
-SES-1019,False,0,False,0.0,iOS Mobile
-SES-1020,False,0,False,0.0,Android Mobile
-SES-1021,False,0,False,0.0,iOS Mobile
-SES-1022,False,0,True,74.53,iOS Mobile
-SES-1023,False,0,False,0.0,iOS Mobile
-SES-1024,False,0,False,0.0,iOS Mobile
-SES-1025,True,166,False,0.0,Android Mobile
-SES-1026,False,0,False,0.0,Android Mobile
-SES-1027,True,98,False,0.0,iOS Mobile
-SES-1028,True,160,False,0.0,Android Mobile
-SES-1029,False,0,True,43.62,iOS Mobile
-SES-1030,True,114,False,0.0,iOS Mobile
-SES-1031,False,0,False,0.0,iOS Mobile
-SES-1032,False,0,False,0.0,iOS Mobile
-SES-1033,False,0,False,0.0,iOS Mobile
-SES-1034,True,96,True,218.9,Desktop Chrome
-SES-1035,True,91,True,109.94,Android Mobile
-SES-1036,False,0,False,0.0,Android Mobile
-SES-1037,True,198,True,186.77,Android Mobile
-SES-1038,True,228,False,0.0,iOS Mobile
-SES-1039,False,0,True,131.84,Android Mobile
-SES-1040,True,55,False,0.0,iOS Mobile
-SES-1041,False,0,False,0.0,Android Mobile
-SES-1042,False,0,False,0.0,iOS Mobile
-SES-1043,False,0,False,0.0,Android Mobile
-SES-1044,True,76,False,0.0,Android Mobile
-SES-1045,False,0,False,0.0,Android Mobile
-SES-1046,True,111,True,123.57,iOS Mobile
-SES-1047,False,0,False,0.0,iOS Mobile
-SES-1048,False,0,False,0.0,iOS Mobile
-SES-1049,False,0,False,0.0,Android Mobile
-SES-1050,False,0,False,0.0,iOS Mobile
-SES-1051,True,51,False,0.0,Android Mobile
-SES-1052,False,0,False,0.0,iOS Mobile
-SES-1053,False,0,False,0.0,iOS Mobile
-SES-1054,False,0,False,0.0,iOS Mobile
-SES-1055,False,0,True,89.6,Desktop Chrome
-SES-1056,False,0,False,0.0,iOS Mobile
-SES-1057,True,86,False,0.0,Android Mobile
-SES-1058,True,142,False,0.0,iOS Mobile
-SES-1059,True,140,False,0.0,iOS Mobile
-SES-1060,False,0,False,0.0,iOS Mobile
-SES-1061,False,0,False,0.0,Android Mobile
-SES-1062,False,0,False,0.0,iOS Mobile
-SES-1063,True,98,False,0.0,Android Mobile
-SES-1064,False,0,False,0.0,iOS Mobile
-SES-1065,False,0,False,0.0,Android Mobile
-SES-1066,False,0,False,0.0,iOS Mobile
-SES-1067,True,103,False,0.0,iOS Mobile
-SES-1068,True,52,True,118.21,iOS Mobile
-SES-1069,False,0,False,0.0,Android Mobile
-SES-1070,True,75,False,0.0,iOS Mobile
-SES-1071,False,0,False,0.0,Desktop Chrome
-SES-1072,False,0,False,0.0,Android Mobile
-SES-1073,True,54,False,0.0,Android Mobile
-SES-1074,False,0,False,0.0,iOS Mobile
-SES-1075,True,86,False,0.0,Android Mobile
-SES-1076,False,0,False,0.0,Desktop Chrome
-SES-1077,False,0,False,0.0,Android Mobile
-SES-1078,False,0,False,0.0,iOS Mobile
-SES-1079,False,0,True,104.07,iOS Mobile
-SES-1080,False,0,False,0.0,iOS Mobile
-SES-1081,False,0,False,0.0,Android Mobile
-SES-1082,False,0,True,156.8,iOS Mobile
-SES-1083,False,0,False,0.0,Android Mobile
-SES-1084,False,0,True,114.98,iOS Mobile
-SES-1085,False,0,False,0.0,Android Mobile
-SES-1086,True,63,False,0.0,iOS Mobile
-SES-1087,False,0,False,0.0,Desktop Chrome
-SES-1088,False,0,False,0.0,iOS Mobile
-SES-1089,True,68,False,0.0,iOS Mobile
-SES-1090,False,0,False,0.0,iOS Mobile
-SES-1091,False,0,False,0.0,Android Mobile
-SES-1092,False,0,False,0.0,iOS Mobile
-SES-1093,True,105,False,0.0,Desktop Chrome
-SES-1094,False,0,False,0.0,Android Mobile
-SES-1095,True,213,True,131.81,Desktop Chrome
-SES-1096,False,0,False,0.0,iOS Mobile
-SES-1097,False,0,False,0.0,iOS Mobile
-SES-1098,False,0,True,118.1,Desktop Chrome
-SES-1099,False,0,False,0.0,iOS Mobile
-SES-1100,True,86,False,0.0,Android Mobile
-SES-1101,False,0,False,0.0,iOS Mobile
-SES-1102,False,0,True,57.75,Android Mobile
-SES-1103,True,235,True,163.42,iOS Mobile
-SES-1104,True,194,True,161.77,iOS Mobile
-SES-1105,True,152,True,179.63,Desktop Chrome
-SES-1106,False,0,False,0.0,iOS Mobile
-SES-1107,True,68,False,0.0,iOS Mobile
-SES-1108,False,0,True,102.44,iOS Mobile
-SES-1109,True,93,True,183.13,Android Mobile
-SES-1110,False,0,False,0.0,iOS Mobile
-SES-1111,False,0,False,0.0,Desktop Chrome
-SES-1112,True,144,True,147.09,Desktop Chrome
-SES-1113,True,161,False,0.0,iOS Mobile
-SES-1114,False,0,False,0.0,iOS Mobile
-SES-1115,False,0,False,0.0,Desktop Chrome
-SES-1116,True,87,True,174.29,iOS Mobile
-SES-1117,False,0,False,0.0,Android Mobile
-SES-1118,True,114,False,0.0,Android Mobile
-SES-1119,True,246,False,0.0,Desktop Chrome
-SES-1120,False,0,False,0.0,iOS Mobile
-SES-1121,False,0,False,0.0,iOS Mobile
-SES-1122,True,178,True,130.92,Android Mobile
-SES-1123,True,86,True,182.13,iOS Mobile
-SES-1124,False,0,False,0.0,Desktop Chrome
-SES-1125,False,0,False,0.0,Android Mobile
-SES-1126,False,0,False,0.0,iOS Mobile
-SES-1127,False,0,True,113.01,iOS Mobile
-SES-1128,False,0,False,0.0,iOS Mobile
-SES-1129,True,125,False,0.0,Android Mobile
-SES-1130,False,0,False,0.0,Android Mobile
-SES-1131,False,0,False,0.0,iOS Mobile
-SES-1132,True,206,True,171.33,iOS Mobile
-SES-1133,True,25,False,0.0,iOS Mobile
-SES-1134,False,0,False,0.0,iOS Mobile
-SES-1135,False,0,False,0.0,Desktop Chrome
-SES-1136,True,202,False,0.0,iOS Mobile
-SES-1137,False,0,False,0.0,iOS Mobile
-SES-1138,True,36,True,165.09,iOS Mobile
-SES-1139,True,115,True,116.8,Android Mobile
-SES-1140,False,0,False,0.0,iOS Mobile
-SES-1141,True,54,True,128.23,iOS Mobile
-SES-1142,True,96,True,76.52,Android Mobile
-SES-1143,False,0,True,107.19,Android Mobile
-SES-1144,False,0,False,0.0,iOS Mobile
-SES-1145,True,81,False,0.0,iOS Mobile
-SES-1146,False,0,False,0.0,iOS Mobile
-SES-1147,True,130,False,0.0,iOS Mobile
-SES-1148,False,0,False,0.0,iOS Mobile
-SES-1149,True,112,True,113.16,iOS Mobile
-SES-1150,True,60,False,0.0,Android Mobile
-SES-1151,False,0,False,0.0,iOS Mobile
-SES-1152,False,0,False,0.0,Android Mobile
-SES-1153,False,0,True,88.11,Android Mobile
-SES-1154,False,0,False,0.0,Desktop Chrome
-SES-1155,False,0,False,0.0,iOS Mobile
-SES-1156,True,34,True,127.23,iOS Mobile
-SES-1157,False,0,True,88.4,iOS Mobile
-SES-1158,False,0,False,0.0,iOS Mobile
-SES-1159,True,64,False,0.0,Desktop Chrome
-SES-1160,False,0,False,0.0,iOS Mobile
-SES-1161,False,0,False,0.0,iOS Mobile
-SES-1162,False,0,False,0.0,iOS Mobile
-SES-1163,True,143,True,110.83,iOS Mobile
-SES-1164,False,0,True,116.69,iOS Mobile
-SES-1165,True,163,False,0.0,Android Mobile
-SES-1166,False,0,False,0.0,iOS Mobile
-SES-1167,True,64,False,0.0,Desktop Chrome
-SES-1168,True,103,True,147.68,Android Mobile
-SES-1169,False,0,False,0.0,iOS Mobile
-SES-1170,False,0,False,0.0,iOS Mobile
-SES-1171,True,127,True,176.05,Android Mobile
-SES-1172,True,79,False,0.0,iOS Mobile
-SES-1173,False,0,False,0.0,iOS Mobile
-SES-1174,False,0,False,0.0,iOS Mobile
-SES-1175,False,0,False,0.0,iOS Mobile
-SES-1176,False,0,False,0.0,iOS Mobile
-SES-1177,True,189,False,0.0,iOS Mobile
-SES-1178,False,0,False,0.0,iOS Mobile
-SES-1179,True,149,False,0.0,Android Mobile
-SES-1180,False,0,False,0.0,Android Mobile
-SES-1181,True,52,True,183.61,iOS Mobile
-SES-1182,True,70,False,0.0,Android Mobile
-SES-1183,False,0,False,0.0,iOS Mobile
-SES-1184,True,24,False,0.0,iOS Mobile
-SES-1185,False,0,False,0.0,Android Mobile
-SES-1186,True,207,False,0.0,Android Mobile
-SES-1187,False,0,False,0.0,Android Mobile
-SES-1188,True,247,False,0.0,Desktop Chrome
-SES-1189,False,0,False,0.0,iOS Mobile
-SES-1190,False,0,False,0.0,iOS Mobile
-SES-1191,False,0,False,0.0,iOS Mobile
-SES-1192,False,0,False,0.0,iOS Mobile
-SES-1193,True,193,True,114.64,iOS Mobile
-SES-1194,False,0,False,0.0,iOS Mobile
-SES-1195,False,0,False,0.0,iOS Mobile
-SES-1196,False,0,True,68.63,iOS Mobile
-SES-1197,False,0,False,0.0,Desktop Chrome
-SES-1198,True,243,False,0.0,iOS Mobile
-SES-1199,False,0,True,138.16,iOS Mobile
-SES-1200,True,93,True,149.75,Android Mobile
-SES-1201,True,86,True,149.65,iOS Mobile
-SES-1202,False,0,True,103.63,iOS Mobile
-SES-1203,False,0,False,0.0,Android Mobile
-SES-1204,True,208,False,0.0,Desktop Chrome
-SES-1205,True,149,True,105.2,iOS Mobile
-SES-1206,False,0,False,0.0,iOS Mobile
-SES-1207,True,140,True,111.13,Android Mobile
-SES-1208,True,39,True,166.39,Android Mobile
-SES-1209,False,0,False,0.0,iOS Mobile
-SES-1210,False,0,False,0.0,iOS Mobile
-SES-1211,False,0,True,68.26,Android Mobile
-SES-1212,False,0,False,0.0,iOS Mobile
-SES-1213,True,234,True,106.59,Android Mobile
-SES-1214,False,0,False,0.0,Desktop Chrome
-SES-1215,False,0,True,153.87,Android Mobile
-SES-1216,False,0,False,0.0,Android Mobile
-SES-1217,False,0,True,117.7,Android Mobile
-SES-1218,True,25,False,0.0,Desktop Chrome
-SES-1219,False,0,True,69.26,Android Mobile
-SES-1220,False,0,False,0.0,iOS Mobile
-SES-1221,True,128,False,0.0,Android Mobile
-SES-1222,False,0,False,0.0,Android Mobile
-SES-1223,True,84,False,0.0,iOS Mobile
-SES-1224,True,147,True,101.97,iOS Mobile
-SES-1225,True,130,False,0.0,iOS Mobile
-SES-1226,False,0,False,0.0,Android Mobile
-SES-1227,False,0,False,0.0,iOS Mobile
-SES-1228,True,132,False,0.0,Android Mobile
-SES-1229,True,30,True,150.4,iOS Mobile
-SES-1230,False,0,False,0.0,iOS Mobile
-SES-1231,False,0,False,0.0,Android Mobile
-SES-1232,True,75,True,105.42,iOS Mobile
-SES-1233,False,0,False,0.0,Android Mobile
-SES-1234,False,0,False,0.0,Android Mobile
-SES-1235,True,80,True,169.55,iOS Mobile
-SES-1236,False,0,False,0.0,Desktop Chrome
-SES-1237,False,0,False,0.0,iOS Mobile
-SES-1238,False,0,False,0.0,iOS Mobile
-SES-1239,False,0,True,113.35,Android Mobile
-SES-1240,True,45,True,183.34,iOS Mobile
-SES-1241,False,0,False,0.0,iOS Mobile
-SES-1242,False,0,False,0.0,Android Mobile
-SES-1243,True,140,False,0.0,iOS Mobile
-SES-1244,False,0,False,0.0,iOS Mobile
-SES-1245,False,0,False,0.0,Desktop Chrome
-SES-1246,False,0,False,0.0,iOS Mobile
-SES-1247,False,0,False,0.0,iOS Mobile
-SES-1248,True,96,True,86.99,Android Mobile
-SES-1249,True,39,False,0.0,iOS Mobile
+Session_ID,Timestamp,Product_Category,AR_TryOn_Used,Time_in_AR,Purchase_Made,Cart_Value,Device_Type
+SES-1000,2026-10-01 09:40:58,Apparel,False,0,False,0.0,iOS Mobile
+SES-1001,2026-10-01 14:56:56,Footwear,True,53,False,0.0,Android Mobile
+SES-1002,2026-10-01 18:27:00,Apparel,True,72,False,0.0,Desktop Chrome
+SES-1003,2026-10-01 20:04:16,Apparel,True,178,False,0.0,Android Mobile
+SES-1004,2026-10-01 20:04:49,Apparel,False,0,False,0.0,Android Mobile
+SES-1005,2026-10-01 22:21:00,Apparel,False,0,False,0.0,iOS Mobile
+SES-1006,2026-10-01 22:40:25,Apparel,False,0,True,126.05,iOS Mobile
+SES-1007,2026-10-02 09:03:19,Apparel,False,0,False,0.0,Android Mobile
+SES-1008,2026-10-02 10:07:05,Apparel,True,41,False,0.0,Android Mobile
+SES-1009,2026-10-02 10:10:36,Apparel,False,0,False,0.0,iOS Mobile
+SES-1010,2026-10-02 10:13:37,Apparel,True,134,False,0.0,Android Mobile
+SES-1011,2026-10-02 11:14:25,Eyewear,True,136,False,0.0,Android Mobile
+SES-1012,2026-10-02 11:42:16,Apparel,False,0,True,95.87,Android Mobile
+SES-1013,2026-10-02 11:54:54,Apparel,True,117,True,138.38,iOS Mobile
+SES-1014,2026-10-02 13:49:15,Apparel,False,0,False,0.0,Android Mobile
+SES-1015,2026-10-02 15:16:43,Apparel,True,120,False,0.0,iOS Mobile
+SES-1016,2026-10-02 15:59:39,Apparel,True,157,False,0.0,iOS Mobile
+SES-1017,2026-10-02 16:53:35,Apparel,False,0,False,0.0,Android Mobile
+SES-1018,2026-10-02 17:12:53,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1019,2026-10-02 17:17:36,Apparel,False,0,False,0.0,Android Mobile
+SES-1020,2026-10-02 17:20:02,Apparel,False,0,False,0.0,Android Mobile
+SES-1021,2026-10-02 17:26:48,Footwear,True,39,True,145.57,iOS Mobile
+SES-1022,2026-10-02 19:00:50,Accessories,True,136,True,178.56,Android Mobile
+SES-1023,2026-10-02 19:59:42,Eyewear,True,36,False,0.0,Android Mobile
+SES-1024,2026-10-02 20:03:43,Apparel,True,45,False,0.0,Android Mobile
+SES-1025,2026-10-02 20:37:03,Apparel,False,0,True,127.57,Android Mobile
+SES-1026,2026-10-02 21:40:28,Footwear,False,0,False,0.0,iOS Mobile
+SES-1027,2026-10-03 09:40:44,Apparel,True,151,False,0.0,Android Mobile
+SES-1028,2026-10-03 12:04:14,Footwear,False,0,True,99.72,Android Mobile
+SES-1029,2026-10-03 13:42:53,Apparel,False,0,False,0.0,Android Mobile
+SES-1030,2026-10-03 13:50:21,Apparel,False,0,False,0.0,Android Mobile
+SES-1031,2026-10-03 15:18:05,Apparel,True,29,False,0.0,iOS Mobile
+SES-1032,2026-10-03 15:31:59,Apparel,True,34,False,0.0,Android Mobile
+SES-1033,2026-10-03 15:52:11,Footwear,False,0,False,0.0,iOS Mobile
+SES-1034,2026-10-03 17:10:28,Accessories,True,293,True,156.64,Android Mobile
+SES-1035,2026-10-03 22:15:05,Accessories,True,135,True,115.36,Android Mobile
+SES-1036,2026-10-04 10:39:13,Footwear,True,60,False,0.0,iOS Mobile
+SES-1037,2026-10-04 13:20:45,Apparel,True,98,False,0.0,iOS Mobile
+SES-1038,2026-10-04 17:07:06,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1039,2026-10-04 18:00:20,Eyewear,True,300,True,131.36,iOS Mobile
+SES-1040,2026-10-04 20:42:24,Footwear,False,0,False,0.0,Android Mobile
+SES-1041,2026-10-04 21:18:19,Eyewear,False,0,True,95.45,Android Mobile
+SES-1042,2026-10-04 21:19:06,Apparel,False,0,False,0.0,iOS Mobile
+SES-1043,2026-10-04 21:45:02,Apparel,False,0,False,0.0,Android Mobile
+SES-1044,2026-10-05 09:43:49,Apparel,False,0,False,0.0,Android Mobile
+SES-1045,2026-10-05 17:16:17,Footwear,True,103,False,0.0,iOS Mobile
+SES-1046,2026-10-05 17:41:56,Eyewear,True,152,True,142.2,Android Mobile
+SES-1047,2026-10-06 08:47:37,Footwear,False,0,False,0.0,iOS Mobile
+SES-1048,2026-10-06 08:49:08,Apparel,True,100,False,0.0,Desktop Chrome
+SES-1049,2026-10-06 11:15:53,Apparel,True,106,False,0.0,Desktop Chrome
+SES-1050,2026-10-06 11:22:15,Footwear,False,0,False,0.0,iOS Mobile
+SES-1051,2026-10-06 14:07:54,Footwear,False,0,False,0.0,iOS Mobile
+SES-1052,2026-10-06 15:16:58,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1053,2026-10-06 16:51:15,Apparel,False,0,True,87.91,iOS Mobile
+SES-1054,2026-10-06 17:09:01,Footwear,True,44,True,181.53,Desktop Chrome
+SES-1055,2026-10-06 18:47:46,Accessories,False,0,True,139.33,Desktop Chrome
+SES-1056,2026-10-06 19:32:49,Accessories,True,89,False,0.0,iOS Mobile
+SES-1057,2026-10-06 21:10:20,Apparel,True,111,True,126.2,Desktop Chrome
+SES-1058,2026-10-06 21:18:08,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1059,2026-10-06 21:27:24,Footwear,False,0,False,0.0,iOS Mobile
+SES-1060,2026-10-07 11:46:24,Footwear,True,102,False,0.0,Desktop Chrome
+SES-1061,2026-10-07 12:57:38,Accessories,False,0,False,0.0,Android Mobile
+SES-1062,2026-10-07 12:58:09,Accessories,False,0,False,0.0,Desktop Chrome
+SES-1063,2026-10-07 15:48:31,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1064,2026-10-07 16:03:38,Apparel,False,0,True,112.67,Android Mobile
+SES-1065,2026-10-07 18:54:04,Apparel,True,34,False,0.0,iOS Mobile
+SES-1066,2026-10-07 19:53:08,Eyewear,True,90,False,0.0,Android Mobile
+SES-1067,2026-10-07 19:53:33,Apparel,True,15,False,0.0,iOS Mobile
+SES-1068,2026-10-08 08:29:16,Footwear,True,140,False,0.0,Android Mobile
+SES-1069,2026-10-08 09:47:42,Apparel,True,84,True,161.51,Android Mobile
+SES-1070,2026-10-08 10:17:30,Footwear,False,0,False,0.0,iOS Mobile
+SES-1071,2026-10-08 13:52:03,Footwear,False,0,False,0.0,Android Mobile
+SES-1072,2026-10-08 16:31:30,Apparel,False,0,False,0.0,Android Mobile
+SES-1073,2026-10-08 19:02:23,Footwear,True,117,False,0.0,Desktop Chrome
+SES-1074,2026-10-08 19:32:54,Eyewear,True,28,True,147.15,Desktop Chrome
+SES-1075,2026-10-08 19:58:36,Apparel,True,113,True,102.15,Android Mobile
+SES-1076,2026-10-08 21:27:25,Apparel,False,0,False,0.0,iOS Mobile
+SES-1077,2026-10-09 11:03:47,Accessories,False,0,False,0.0,iOS Mobile
+SES-1078,2026-10-09 11:42:08,Apparel,False,0,False,0.0,iOS Mobile
+SES-1079,2026-10-09 13:20:04,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1080,2026-10-09 14:56:58,Footwear,False,0,False,0.0,Desktop Chrome
+SES-1081,2026-10-09 15:21:57,Footwear,False,0,False,0.0,Android Mobile
+SES-1082,2026-10-09 16:12:37,Eyewear,False,0,True,94.43,iOS Mobile
+SES-1083,2026-10-09 16:48:04,Eyewear,False,0,False,0.0,Android Mobile
+SES-1084,2026-10-09 17:37:46,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1085,2026-10-09 18:22:25,Apparel,False,0,True,95.85,iOS Mobile
+SES-1086,2026-10-09 18:31:20,Apparel,True,224,False,0.0,iOS Mobile
+SES-1087,2026-10-09 19:51:55,Apparel,True,149,True,170.08,iOS Mobile
+SES-1088,2026-10-09 20:18:22,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1089,2026-10-09 21:13:10,Accessories,False,0,False,0.0,Android Mobile
+SES-1090,2026-10-10 09:05:57,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1091,2026-10-10 10:15:53,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1092,2026-10-10 10:57:06,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1093,2026-10-10 11:14:27,Apparel,False,0,False,0.0,Android Mobile
+SES-1094,2026-10-10 11:29:35,Accessories,True,114,True,148.34,iOS Mobile
+SES-1095,2026-10-10 11:34:46,Accessories,False,0,False,0.0,iOS Mobile
+SES-1096,2026-10-10 13:49:49,Footwear,False,0,False,0.0,iOS Mobile
+SES-1097,2026-10-10 14:02:27,Apparel,True,70,True,174.21,Android Mobile
+SES-1098,2026-10-10 14:06:30,Apparel,False,0,False,0.0,iOS Mobile
+SES-1099,2026-10-10 16:52:47,Footwear,True,217,True,173.98,iOS Mobile
+SES-1100,2026-10-10 21:10:35,Apparel,False,0,False,0.0,iOS Mobile
+SES-1101,2026-10-11 08:22:58,Eyewear,True,100,False,0.0,Android Mobile
+SES-1102,2026-10-11 09:04:21,Apparel,False,0,True,62.78,iOS Mobile
+SES-1103,2026-10-11 11:31:51,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1104,2026-10-11 12:16:12,Apparel,True,72,True,147.97,iOS Mobile
+SES-1105,2026-10-11 14:29:54,Footwear,False,0,True,130.25,iOS Mobile
+SES-1106,2026-10-11 15:55:15,Accessories,False,0,True,75.85,iOS Mobile
+SES-1107,2026-10-11 18:43:59,Apparel,False,0,False,0.0,Android Mobile
+SES-1108,2026-10-11 19:00:01,Apparel,False,0,False,0.0,iOS Mobile
+SES-1109,2026-10-11 20:16:13,Accessories,True,186,False,0.0,iOS Mobile
+SES-1110,2026-10-11 20:25:18,Accessories,True,172,True,127.28,iOS Mobile
+SES-1111,2026-10-11 21:01:46,Apparel,False,0,False,0.0,iOS Mobile
+SES-1112,2026-10-12 08:27:45,Apparel,True,27,False,0.0,iOS Mobile
+SES-1113,2026-10-12 09:07:09,Footwear,False,0,True,94.98,iOS Mobile
+SES-1114,2026-10-12 09:28:01,Accessories,False,0,False,0.0,iOS Mobile
+SES-1115,2026-10-12 12:18:04,Apparel,False,0,False,0.0,iOS Mobile
+SES-1116,2026-10-12 13:25:49,Apparel,False,0,False,0.0,iOS Mobile
+SES-1117,2026-10-12 13:40:39,Apparel,False,0,False,0.0,iOS Mobile
+SES-1118,2026-10-12 14:55:56,Accessories,True,15,False,0.0,Android Mobile
+SES-1119,2026-10-12 15:02:02,Accessories,False,0,False,0.0,Android Mobile
+SES-1120,2026-10-12 17:31:52,Accessories,True,77,False,0.0,iOS Mobile
+SES-1121,2026-10-12 19:44:01,Apparel,True,137,True,160.45,iOS Mobile
+SES-1122,2026-10-12 20:15:20,Apparel,True,53,False,0.0,Desktop Chrome
+SES-1123,2026-10-12 20:38:32,Eyewear,True,154,False,0.0,Android Mobile
+SES-1124,2026-10-13 08:04:38,Eyewear,True,101,True,154.83,iOS Mobile
+SES-1125,2026-10-13 08:26:39,Apparel,False,0,False,0.0,iOS Mobile
+SES-1126,2026-10-13 09:50:45,Apparel,False,0,False,0.0,Android Mobile
+SES-1127,2026-10-13 10:23:19,Footwear,False,0,False,0.0,Android Mobile
+SES-1128,2026-10-13 11:14:54,Apparel,True,256,False,0.0,iOS Mobile
+SES-1129,2026-10-13 11:59:37,Apparel,True,105,False,0.0,Android Mobile
+SES-1130,2026-10-13 12:02:50,Apparel,False,0,False,0.0,iOS Mobile
+SES-1131,2026-10-13 12:45:53,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1132,2026-10-13 14:25:04,Apparel,False,0,False,0.0,iOS Mobile
+SES-1133,2026-10-13 15:01:54,Apparel,False,0,False,0.0,iOS Mobile
+SES-1134,2026-10-13 15:16:11,Apparel,False,0,False,0.0,Android Mobile
+SES-1135,2026-10-13 16:20:02,Apparel,False,0,True,145.52,iOS Mobile
+SES-1136,2026-10-13 18:00:37,Accessories,True,67,True,139.86,iOS Mobile
+SES-1137,2026-10-13 18:48:57,Footwear,False,0,True,121.02,Android Mobile
+SES-1138,2026-10-13 19:50:46,Apparel,True,125,True,150.82,Android Mobile
+SES-1139,2026-10-13 21:37:48,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1140,2026-10-13 22:16:15,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1141,2026-10-14 11:14:54,Accessories,False,0,False,0.0,Desktop Chrome
+SES-1142,2026-10-14 12:16:23,Apparel,False,0,True,90.63,Android Mobile
+SES-1143,2026-10-14 12:41:32,Accessories,False,0,False,0.0,iOS Mobile
+SES-1144,2026-10-14 15:45:30,Apparel,True,76,False,0.0,Android Mobile
+SES-1145,2026-10-14 18:10:00,Apparel,True,216,True,177.51,Android Mobile
+SES-1146,2026-10-15 08:13:30,Apparel,False,0,False,0.0,Android Mobile
+SES-1147,2026-10-15 09:45:32,Footwear,False,0,False,0.0,iOS Mobile
+SES-1148,2026-10-15 13:52:12,Footwear,False,0,False,0.0,Android Mobile
+SES-1149,2026-10-15 14:48:52,Accessories,True,29,True,103.23,Android Mobile
+SES-1150,2026-10-15 15:08:34,Accessories,True,139,False,0.0,iOS Mobile
+SES-1151,2026-10-15 18:42:56,Apparel,False,0,True,113.06,Android Mobile
+SES-1152,2026-10-15 19:41:19,Apparel,False,0,False,0.0,Android Mobile
+SES-1153,2026-10-15 19:45:48,Footwear,False,0,False,0.0,Android Mobile
+SES-1154,2026-10-15 22:43:45,Apparel,False,0,True,86.53,iOS Mobile
+SES-1155,2026-10-16 08:46:03,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1156,2026-10-16 11:12:08,Apparel,True,91,False,0.0,iOS Mobile
+SES-1157,2026-10-16 12:09:46,Apparel,False,0,False,0.0,iOS Mobile
+SES-1158,2026-10-16 19:20:22,Apparel,True,55,False,0.0,Android Mobile
+SES-1159,2026-10-16 19:22:54,Apparel,True,34,False,0.0,Android Mobile
+SES-1160,2026-10-17 08:24:19,Eyewear,False,0,False,0.0,Desktop Chrome
+SES-1161,2026-10-17 10:39:40,Apparel,False,0,True,89.02,Android Mobile
+SES-1162,2026-10-17 10:51:23,Footwear,False,0,False,0.0,iOS Mobile
+SES-1163,2026-10-17 11:23:28,Apparel,True,142,True,148.9,iOS Mobile
+SES-1164,2026-10-17 12:28:41,Accessories,False,0,False,0.0,iOS Mobile
+SES-1165,2026-10-17 15:15:54,Footwear,False,0,False,0.0,Android Mobile
+SES-1166,2026-10-17 15:20:28,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1167,2026-10-17 15:44:41,Accessories,True,55,False,0.0,Android Mobile
+SES-1168,2026-10-17 17:26:56,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1169,2026-10-17 17:58:52,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1170,2026-10-17 20:09:38,Accessories,True,136,False,0.0,iOS Mobile
+SES-1171,2026-10-17 20:47:39,Apparel,False,0,False,0.0,Android Mobile
+SES-1172,2026-10-17 21:02:34,Accessories,False,0,False,0.0,iOS Mobile
+SES-1173,2026-10-17 21:09:01,Accessories,True,67,False,0.0,iOS Mobile
+SES-1174,2026-10-18 10:09:43,Apparel,True,69,False,0.0,iOS Mobile
+SES-1175,2026-10-18 11:43:32,Accessories,True,68,True,93.82,iOS Mobile
+SES-1176,2026-10-18 12:51:41,Apparel,False,0,False,0.0,Android Mobile
+SES-1177,2026-10-18 14:09:46,Accessories,False,0,False,0.0,iOS Mobile
+SES-1178,2026-10-18 15:09:40,Footwear,False,0,False,0.0,iOS Mobile
+SES-1179,2026-10-18 15:42:15,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1180,2026-10-18 16:05:38,Accessories,False,0,True,99.97,Desktop Chrome
+SES-1181,2026-10-18 20:59:19,Apparel,True,75,False,0.0,Android Mobile
+SES-1182,2026-10-18 21:39:29,Apparel,False,0,False,0.0,Android Mobile
+SES-1183,2026-10-19 13:03:54,Apparel,True,62,False,0.0,Android Mobile
+SES-1184,2026-10-19 18:10:05,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1185,2026-10-19 19:07:16,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1186,2026-10-19 22:04:57,Apparel,True,52,False,0.0,iOS Mobile
+SES-1187,2026-10-20 13:19:26,Apparel,True,67,True,135.9,Desktop Chrome
+SES-1188,2026-10-20 14:18:39,Footwear,False,0,False,0.0,iOS Mobile
+SES-1189,2026-10-20 17:01:36,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1190,2026-10-20 18:38:18,Apparel,True,146,False,0.0,Android Mobile
+SES-1191,2026-10-20 21:12:16,Apparel,False,0,False,0.0,iOS Mobile
+SES-1192,2026-10-20 21:56:43,Accessories,True,205,False,0.0,iOS Mobile
+SES-1193,2026-10-21 12:47:55,Apparel,False,0,False,0.0,Android Mobile
+SES-1194,2026-10-21 17:25:00,Apparel,True,38,False,0.0,iOS Mobile
+SES-1195,2026-10-21 18:29:33,Accessories,True,235,True,132.24,iOS Mobile
+SES-1196,2026-10-21 18:45:13,Footwear,True,60,True,175.63,iOS Mobile
+SES-1197,2026-10-21 18:58:14,Accessories,False,0,False,0.0,iOS Mobile
+SES-1198,2026-10-22 08:32:52,Eyewear,True,105,True,182.52,Android Mobile
+SES-1199,2026-10-22 08:52:52,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1200,2026-10-22 08:58:19,Apparel,False,0,True,78.25,Desktop Chrome
+SES-1201,2026-10-22 10:14:38,Apparel,False,0,True,117.57,iOS Mobile
+SES-1202,2026-10-22 10:15:32,Apparel,True,29,False,0.0,Desktop Chrome
+SES-1203,2026-10-22 11:30:36,Eyewear,True,99,False,0.0,Android Mobile
+SES-1204,2026-10-22 11:53:00,Apparel,False,0,False,0.0,Android Mobile
+SES-1205,2026-10-22 12:28:08,Apparel,False,0,False,0.0,Android Mobile
+SES-1206,2026-10-22 12:40:10,Apparel,False,0,False,0.0,iOS Mobile
+SES-1207,2026-10-22 12:58:18,Apparel,True,160,False,0.0,Desktop Chrome
+SES-1208,2026-10-22 14:48:24,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1209,2026-10-22 16:08:27,Footwear,False,0,False,0.0,iOS Mobile
+SES-1210,2026-10-22 17:41:21,Eyewear,True,88,False,0.0,iOS Mobile
+SES-1211,2026-10-22 18:49:54,Apparel,True,62,False,0.0,Android Mobile
+SES-1212,2026-10-22 21:10:09,Apparel,False,0,False,0.0,Android Mobile
+SES-1213,2026-10-22 21:10:44,Accessories,True,60,False,0.0,iOS Mobile
+SES-1214,2026-10-22 22:38:28,Footwear,True,163,False,0.0,iOS Mobile
+SES-1215,2026-10-23 09:19:31,Apparel,False,0,False,0.0,iOS Mobile
+SES-1216,2026-10-23 10:15:42,Eyewear,False,0,False,0.0,Desktop Chrome
+SES-1217,2026-10-23 10:22:33,Apparel,False,0,False,0.0,iOS Mobile
+SES-1218,2026-10-23 11:19:32,Apparel,False,0,False,0.0,iOS Mobile
+SES-1219,2026-10-23 15:24:15,Apparel,False,0,False,0.0,iOS Mobile
+SES-1220,2026-10-23 15:34:31,Footwear,True,83,True,155.68,iOS Mobile
+SES-1221,2026-10-23 16:54:38,Footwear,True,55,False,0.0,iOS Mobile
+SES-1222,2026-10-23 20:10:13,Apparel,False,0,False,0.0,Android Mobile
+SES-1223,2026-10-24 08:48:18,Apparel,True,131,False,0.0,iOS Mobile
+SES-1224,2026-10-24 09:32:25,Apparel,True,106,False,0.0,iOS Mobile
+SES-1225,2026-10-24 11:32:27,Accessories,False,0,False,0.0,iOS Mobile
+SES-1226,2026-10-24 11:58:40,Apparel,False,0,False,0.0,Android Mobile
+SES-1227,2026-10-24 16:35:09,Footwear,False,0,False,0.0,Android Mobile
+SES-1228,2026-10-24 17:41:53,Apparel,True,283,False,0.0,iOS Mobile
+SES-1229,2026-10-24 17:53:48,Footwear,True,199,True,162.65,Android Mobile
+SES-1230,2026-10-24 20:31:28,Apparel,False,0,False,0.0,iOS Mobile
+SES-1231,2026-10-24 22:41:25,Footwear,False,0,False,0.0,Desktop Chrome
+SES-1232,2026-10-24 22:54:06,Footwear,True,47,False,0.0,Android Mobile
+SES-1233,2026-10-25 10:39:08,Footwear,True,15,False,0.0,Android Mobile
+SES-1234,2026-10-25 15:57:58,Eyewear,False,0,False,0.0,Android Mobile
+SES-1235,2026-10-25 16:59:17,Apparel,False,0,False,0.0,Android Mobile
+SES-1236,2026-10-25 17:12:54,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1237,2026-10-25 18:00:46,Apparel,True,156,False,0.0,Android Mobile
+SES-1238,2026-10-25 18:52:05,Footwear,False,0,True,123.4,iOS Mobile
+SES-1239,2026-10-25 20:18:40,Accessories,False,0,False,0.0,iOS Mobile
+SES-1240,2026-10-25 21:09:28,Apparel,False,0,False,0.0,iOS Mobile
+SES-1241,2026-10-25 21:16:35,Footwear,False,0,False,0.0,iOS Mobile
+SES-1242,2026-10-25 22:51:46,Footwear,True,89,True,143.92,Android Mobile
+SES-1243,2026-10-26 09:34:56,Apparel,False,0,True,71.21,Desktop Chrome
+SES-1244,2026-10-26 10:23:21,Eyewear,True,123,True,141.77,iOS Mobile
+SES-1245,2026-10-26 11:55:07,Footwear,True,150,True,138.51,Android Mobile
+SES-1246,2026-10-26 15:46:18,Eyewear,True,120,False,0.0,iOS Mobile
+SES-1247,2026-10-26 15:49:48,Accessories,True,23,False,0.0,iOS Mobile
+SES-1248,2026-10-26 18:59:24,Footwear,False,0,False,0.0,iOS Mobile
+SES-1249,2026-10-26 20:16:12,Eyewear,False,0,False,0.0,iOS Mobile
+SES-1250,2026-10-26 21:32:50,Eyewear,False,0,True,95.99,iOS Mobile
+SES-1251,2026-10-26 22:11:25,Apparel,False,0,False,0.0,Android Mobile
+SES-1252,2026-10-26 22:29:19,Footwear,False,0,False,0.0,Android Mobile
+SES-1253,2026-10-27 08:27:11,Apparel,False,0,False,0.0,Android Mobile
+SES-1254,2026-10-27 08:45:45,Footwear,False,0,False,0.0,iOS Mobile
+SES-1255,2026-10-27 09:09:50,Footwear,True,69,True,117.23,Desktop Chrome
+SES-1256,2026-10-27 13:40:27,Footwear,False,0,False,0.0,iOS Mobile
+SES-1257,2026-10-27 14:04:59,Apparel,False,0,False,0.0,Android Mobile
+SES-1258,2026-10-27 14:46:40,Apparel,False,0,True,73.54,iOS Mobile
+SES-1259,2026-10-27 15:02:32,Footwear,True,60,False,0.0,iOS Mobile
+SES-1260,2026-10-27 15:54:24,Apparel,True,75,False,0.0,iOS Mobile
+SES-1261,2026-10-27 16:05:17,Apparel,False,0,False,0.0,iOS Mobile
+SES-1262,2026-10-27 21:46:35,Accessories,False,0,False,0.0,Android Mobile
+SES-1263,2026-10-27 22:50:14,Accessories,True,76,True,121.17,iOS Mobile
+SES-1264,2026-10-28 08:55:19,Footwear,True,132,True,193.69,Android Mobile
+SES-1265,2026-10-28 10:08:56,Apparel,False,0,False,0.0,Android Mobile
+SES-1266,2026-10-28 11:10:33,Eyewear,True,140,True,173.81,Android Mobile
+SES-1267,2026-10-28 13:54:22,Apparel,True,49,True,174.83,Desktop Chrome
+SES-1268,2026-10-28 16:33:25,Apparel,True,206,False,0.0,iOS Mobile
+SES-1269,2026-10-28 16:48:55,Footwear,False,0,False,0.0,iOS Mobile
+SES-1270,2026-10-28 16:55:35,Apparel,True,160,False,0.0,Android Mobile
+SES-1271,2026-10-28 16:56:54,Accessories,True,49,False,0.0,Android Mobile
+SES-1272,2026-10-28 18:46:35,Apparel,False,0,True,109.2,iOS Mobile
+SES-1273,2026-10-28 22:20:59,Apparel,False,0,True,100.21,Android Mobile
+SES-1274,2026-10-29 08:05:52,Footwear,False,0,True,87.41,iOS Mobile
+SES-1275,2026-10-29 08:26:02,Accessories,False,0,False,0.0,Android Mobile
+SES-1276,2026-10-29 09:16:16,Apparel,False,0,False,0.0,iOS Mobile
+SES-1277,2026-10-29 12:34:24,Apparel,False,0,False,0.0,iOS Mobile
+SES-1278,2026-10-29 13:13:43,Apparel,False,0,False,0.0,Android Mobile
+SES-1279,2026-10-29 14:17:29,Eyewear,False,0,False,0.0,Desktop Chrome
+SES-1280,2026-10-29 15:06:40,Footwear,False,0,False,0.0,iOS Mobile
+SES-1281,2026-10-29 15:49:11,Accessories,False,0,True,92.24,iOS Mobile
+SES-1282,2026-10-29 16:04:26,Apparel,False,0,True,99.23,iOS Mobile
+SES-1283,2026-10-29 17:52:45,Apparel,False,0,False,0.0,iOS Mobile
+SES-1284,2026-10-29 19:37:02,Apparel,True,28,True,168.33,iOS Mobile
+SES-1285,2026-10-30 08:44:24,Eyewear,True,243,True,116.24,Desktop Chrome
+SES-1286,2026-10-30 11:41:47,Apparel,False,0,True,143.34,Android Mobile
+SES-1287,2026-10-30 15:52:51,Apparel,True,116,True,145.0,Android Mobile
+SES-1288,2026-10-30 16:03:06,Accessories,False,0,False,0.0,iOS Mobile
+SES-1289,2026-10-30 17:07:09,Footwear,False,0,False,0.0,iOS Mobile
+SES-1290,2026-10-30 17:41:08,Apparel,False,0,False,0.0,Android Mobile
+SES-1291,2026-10-30 17:44:54,Eyewear,True,41,False,0.0,iOS Mobile
+SES-1292,2026-10-30 18:11:35,Apparel,True,47,True,139.57,Android Mobile
+SES-1293,2026-10-30 21:36:56,Apparel,False,0,False,0.0,Android Mobile
+SES-1294,2026-10-31 09:31:22,Apparel,False,0,False,0.0,Android Mobile
+SES-1295,2026-10-31 10:53:00,Footwear,True,41,False,0.0,Android Mobile
+SES-1296,2026-10-31 12:46:53,Apparel,False,0,False,0.0,Android Mobile
+SES-1297,2026-10-31 13:36:24,Apparel,True,60,True,190.54,iOS Mobile
+SES-1298,2026-10-31 14:42:25,Apparel,False,0,False,0.0,Desktop Chrome
+SES-1299,2026-10-31 18:50:18,Footwear,True,272,False,0.0,Android Mobile
