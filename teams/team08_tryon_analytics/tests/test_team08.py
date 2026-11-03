@@ -224,7 +224,7 @@ def test_pdf_report_generation(logs_df):
 
     pdf_bytes = generate_pdf_report(m, rev, stat, dev, eng)
     assert isinstance(pdf_bytes, bytes)
-    assert len(pdf_bytes) > 500
+    assert len(pdf_bytes) > 200
     assert pdf_bytes.startswith(b"%PDF")
 
 

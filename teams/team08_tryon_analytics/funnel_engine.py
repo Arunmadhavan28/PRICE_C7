@@ -525,6 +525,92 @@ def generate_executive_insights(
     }
 
 
+def _generate_pure_python_pdf(
+    metrics: Dict[str, Any],
+    revenue_impact: Dict[str, float],
+    stat_val: Dict[str, Any],
+    filter_summary: str = "All Devices | Full Sample"
+) -> bytes:
+    """
+    Standard PDF-1.4 pure-Python binary generator used when fpdf2 is not installed.
+    Constructs a syntactically valid PDF document (>1 KB) with standard catalog, pages, font, and content stream.
+    """
+    sig_text = "Statistically Significant (p < 0.05)" if stat_val.get("is_significant", False) else "Not Statistically Significant (p >= 0.05)"
+    content_lines = [
+        "BT",
+        "/F1 16 Tf",
+        "50 780 Td",
+        "(VIRTUAL TRY-ON ANALYTICS | EXECUTIVE REPORT) Tj",
+        "/F1 10 Tf",
+        "0 -18 Td",
+        f"(Active Segment: {filter_summary} | Total Sessions: {metrics.get('total_sessions', 0)}) Tj",
+        "0 -24 Td",
+        "/F1 13 Tf",
+        "(1. Executive KPI Summary) Tj",
+        "/F1 10 Tf",
+        "0 -16 Td",
+        f"(AR Conversion Rate: {metrics.get('cr_ar', 0.0):.1f}% | Control Conversion: {metrics.get('cr_non_ar', 0.0):.1f}%) Tj",
+        "0 -14 Td",
+        f"(Relative Conversion Lift: {metrics.get('conversion_lift_pct', 0.0):+.1f}%) Tj",
+        "0 -14 Td",
+        f"(AR AOV: ${metrics.get('aov_ar', 0.0):.2f} | Standard AOV: ${metrics.get('aov_non_ar', 0.0):.2f}) Tj",
+        "0 -14 Td",
+        f"(Revenue per Session: ${revenue_impact.get('rps_ar', 0.0):.2f} vs ${revenue_impact.get('rps_non_ar', 0.0):.2f} [{revenue_impact.get('rps_lift_pct', 0.0):+.1f}% Lift]) Tj",
+        "0 -14 Td",
+        f"(Gross AR Revenue: ${metrics.get('total_rev_ar', 0.0):,.2f} | Est. Incremental: ${revenue_impact.get('incremental_revenue', 0.0):,.2f}) Tj",
+        "0 -14 Td",
+        f"(Average Engagement Time in AR: {metrics.get('avg_time_in_ar_sec', 0.0):.1f} seconds) Tj",
+        "0 -24 Td",
+        "/F1 13 Tf",
+        "(2. Statistical Validation & Hypothesis Testing) Tj",
+        "/F1 10 Tf",
+        "0 -16 Td",
+        f"(Two-Proportion Z-Score: {stat_val.get('z_score', 0.0):.2f} | P-Value: {stat_val.get('p_value', 1.0):.4f}) Tj",
+        "0 -14 Td",
+        f"(Hypothesis Decision: {sig_text}) Tj",
+        "0 -14 Td",
+        f"(AR 95% CI: [{stat_val.get('ci_ar', (0,0))[0]:.1f}%, {stat_val.get('ci_ar', (0,0))[1]:.1f}%] | Control 95% CI: [{stat_val.get('ci_non_ar', (0,0))[0]:.1f}%, {stat_val.get('ci_non_ar', (0,0))[1]:.1f}%]) Tj",
+        "0 -24 Td",
+        "/F1 13 Tf",
+        "(3. Methodological Limitations & Causal Advisory) Tj",
+        "/F1 9 Tf",
+        "0 -15 Td",
+        "(Cautionary Guidance: Observational telemetry exhibits self-selection bias as users chose to launch AR.) Tj",
+        "0 -13 Td",
+        "(Randomized controlled A/B testing is advised prior to committing to multi-year 3D vendor contracts.) Tj",
+        "ET"
+    ]
+    stream_content = "\n".join(content_lines).encode("latin-1", errors="replace")
+    stream_len = len(stream_content)
+
+    objects = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        f"<< /Length {stream_len} >>\nstream\n".encode("latin-1") + stream_content + b"\nendstream"
+    ]
+
+    pdf_out = bytearray(b"%PDF-1.4\n")
+    offsets = []
+    for i, obj in enumerate(objects, 1):
+        offsets.append(len(pdf_out))
+        pdf_out.extend(f"{i} 0 obj\n".encode("latin-1"))
+        pdf_out.extend(obj)
+        pdf_out.extend(b"\nendobj\n")
+
+    xref_offset = len(pdf_out)
+    pdf_out.extend(b"xref\n")
+    pdf_out.extend(f"0 {len(objects) + 1}\n".encode("latin-1"))
+    pdf_out.extend(b"0000000000 65535 f \n")
+    for off in offsets:
+        pdf_out.extend(f"{off:010d} 00000 n \n".encode("latin-1"))
+
+    pdf_out.extend(b"trailer\n")
+    pdf_out.extend(f"<< /Size {len(objects) + 1} /Root 1 0 R >>\nstartxref\n{xref_offset}\n%%EOF\n".encode("latin-1"))
+    return bytes(pdf_out)
+
+
 def generate_pdf_report(
     metrics: Dict[str, Any],
     revenue_impact: Dict[str, float],
@@ -534,7 +620,8 @@ def generate_pdf_report(
     filter_summary: str = "All Devices | Full Sample"
 ) -> bytes:
     """
-    Generates a structured, executive-grade PDF analytics report using fpdf2.
+    Generates a structured, executive-grade PDF analytics report using fpdf2,
+    or pure-Python standard PDF fallback if fpdf2 is not available.
 
     Returns:
     - bytes: The raw PDF file bytes.
@@ -542,8 +629,8 @@ def generate_pdf_report(
     try:
         from fpdf import FPDF
     except ImportError:
-        # Fallback if fpdf2 is not available
-        return b"%PDF-1.4 Mock fallback PDF content - install fpdf2"
+        # Pure-Python PDF generator fallback when fpdf2 is not installed
+        return _generate_pure_python_pdf(metrics, revenue_impact, stat_val, filter_summary)
 
     class ExecutiveReportPDF(FPDF):
         def header(self):
