@@ -13,9 +13,10 @@
 - **Track**: Pricing Analytics and Margin Optimization
 - **Application Name**: The 'Happy Hour' Dynamic Pricing Engine
 - **Target Category**: Retail AI Lab (PRICE_C7) — Team 3
-- **Team Members**:
-  - Lead Engineer & Pricing Analyst: Hariharan R (@hariwhatever)
-  - Core Contributor: Pricing Strategy & AI Systems Developer
+- **Team Members (Official Roster)**:
+  - Member 1: Shri hari S (Register No: 24bmc054, GitHub: @hariwhatever)
+  - Member 2: Parameshwari S (Register No: 24Beo013, GitHub: @ananya-scribbles)
+  - Member 3: affrina A (Register No: 25bds030)
 
 ---
 

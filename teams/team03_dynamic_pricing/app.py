@@ -2,6 +2,7 @@
 Streamlit Web Application for Team 3: Dynamic Pricing Engine.
 Interactive pricing dashboard with real-time environmental simulation,
 financial margin analytics, and rule transparency.
+Clean academic formatting with zero decorative unicode symbols.
 """
 
 from pathlib import Path
@@ -12,16 +13,15 @@ from pricing_engine import load_inventory, calculate_dynamic_price
 
 # Page Configuration
 st.set_page_config(
-    page_title="Happy Hour Dynamic Pricing Engine | Retail AI",
-    page_icon="☕",
+    page_title="Dynamic Pricing Engine | Retail AI Team 3",
     layout="wide"
 )
 
 # Application Header
-st.title("☕ 'Happy Hour' Dynamic Pricing Engine")
+st.title("'Happy Hour' Dynamic Pricing Engine")
 st.caption(
     "Intraday Algorithmic Pricing Modifiers with Cost-Basis Protection | "
-    "Designed for Store & Revenue Managers"
+    "Designed for Store and Revenue Managers"
 )
 
 # Load Inventory
@@ -33,7 +33,7 @@ except Exception as e:
     st.stop()
 
 # Sidebar: Environmental Simulation Controls
-st.sidebar.header("🌍 Environmental Simulation")
+st.sidebar.header("Environmental Simulation Controls")
 
 hour = st.sidebar.slider(
     "Time of Day (24-Hour Clock)",
@@ -66,7 +66,7 @@ category_filter = st.sidebar.selectbox(
 )
 
 # Sidebar Clock and Context Indicator
-time_band = "🌅 Morning Rush" if 7 <= hour <= 9 else ("🌆 Happy Hour (Clearance)" if hour >= 17 else "☀️ Standard Hours")
+time_band = "[Morning Rush]" if 7 <= hour <= 9 else ("[Happy Hour Clearance]" if hour >= 17 else "[Standard Operating Hours]")
 st.sidebar.info(f"**Clock**: `{hour:02d}:00` ({time_band})\n\n**Weather**: `{weather}`\n\n**Inventory Factor**: `{stock_override:.1f}x`")
 
 # Calculate Dynamic Prices across inventory using core pricing engine
@@ -110,9 +110,9 @@ st.markdown("---")
 
 # Main Interface Tabs
 tab_board, tab_explain, tab_safeguards = st.tabs([
-    "📊 Real-Time Price Board & Visualizer",
-    "🔍 Item Drilldown & Price Explanations",
-    "🛡️ Engine Safeguards & Export"
+    "Tab 1: Real-Time Price Board and Analytics",
+    "Tab 2: Item Drilldown and Price Explanations",
+    "Tab 3: Engine Safeguards and Export"
 ])
 
 with tab_board:
@@ -166,7 +166,7 @@ with tab_board:
         st.plotly_chart(fig, use_container_width=True)
 
 with tab_explain:
-    st.subheader("Algorithmic Transparency & Price Drivers")
+    st.subheader("Algorithmic Transparency and Price Drivers")
     selected_item_name = st.selectbox("Select Menu Item for Deep-Dive", df_results["Item"].tolist())
 
     if selected_item_name:
@@ -183,13 +183,13 @@ with tab_explain:
         st.markdown("#### Triggered Decision Logic")
         for rule in row["Rules_Triggered"]:
             if "Clearance" in rule:
-                st.warning(f"📉 **Clearance Applied**: {rule}")
+                st.warning(f"[Clearance Applied]: {rule}")
             elif "Surge" in rule or "Premium" in rule:
-                st.success(f"📈 **Demand Modifier Applied**: {rule}")
+                st.success(f"[Demand Modifier Applied]: {rule}")
             elif "Cost Basis Floor" in rule:
-                st.error(f"🛡️ **Guardrail Triggered**: {rule} — Price prevented from dropping below ${row['Cost_Price']:.2f} cost basis.")
+                st.error(f"[Cost-Floor Guardrail Triggered]: {rule} -- Price prevented from dropping below ${row['Cost_Price']:.2f} cost basis.")
             else:
-                st.info(f"ℹ️ {rule}")
+                st.info(f"[Standard Base Rate]: {rule}")
 
         with st.expander("Detailed Margin Economics"):
             st.write(f"- **Gross Margin ($)**: `${row['Margin_Dollar']:.2f}`")
@@ -197,7 +197,7 @@ with tab_explain:
             st.write(f"- **Available Stock**: `{row['Current_Stock']}` units")
 
 with tab_safeguards:
-    st.subheader("Configured Safeguards & System Health")
+    st.subheader("Configured Safeguards and System Health")
     sc1, sc2, sc3 = st.columns(3)
     with sc1:
         st.markdown("**1. Cost-Floor Protection**")
@@ -207,13 +207,13 @@ with tab_safeguards:
         st.caption("Surges are bounded by `MAX_PRICE_MULTIPLIER = 2.0x` (+100% cap) to prevent consumer backlash during extreme demand spikes.")
     with sc3:
         st.markdown("**3. Zero/Negative Stock Safety**")
-        st.caption("Stock levels $\le 0$ do not trigger false scarcity premiums or liquidation discounts.")
+        st.caption("Stock levels <= 0 do not trigger false scarcity premiums or liquidation discounts.")
 
     st.markdown("---")
     st.subheader("Export Recommended Menu Prices")
     csv_bytes = df_results.to_csv(index=False).encode("utf-8")
     st.download_button(
-        label="📥 Download Pricing Table (CSV)",
+        label="Download Inventory and Prices (CSV)",
         data=csv_bytes,
         file_name=f"dynamic_prices_hour_{hour}_{weather.lower()}.csv",
         mime="text/csv"
