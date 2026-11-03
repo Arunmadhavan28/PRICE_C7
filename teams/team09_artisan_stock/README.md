@@ -7,14 +7,14 @@
 [![Autograder Score](https://img.shields.io/badge/Autograder-100%2F100%20(25.0%2F25%20Marks)-success.svg)](#evaluation-rubric-scorecard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-An intelligent, visual Kanban inventory planning platform engineered for independent artisans, craft makers, and boutique retail studios. Features real-time material runway calculations, supplier lead-time risk diagnostics, dynamic holiday/market demand surge simulations, and autonomous 1-click purchase order generation.
+An intelligent visual Kanban inventory planning platform engineered for independent artisans, craft makers, and boutique retail studios. Features real-time material runway calculations, supplier lead-time risk diagnostics, dynamic holiday and market demand surge simulations, and autonomous 1-click purchase order generation in Indian Rupees (INR).
 
 ---
 
 ## Team Information
-- **Assigned Track**: Team 9 — Inventory Optimization and Supply Chain Planning
+- **Assigned Track**: Team 9 - Inventory Optimization and Supply Chain Planning
 - **Application Name**: The Artisan Safety-Stock Planner
-- **Domain Category**: Inventory Analytics & Supply Chain Management
+- **Domain Category**: Inventory Analytics and Supply Chain Management
 - **Project Author & Lead Engineer**: **Ayesha Jumana** ([@Ayeshajumana](https://github.com/Ayeshajumana))
 - **Repository**: [PRICE_C7 / Team 09](https://github.com/Ayeshajumana/PRICE_C7)
 
@@ -25,18 +25,18 @@ An intelligent, visual Kanban inventory planning platform engineered for indepen
 ### The Business Challenge
 Independent artisans, jewelry designers, leather crafters, candle makers, and apothecary creators often operate with high-value, bespoke raw materials that have long, unpredictable supplier fulfillment lead times (often 7 to 15+ days). Most makers manage inventory informally through memory, manual notebooks, or basic spreadsheets.
 
-Consequently, artisans frequently discover stockouts too late—often right before high-stakes holiday markets, pop-up craft fairs, or retail surges. Running out of a single vital ingredient (e.g., soy wax flakes, earring hooks, or veg-tan leather) stalls the entire studio production cycle, leading to lost revenue and missed market deadlines.
+Consequently, artisans frequently discover stockouts too late - often right before high-stakes holiday markets, pop-up craft fairs, or retail surges. Running out of a single vital ingredient (e.g., soy wax flakes, earring hooks, or veg-tan leather) stalls the entire studio production cycle, leading to lost revenue and missed market deadlines.
 
 ### The Engineering Solution
 **The Artisan Safety-Stock Planner** bridges this operational gap by transforming raw material tracking into an autonomous, proactive decision-support engine:
 1. **Visual Material Runway Kanban**: Continuously computes inventory runway days ($R = \frac{I_{current}}{d}$) against supplier delivery lead times ($L$).
 2. **Three-Tier Urgency Classification**:
-   - 🔴 **CRITICAL**: Runway Days $\le$ Lead Time Days (Immediate stockout risk before shipment can physically arrive).
-   - 🟡 **WARNING**: Current Stock $\le$ Reorder Point ($ROP$) (Approaching safety buffer threshold).
-   - 🟢 **HEALTHY**: Current Stock $> ROP$ (Adequate operational buffer).
+   - **[CRITICAL]**: Runway Days $\le$ Lead Time Days (Immediate stockout risk before shipment can physically arrive).
+   - **[WARNING]**: Current Stock $\le$ Reorder Point ($ROP$) (Approaching safety buffer threshold).
+   - **[HEALTHY]**: Current Stock $> ROP$ (Adequate operational buffer).
 3. **Interactive Demand Surge Simulator**: Models festival and seasonal market spikes (1.0x to 3.0x daily consumption rate) to stress-test studio resilience.
 4. **What-If Scenario Lab**: Allows makers to adjust lead times, burn rates, and buffer levels interactively to anticipate supply chain shocks.
-5. **1-Click Autonomous Purchase Order Studio**: Consolidates endangered materials into standardized, itemized vendor purchase orders with instant plain text (`.txt`) and tabular (`.csv`) export.
+5. **1-Click Autonomous Purchase Order Studio**: Consolidates endangered materials into standardized, itemized vendor purchase orders with instant plain text (`.txt`) and tabular (`.csv`) export in INR.
 
 ---
 
@@ -87,11 +87,11 @@ Recalculating both $ROP_{surge}$ and $\text{Runway}_{surge}$ instantly across al
 
 ```mermaid
 flowchart TD
-    subgraph DataLayer["📁 Layer 1: Data & Storage"]
+    subgraph DataLayer["Layer 1: Data and Storage"]
         CSV[("artisan_materials.csv<br/>14 Artisanal SKUs")]
     end
 
-    subgraph CoreEngine["⚙️ Layer 2: Core Algorithmic Engine (stock_engine.py)"]
+    subgraph CoreEngine["Layer 2: Core Algorithmic Engine (stock_engine.py)"]
         Load["load_materials_data()"]
         ROP["calculate_safety_stock()<br/>ROP = (L * d) + SS"]
         Runway["calculate_runway_days()<br/>Runway = Current / Burn"]
@@ -101,7 +101,7 @@ flowchart TD
         PO_Gen["generate_purchase_order()<br/>Plaintext & CSV"]
     end
 
-    subgraph TestingSuite["🧪 Automated Testing Suite (tests/test_team09.py)"]
+    subgraph TestingSuite["Layer 3: Automated Testing Suite (tests/test_team09.py)"]
         TestSchema["test_materials_schema"]
         TestROP["test_reorder_point_formula"]
         TestRunway["test_runway_calculation"]
@@ -111,7 +111,7 @@ flowchart TD
         TestPO["test_purchase_order_generator"]
     end
 
-    subgraph UserInterface["🖥️ Layer 3: Interactive UI (app.py)"]
+    subgraph UserInterface["Layer 4: Interactive UI (app.py)"]
         KPIs["Executive Metric Cards<br/>Valuation, SKUs, Capital Needed"]
         Kanban["Visual Kanban Board<br/>Color-coded Cards + Health Bars"]
         Plotly1["Horizon Danger Zone Chart<br/>Runway vs Lead Time Threshold"]
@@ -142,9 +142,9 @@ flowchart TD
 
 ### 2. Visual Material Runway Kanban Board
 - 3-column responsive card grid with status borders:
-  - 🔴 **Red border**: Critical stockout imminent before supplier delivery.
-  - 🟡 **Amber border**: Reorder point crossed; replenishment needed.
-  - 🟢 **Emerald border**: Stock buffer healthy and optimal.
+  - **[CRITICAL] Red border**: Critical stockout imminent before supplier delivery.
+  - **[WARNING] Amber border**: Reorder point crossed; replenishment needed.
+  - **[HEALTHY] Emerald border**: Stock buffer healthy and optimal.
 - Dynamic runway health progress bars (`st.progress`).
 - Quick visibility into material category, current stock, burn rate, lead time, unit cost, risk score, and vendor contact.
 
@@ -166,8 +166,8 @@ flowchart TD
 - One-click vendor order compilation.
 - Structured, itemized plaintext PO invoice preview with purchase order number, delivery terms, and grand total.
 - Dual export capability:
-  - 📄 **Plain Text (`.txt`)**: Ready to paste into email or vendor portals.
-  - 📊 **Tabular (`.csv`)**: Formatted for import into accounting systems or Excel.
+  - **Plain Text (.txt)**: Ready to paste into email or vendor portals.
+  - **Tabular (.csv)**: Formatted for import into accounting systems or Excel.
 
 ---
 
@@ -182,7 +182,7 @@ Our development workflow followed a disciplined 3-layer vibe-coding methodology 
 > *"Write a complete automated test suite `tests/test_team09.py` verifying all core functions. Include assertions for schema conformance of `artisan_materials.csv`, mathematical accuracy of ROP, edge-case handling for zero burn rates, status classification thresholds, demand surge multipliers, portfolio summaries, and purchase order text formatting. Ensure 100% test pass rate with pytest."*
 
 ### Prompt 3: Production Streamlit Dashboard with Glassmorphism UI
-> *"Build an executive Streamlit dashboard in `app.py` that stands out from typical student projects. Add custom CSS with glassmorphic cards, glowing status borders, and modern metric tiles. Implement a 3-column Kanban card grid featuring `st.progress` runway health indicators, category pills, and upcoming event triggers. Ensure all autograder widgets (`st.progress`, `st.button`, `st.columns`, `st.download_button`) and user guidance structures are included."*
+> *"Build an executive Streamlit dashboard in `app.py` that stands out from typical student projects. Add custom CSS with clean cards, glowing status borders, and modern metric tiles. Implement a 3-column Kanban card grid featuring `st.progress` runway health indicators, category pills, and upcoming event triggers. Ensure all autograder widgets (`st.progress`, `st.button`, `st.columns`, `st.download_button`) and user guidance structures are included."*
 
 ### Prompt 4: Advanced Supply Chain Diagnostics with Plotly
 > *"Add interactive Plotly charts to `app.py`: 1) A Horizon comparison chart displaying Runway Days vs Supplier Lead Time (with a dashed danger threshold line indicating stockout before delivery), 2) A Category Capital Allocation Donut chart showing replenishment budget breakdown, and 3) A Stockout Vulnerability bubble scatter chart mapping burn rate vs stock level with bubble size mapped to supplier lead time."*

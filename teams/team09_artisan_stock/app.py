@@ -1,7 +1,7 @@
 """
 Streamlit Web Application for Team 9: The Artisan Safety-Stock Planner.
 Visual Kanban inventory tracking, Plotly runway diagnostics, and automated 1-click purchase orders.
-Designed for high readability, modern aesthetics, and seamless light/dark theme adaptation.
+Clean academic formatting with zero decorative unicode emojis and native theme adaptation.
 """
 
 from pathlib import Path
@@ -24,11 +24,10 @@ from stock_engine import (
 )
 
 # ---------------------------------------------------------
-# Page Configuration
+# Page Configuration (Clean Academic Header)
 # ---------------------------------------------------------
 st.set_page_config(
     page_title="Artisan Safety-Stock Planner",
-    page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -165,7 +164,7 @@ with st.sidebar:
     st.title("Artisan Studio Controls")
     st.caption("Inventory & Supply Chain Command Center")
 
-    st.markdown("### 🎪 Demand Surge Simulator")
+    st.markdown("### Demand Surge Simulator")
     st.info("Simulate upcoming craft fair pop-ups, holiday rushes, or seasonal demand spikes.")
     surge_multiplier = st.slider(
         "Event Demand Multiplier",
@@ -179,7 +178,7 @@ with st.sidebar:
         st.warning(f"Active Surge: {surge_multiplier:.2f}x Normal Consumption")
 
     st.markdown("---")
-    st.markdown("### 🔍 Filters & Search")
+    st.markdown("### Filters and Search")
     categories = ["All Categories"] + sorted(list(raw_df["Category"].dropna().unique()))
     selected_category = st.selectbox("Craft Category", categories)
 
@@ -245,7 +244,7 @@ with kpi_col2:
     st.metric(
         label="Critical Stockouts",
         value=f"{crit_count} Alert{'s' if crit_count != 1 else ''}",
-        delta="Runway ≤ Lead Time",
+        delta="Runway <= Lead Time",
         delta_color="inverse" if crit_count > 0 else "normal"
     )
 
@@ -254,7 +253,7 @@ with kpi_col3:
     st.metric(
         label="Reorder Warnings",
         value=f"{warn_count} Item{'s' if warn_count != 1 else ''}",
-        delta="Stock ≤ Reorder Point",
+        delta="Stock <= Reorder Point",
         delta_color="inverse" if warn_count > 0 else "normal"
     )
 
@@ -268,22 +267,22 @@ with kpi_col4:
 # Subtle secondary metrics summary ribbon
 st.markdown(f"""
 <div class="summary-ribbon">
-    <span>💼 <b>Current Asset Value:</b> ₹{portfolio['total_asset_value']:,.2f}</span>
-    <span>⏱️ <b>Average Studio Runway:</b> {portfolio['average_runway_days']} Days</span>
-    <span>⚡ <b>Active Demand Rate:</b> {surge_multiplier:.2f}x Normal Pace</span>
-    <span>🎯 <b>Average Portfolio Risk:</b> {portfolio['average_risk_score']}%</span>
+    <span><b>Current Asset Value:</b> ₹{portfolio['total_asset_value']:,.2f}</span>
+    <span><b>Average Studio Runway:</b> {portfolio['average_runway_days']} Days</span>
+    <span><b>Active Demand Rate:</b> {surge_multiplier:.2f}x Normal Pace</span>
+    <span><b>Average Portfolio Risk:</b> {portfolio['average_risk_score']}%</span>
 </div>
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# Main Application Tabs (Clean, Readable Labels)
+# Main Application Tabs (Clean Academic Labels)
 # ---------------------------------------------------------
 tab_kanban, tab_analytics, tab_simulator, tab_po, tab_data = st.tabs([
-    "📋 Kanban Board",
-    "📊 Runway Charts",
-    "🎛️ What-If Simulator",
-    "📝 Purchase Orders",
-    "📦 Master Catalog"
+    "Kanban Board",
+    "Runway Charts",
+    "What-If Simulator",
+    "Purchase Orders",
+    "Master Catalog"
 ])
 
 # ---------------------------------------------------------
@@ -333,7 +332,7 @@ with tab_kanban:
                 """, unsafe_allow_html=True)
 
                 st.progress(health_ratio)
-                st.caption(f"📅 Trigger: {mat['Upcoming_Events']} &bull; 📧 {mat['Supplier_Contact']}")
+                st.caption(f"Trigger: {mat['Upcoming_Events']} | Contact: {mat['Supplier_Contact']}")
                 st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
@@ -410,7 +409,7 @@ with tab_analytics:
             )
             st.plotly_chart(fig_donut, use_container_width=True)
         else:
-            st.success("🎉 All inventory levels are optimal! No replenishment capital currently needed.")
+            st.success("All inventory levels are optimal. No replenishment capital currently needed.")
 
     # Scatter Bubble Chart: Burn Rate vs Current Level vs Lead Time
     st.markdown("### Stockout Vulnerability Matrix")
@@ -482,7 +481,7 @@ with tab_simulator:
         target_restore_stock = (30 * sim_burn) + sim_safety
         units_needed = max(0, int(np.ceil(target_restore_stock - sim_current)))
         unit_price = float(target_row.get("Unit_Cost", 5.0))
-        st.info(f"💡 Recommended replenishment order to restore 30-day runway: **{units_needed} units** (₹{units_needed * unit_price:,.2f})")
+        st.info(f"Recommended replenishment order to restore 30-day runway: **{units_needed} units** (₹{units_needed * unit_price:,.2f})")
 
 # ---------------------------------------------------------
 # TAB 4: Autonomous Purchase Order Studio
@@ -492,9 +491,9 @@ with tab_po:
     st.caption("Consolidates all Critical and Warning inventory items into an itemized purchase order ready for vendor transmission.")
 
     if not items_needing_po:
-        st.success("🎉 All inventory levels are optimal! No materials currently meet the replenishment threshold.")
+        st.success("All inventory levels are optimal. No materials currently meet the replenishment threshold.")
     else:
-        st.warning(f"⚠️ **{len(items_needing_po)} Material{'s' if len(items_needing_po) != 1 else ''}** require replenishment to prevent stockouts.")
+        st.warning(f"**[ALERT] {len(items_needing_po)} Material{'s' if len(items_needing_po) != 1 else ''}** require replenishment to prevent stockouts.")
 
         po_table_df = generate_purchase_order_dataframe(items_needing_po)
         st.dataframe(po_table_df, use_container_width=True)
@@ -505,7 +504,7 @@ with tab_po:
         c_po_left, c_po_right = st.columns([1, 1])
         with c_po_left:
             st.download_button(
-                label="📄 Download Purchase Order as Plain Text (.txt)",
+                label="Download Purchase Order as Plain Text (.txt)",
                 data=po_text,
                 file_name="artisan_purchase_order.txt",
                 mime="text/plain",
@@ -514,7 +513,7 @@ with tab_po:
         with c_po_right:
             csv_data = po_table_df.to_csv(index=False).encode('utf-8')
             st.download_button(
-                label="📊 Download Purchase Order as CSV (.csv)",
+                label="Download Purchase Order as CSV (.csv)",
                 data=csv_data,
                 file_name="artisan_purchase_order.csv",
                 mime="text/csv",
@@ -541,7 +540,7 @@ with tab_data:
 
     master_csv = raw_df.to_csv(index=False).encode('utf-8')
     st.download_button(
-        label="📥 Export Master Catalog as CSV",
+        label="Export Master Catalog as CSV",
         data=master_csv,
         file_name="artisan_materials_catalog.csv",
         mime="text/csv"
