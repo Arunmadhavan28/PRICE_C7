@@ -13,7 +13,7 @@ from forecaster import load_trend_data, forecast_demand
 try:
     st.set_page_config(
         page_title="Trend Forecaster | Retail AI",
-        page_icon="📈",
+        page_icon=None,
         layout="wide"
     )
 except Exception:
@@ -80,10 +80,11 @@ simulated_spike = st.sidebar.slider("Simulate Viral Signal Shift (%)", min_value
 
 # Adjust DataFrame copy if scenario simulation active
 sim_df = df.copy()
+sim_df["Social_Media_Trend_Score"] = sim_df["Social_Media_Trend_Score"].astype(float)
 if simulated_spike != 0:
     mask = sim_df["Item_Category"] == selected_category
     factor = 1.0 + (simulated_spike / 100.0)
-    sim_df.loc[mask, "Social_Media_Trend_Score"] = (sim_df.loc[mask, "Social_Media_Trend_Score"] * factor).clip(0, 100)
+    sim_df.loc[mask, "Social_Media_Trend_Score"] = (sim_df.loc[mask, "Social_Media_Trend_Score"] * factor).clip(0.0, 100.0)
 
 # Execute Forecast
 hist_df, forecast_df, metrics = forecast_demand(
@@ -126,10 +127,10 @@ st.markdown("---")
 
 # Tabbed Layout
 tab_forecast, tab_inventory, tab_mood, tab_diagnostics = st.tabs([
-    "📈 Demand Trajectory & Forecast",
-    "📦 Buyer Replenishment Plan",
-    "🎨 Cultural Aesthetic & Mood Board",
-    "📊 Seasonality & Diagnostics"
+    "Tab 1: Demand Trajectory & Forecast",
+    "Tab 2: Buyer Replenishment Plan",
+    "Tab 3: Cultural Aesthetic & Mood Board",
+    "Tab 4: Seasonality & Diagnostics"
 ])
 
 # -------------------------------------------------------------
@@ -138,7 +139,7 @@ tab_forecast, tab_inventory, tab_mood, tab_diagnostics = st.tabs([
 with tab_forecast:
     st.subheader(f"Demand Projection with Cultural Wave Overlay — {selected_category}")
     if simulated_spike != 0:
-        st.info(f"⚡ Simulated Scenario Active: {simulated_spike:+d}% shift applied to social media trend signals.")
+        st.info(f"[Simulation Active] Simulated Scenario Active: {simulated_spike:+d}% shift applied to social media trend signals.")
 
     # Create Dual-Axis Plotly Chart
     fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -226,7 +227,7 @@ with tab_inventory:
 
     csv_data = forecast_df.to_csv(index=False).encode("utf-8")
     st.download_button(
-        label="📥 Download Forecast & Purchase Order (CSV)",
+        label="Download Forecast & Purchase Order (CSV)",
         data=csv_data,
         file_name=f"forecast_{selected_category.lower().replace(' ', '_')}_{forecast_days}d.csv",
         mime="text/csv"

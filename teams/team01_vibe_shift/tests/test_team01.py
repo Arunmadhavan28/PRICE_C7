@@ -162,3 +162,16 @@ def test_metrics_contents(sample_data):
         assert metrics[key] is not None
     assert metrics["safety_stock_recommendation"] >= 5
     assert metrics["reorder_point_recommendation"] >= metrics["safety_stock_recommendation"]
+
+
+def test_scenario_simulation_spike(sample_data):
+    """Verifies that simulating a viral shift does not raise TypeError and modulates forecast."""
+    sim_df = sample_data.copy()
+    sim_df["Social_Media_Trend_Score"] = sim_df["Social_Media_Trend_Score"].astype(float)
+    cat = sim_df["Item_Category"].iloc[0]
+    mask = sim_df["Item_Category"] == cat
+    factor = 1.25  # +25% viral shift
+    sim_df.loc[mask, "Social_Media_Trend_Score"] = (sim_df.loc[mask, "Social_Media_Trend_Score"] * factor).clip(0.0, 100.0)
+    _, f_spike, m_spike = forecast_demand(sim_df, category=cat, forecast_days=30)
+    assert len(f_spike) == 30
+    assert (f_spike["Forecast_Demand"] >= 0).all()

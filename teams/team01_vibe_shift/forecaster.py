@@ -43,10 +43,10 @@ def load_trend_data(filepath_or_buffer: Union[str, Path, io.IOBase]) -> pd.DataF
         raise ValueError(f"Dataset contains {invalid_count} row(s) with invalid or unparseable dates.")
 
     # Validate and clean numeric fields
-    df["Historical_Sales_Volume"] = pd.to_numeric(df["Historical_Sales_Volume"], errors="coerce").fillna(0)
-    df["Historical_Sales_Volume"] = df["Historical_Sales_Volume"].clip(lower=0)
+    df["Historical_Sales_Volume"] = pd.to_numeric(df["Historical_Sales_Volume"], errors="coerce").astype(float).fillna(0.0)
+    df["Historical_Sales_Volume"] = df["Historical_Sales_Volume"].clip(lower=0.0)
 
-    df["Social_Media_Trend_Score"] = pd.to_numeric(df["Social_Media_Trend_Score"], errors="coerce").fillna(50)
+    df["Social_Media_Trend_Score"] = pd.to_numeric(df["Social_Media_Trend_Score"], errors="coerce").astype(float).fillna(50.0)
     df["Social_Media_Trend_Score"] = df["Social_Media_Trend_Score"].clip(0.0, 100.0)
 
     df["Item_Category"] = df["Item_Category"].astype(str).str.strip()
