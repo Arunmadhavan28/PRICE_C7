@@ -4,9 +4,10 @@
 - Track: Natural Language Processing and Emotion Analytics
 - Application Name: The Empathy Engine
 - Team Members:
-  - Member 1: [Full Name (@github_handle)]
-  - Member 2: [Full Name (@github_handle)]
-  - Member 3: [Full Name (@github_handle)]
+  - Member 1: LINGARAJ V 
+  - Member 2: NANDHINI J
+  - Member 3: NISANTH EP
+  - Member 4: AHIL VP 
 
 ---
 
