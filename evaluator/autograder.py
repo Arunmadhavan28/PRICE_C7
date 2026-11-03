@@ -338,7 +338,9 @@ def detect_modified_team() -> list:
     """Detects which team folder was modified using git diff."""
     detected = set()
     commands = [
+        ["git", "diff", "--name-only", "target/main...HEAD"],
         ["git", "diff", "--name-only", "origin/main...HEAD"],
+        ["git", "diff", "--name-only", "main...HEAD"],
         ["git", "diff", "--name-only", "HEAD~1", "HEAD"],
         ["git", "status", "--porcelain"]
     ]
