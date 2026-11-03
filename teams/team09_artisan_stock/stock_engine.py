@@ -227,7 +227,7 @@ def generate_purchase_order(items_to_reorder: List[Dict[str, Any]]) -> str:
         f"Order Status: APPROVED FOR TRANSMISSION",
         f"Shipment Urgency: EXPEDITE PRIORITY (Supply Chain Risk Protected)",
         "-" * 72,
-        f"{'ITEM / MATERIAL':<36} | {'QTY':>6} | {'UNIT (₹)':>9} | {'TOTAL (₹)':>13}",
+        f"{'ITEM / MATERIAL':<36} | {'QTY':>6} | {'UNIT (INR)':>9} | {'TOTAL (INR)':>13}",
         "-" * 72,
     ]
 
@@ -238,10 +238,10 @@ def generate_purchase_order(items_to_reorder: List[Dict[str, Any]]) -> str:
         line_total = item["Estimated_PO_Cost"]
         grand_total += line_total
         name_short = (item["Material_Name"][:34] + "..") if len(item["Material_Name"]) > 36 else item["Material_Name"]
-        lines.append(f"{name_short:<36} | {qty:>6} | ₹{unit_price:>8.2f} | ₹{line_total:>12.2f}")
+        lines.append(f"{name_short:<36} | {qty:>6} | INR {unit_price:>8.2f} | INR {line_total:>12.2f}")
 
     lines.append("-" * 72)
-    lines.append(f"{'GRAND TOTAL ESTIMATED CAPITAL:':<52} ₹{grand_total:>14.2f}")
+    lines.append(f"{'GRAND TOTAL ESTIMATED CAPITAL:':<52} INR {grand_total:>14.2f}")
     lines.append("=" * 72)
     lines.append("Supplier Delivery Instructions: Please verify lead times and provide tracking.")
     lines.append("Payment Terms: Net 30 upon delivery confirmation.")
@@ -267,8 +267,8 @@ def generate_purchase_order_dataframe(items_to_reorder: List[Dict[str, Any]]) ->
             "Category": item["Category"],
             "Current_Level": item["Current_Level"],
             "Recommended_Order_Units": item["Recommended_Order_Units"],
-            "Unit_Cost": f"₹{item['Unit_Cost']:.2f}",
-            "Estimated_PO_Cost": f"₹{item['Estimated_PO_Cost']:.2f}",
+            "Unit_Cost": f"INR {item['Unit_Cost']:.2f}",
+            "Estimated_PO_Cost": f"INR {item['Estimated_PO_Cost']:.2f}",
             "Supplier_Contact": item["Supplier_Contact"],
             "Status": item["Status"]
         })

@@ -260,14 +260,14 @@ with kpi_col3:
 with kpi_col4:
     st.metric(
         label="Replenishment Capital",
-        value=f"₹{portfolio['total_po_capital']:,.2f}",
+        value=f"INR {portfolio['total_po_capital']:,.2f}",
         delta="To Restore 30-Day Buffer"
     )
 
 # Subtle secondary metrics summary ribbon
 st.markdown(f"""
 <div class="summary-ribbon">
-    <span><b>Current Asset Value:</b> ₹{portfolio['total_asset_value']:,.2f}</span>
+    <span><b>Current Asset Value:</b> INR {portfolio['total_asset_value']:,.2f}</span>
     <span><b>Average Studio Runway:</b> {portfolio['average_runway_days']} Days</span>
     <span><b>Active Demand Rate:</b> {surge_multiplier:.2f}x Normal Pace</span>
     <span><b>Average Portfolio Risk:</b> {portfolio['average_risk_score']}%</span>
@@ -319,7 +319,7 @@ with tab_kanban:
                         {mat['Material_Name']}
                     </div>
                     <div class="card-body-text">
-                        <b>Current Stock:</b> {mat['Current_Level']} units &bull; <b>Cost:</b> ₹{mat['Unit_Cost']:.2f}<br>
+                        <b>Current Stock:</b> {mat['Current_Level']} units &bull; <b>Cost:</b> INR {mat['Unit_Cost']:.2f}<br>
                         <b>Daily Burn:</b> {mat['Daily_Burn_Rate']}/day &bull; <b>Reorder Point (ROP):</b> {mat['Reorder_Point']}<br>
                         <b>Supplier Lead Time:</b> {mat['Lead_Time_Days']} days<br>
                         <b>Runway Days Remaining:</b> <span style="color: {status_color}; font-weight: 700; font-size: 0.95rem;">{mat['Runway_Days']} days</span>
@@ -481,7 +481,7 @@ with tab_simulator:
         target_restore_stock = (30 * sim_burn) + sim_safety
         units_needed = max(0, int(np.ceil(target_restore_stock - sim_current)))
         unit_price = float(target_row.get("Unit_Cost", 5.0))
-        st.info(f"Recommended replenishment order to restore 30-day runway: **{units_needed} units** (₹{units_needed * unit_price:,.2f})")
+        st.info(f"Recommended replenishment order to restore 30-day runway: **{units_needed} units** (INR {units_needed * unit_price:,.2f})")
 
 # ---------------------------------------------------------
 # TAB 4: Autonomous Purchase Order Studio
