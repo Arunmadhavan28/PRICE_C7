@@ -49,7 +49,6 @@ except ImportError:
 try:
     st.set_page_config(
         page_title="Markdown Optimizer | Retail AI",
-        page_icon="🏷️",
         layout="wide",
         initial_sidebar_state="expanded"
     )
@@ -107,11 +106,11 @@ st.markdown("""
 # -------------------------------------------------------------
 # Sidebar Configuration & Parameters
 # -------------------------------------------------------------
-st.sidebar.title("🏷️ Markdown Optimizer")
+st.sidebar.title("[Markdown Optimizer]")
 st.sidebar.caption("Retail Clearance Analytics Engine")
 
 # Data Source Selection
-st.sidebar.subheader("📂 Data Source")
+st.sidebar.subheader("[Data Source]")
 upload_option = st.sidebar.radio("Select Input Mode", ["Curated Retail Dataset", "Upload Custom Aging CSV"])
 
 if upload_option == "Upload Custom Aging CSV":
@@ -137,7 +136,7 @@ else:
 
 # Interactive Markdown Policy Parameters
 st.sidebar.markdown("---")
-st.sidebar.subheader("⚙️ Markdown Policy Rules")
+st.sidebar.subheader("[Policy Rules] Markdown Policy Rules")
 
 with st.sidebar.expander("Tier Discount Percentages", expanded=False):
     tier_60 = st.slider("Tier 3 (>60 Days on Shelf)", min_value=15, max_value=60, value=30, step=5) / 100.0
@@ -155,7 +154,7 @@ carrying_cost_rate = st.sidebar.slider("Annual Carrying Cost Rate (%)", min_valu
 
 # Merchandiser Filters
 st.sidebar.markdown("---")
-st.sidebar.subheader("🔍 Filters & Search")
+st.sidebar.subheader("[Filters & Search]")
 
 all_categories = sorted(raw_df["Category"].dropna().unique().tolist()) if "Category" in raw_df.columns else []
 selected_category = st.sidebar.selectbox("Merchandise Category", ["All Categories"] + all_categories)
@@ -267,12 +266,12 @@ st.markdown("---")
 # Tabbed Workspace
 # -------------------------------------------------------------
 tab_matrix, tab_charts, tab_pacing, tab_sandbox, tab_ai, tab_export = st.tabs([
-    "📋 Clearance Matrix",
-    "📊 Floor Protection Analytics",
-    "⏱️ Drop Pacing Simulator",
-    "🧪 What-If Sandbox",
-    "💡 Strategic Merchandiser Brief",
-    "📥 POS Export & Action Center"
+    "Tab 1: Clearance Matrix",
+    "Tab 2: Floor Protection Analytics",
+    "Tab 3: Drop Pacing Simulator",
+    "Tab 4: What-If Sandbox",
+    "Tab 5: Strategic Merchandiser Brief",
+    "Tab 6: POS Export & Action Center"
 ])
 
 # -------------------------------------------------------------
@@ -322,7 +321,7 @@ with tab_matrix:
     # Quick interactive action bar
     col_act1, col_act2 = st.columns([3, 1])
     with col_act1:
-        st.info("💡 **Merchandiser Tip:** Items highlighted in red have a velocity lag > 35% or have spent > 60 days on shelf. Clearance discount includes a +5% velocity boost while strictly respecting cost basis.")
+        st.info("[Merchandiser Note] Items highlighted in red have a velocity lag > 35% or have spent > 60 days on shelf. Clearance discount includes a +5% velocity boost while strictly respecting cost basis.")
     with col_act2:
         if st.button("Mark All Filtered as Reviewed", use_container_width=True):
             st.success(f"Approved {len(filtered_df)} SKUs for clearance promotion!")
@@ -337,7 +336,7 @@ with tab_charts:
     chart_col1, chart_col2 = st.columns(2)
 
     with chart_col1:
-        st.markdown("#### 🛡️ Price vs Clearance vs Wholesale Cost Floor")
+        st.markdown("#### [Floor Protection] Price vs Clearance vs Wholesale Cost Floor")
         # Bar chart comparing Retail, Clearance, and Cost Basis
         top_chart_df = filtered_df.head(15) if len(filtered_df) > 0 else optimized_df.head(15)
         
@@ -371,7 +370,7 @@ with tab_charts:
         st.plotly_chart(fig_bar, use_container_width=True)
 
     with chart_col2:
-        st.markdown("#### 🎯 Velocity Lag vs Aging Matrix")
+        st.markdown("#### [Aging Matrix] Velocity Lag vs Aging Matrix")
         # Scatter bubble chart
         fig_scatter = px.scatter(
             optimized_df,
@@ -399,7 +398,7 @@ with tab_charts:
     
     chart_col3, chart_col4 = st.columns(2)
     with chart_col3:
-        st.markdown("#### 🥧 Capital at Risk by Category")
+        st.markdown("#### [Category Distribution] Capital at Risk by Category")
         cat_df = calculate_category_summary(optimized_df)
         fig_pie = px.pie(
             cat_df,
@@ -413,7 +412,7 @@ with tab_charts:
         st.plotly_chart(fig_pie, use_container_width=True)
 
     with chart_col4:
-        st.markdown("#### 💵 Capital Liberation Financial Bridge")
+        st.markdown("#### [Financial Bridge] Capital Liberation Financial Bridge")
         bridge_fig = go.Figure(go.Waterfall(
             name="Financial Recovery",
             orientation="v",
@@ -567,14 +566,14 @@ with tab_sandbox:
 # TAB 5: AI Strategic Merchandiser Brief
 # -------------------------------------------------------------
 with tab_ai:
-    st.subheader("💡 Strategic Clearance Merchandising Brief")
+    st.subheader("[Strategic Brief] Clearance Merchandising Brief")
     st.caption("Automated executive synthesis for Retail Merchandisers, Planners, and Directors.")
 
     brief_text = generate_strategic_brief(metrics, optimized_df)
     st.markdown(brief_text)
 
     st.markdown("---")
-    st.markdown("### 🎯 Clearance Action Playbook")
+    st.markdown("### [Action Playbook] Clearance Action Playbook")
     
     play_col1, play_col2 = st.columns(2)
     with play_col1:
@@ -594,7 +593,7 @@ with tab_ai:
 # TAB 6: POS Export & Action Center
 # -------------------------------------------------------------
 with tab_export:
-    st.subheader("📥 POS Integration & Clearance Batch Export")
+    st.subheader("[POS Integration] Clearance Batch Export")
     st.caption("Generate verified clearance markdown pricing files formatted for Point-of-Sale (POS) and ERP upload.")
 
     export_scope = st.radio("Export Scope", ["At-Risk SKUs Only (Recommended)", "All Inventory SKUs"], horizontal=True)
@@ -609,7 +608,7 @@ with tab_export:
 
     with col_btn1:
         if st.button("Validate POS Upload Schema", type="secondary", use_container_width=True):
-            st.success("✅ All SKUs validated. Clearance Price >= Cost Basis verified. Ready for ERP injection.")
+            st.success("[Verified] All SKUs validated. Clearance Price >= Cost Basis verified. Ready for ERP injection.")
 
     with col_btn2:
         csv_pos = pos_ready_df.to_csv(index=False).encode("utf-8")
