@@ -1,5 +1,7 @@
 """
 Unit tests for Team 7: Ethical AI Auditor for Retail.
+Evaluates algorithmic precision, schema validity, disparate impact math,
+GDPR/CCPA privacy quarantine logic, and Groq Qwen 3.8 27B AI integration.
 """
 
 import sys
@@ -12,7 +14,10 @@ from auditor import (
     load_audit_data,
     audit_privacy_breaches,
     audit_bias_correlation,
-    generate_compliance_report
+    generate_compliance_report,
+    scrub_privacy_violations,
+    generate_audit_certificate_metadata,
+    query_qwen_compliance_intelligence
 )
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "audit_dataset.csv"
@@ -39,6 +44,8 @@ def test_privacy_breach_detection(audit_df):
     assert "breach_rate_pct" in metrics
     # Every row in breaches must have Opt_in_Clean == False
     assert (breaches["Opt_in_Clean"] == False).all()
+    assert metrics["breach_count"] == len(breaches)
+    assert metrics["consented_count"] + metrics["breach_count"] == metrics["total_records"]
 
 
 def test_bias_correlation_calculation(audit_df):
@@ -48,6 +55,9 @@ def test_bias_correlation_calculation(audit_df):
     assert -1.0 <= bias["pearson_correlation"] <= 1.0
     assert "disparate_impact_ratio" in bias
     assert bias["disparate_impact_ratio"] > 0
+    assert "statistically_significant" in bias
+    assert "price_spread" in bias
+    assert bias["price_spread"] >= 0
 
 
 def test_compliance_report_generation(audit_df):
@@ -55,4 +65,46 @@ def test_compliance_report_generation(audit_df):
     report = generate_compliance_report(audit_df)
     assert "risk_level" in report
     assert "recommended_action" in report
-    assert report["risk_level"] in ["CRITICAL NON-COMPLIANCE", "PRIVACY BREACH WARNING", "DEMOGRAPHIC BIAS WARNING", "COMPLIANT & AUDITED"]
+    assert "governance_score" in report
+    assert 0 <= report["governance_score"] <= 100
+    assert report["risk_level"] in [
+        "CRITICAL NON-COMPLIANCE",
+        "PRIVACY BREACH WARNING",
+        "DEMOGRAPHIC BIAS WARNING",
+        "COMPLIANT & AUDITED"
+    ]
+
+
+def test_scrub_privacy_violations(audit_df):
+    """Verifies GDPR Art. 17 data purge returns 100% consented dataset."""
+    clean_df = scrub_privacy_violations(audit_df)
+    assert len(clean_df) > 0
+    assert len(clean_df) <= len(audit_df)
+    _, metrics = audit_privacy_breaches(clean_df)
+    assert metrics["breach_count"] == 0
+    assert metrics["privacy_compliant"] is True
+
+
+def test_audit_certificate_generation(audit_df):
+    """Verifies cryptographic compliance certificate generation."""
+    report = generate_compliance_report(audit_df)
+    cert = generate_audit_certificate_metadata(audit_df, report)
+    assert "certificate_id" in cert
+    assert cert["certificate_id"].startswith("CERT-ETHIX-2026-")
+    assert "standard_alignment" in cert
+    assert len(cert["standard_alignment"]) >= 3
+    assert cert["records_audited"] == len(audit_df)
+
+
+def test_qwen_compliance_intelligence_fallback(audit_df):
+    """Ensures AI intelligence layer returns structured insights and handles offline cases gracefully."""
+    report = generate_compliance_report(audit_df)
+    # Test with empty key to verify deterministic fallback
+    res_offline = query_qwen_compliance_intelligence(
+        "Summarize compliance findings",
+        report,
+        api_key=""
+    )
+    assert "content" in res_offline
+    assert "source" in res_offline
+    assert len(res_offline["content"]) > 50
