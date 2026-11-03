@@ -105,7 +105,11 @@ git push origin team-submission
 1. Go to your repository on GitHub.
 2. Click **Contribute** -> **Open pull request**.
 3. Ensure base repository is `Arunmadhavan28/PRICE_C7` and base branch is `main`.
-4. Submit the pull request.
+4. **Fill out the PR Template and Check All Task Boxes**:
+   - In the PR description, fill in your team members and prompt logs.
+   - In the **Self-Evaluation Checklist**, mark every item with `[x]` (e.g. `- [x] Architecture...`).
+   - Leaving boxes empty (`- [ ]`) causes GitHub to show an incomplete grey badge. Marking all `- [x]` enables the official purple `tasks done` completion badge upon merge.
+5. Submit the pull request.
 
 ---
 

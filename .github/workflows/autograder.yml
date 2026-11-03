@@ -115,8 +115,24 @@ jobs:
               });
             }
 
-            // 2. Submit Autonomous PR Review
+            // 2. Submit Autonomous PR Review and Ensure Tasks Checked
             if (isPerfect) {
+              // Ensure all markdown checkboxes in the PR body are checked [x] for purple badge
+              if (pr.body && pr.body.includes("- [ ]")) {
+                try {
+                  const updatedBody = pr.body.replace(/- \[ \]/g, "- [x]");
+                  await github.rest.pulls.update({
+                    owner: repoOwner,
+                    repo: repoName,
+                    pull_number: prNumber,
+                    body: updatedBody
+                  });
+                  console.log("Automatically updated PR body tasks to [x].");
+                } catch (e) {
+                  console.log("Could not update PR body checkboxes:", e.message);
+                }
+              }
+
               try {
                 await github.rest.pulls.createReview({
                   owner: repoOwner,

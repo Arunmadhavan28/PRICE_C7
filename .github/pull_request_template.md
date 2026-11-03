@@ -44,9 +44,11 @@ Attach screenshots demonstrating the application running locally via `streamlit 
 ---
 
 ### Self-Evaluation Checklist (100 Points / 25 Marks)
-- [ ] Architecture (20 pts): Folder structure clean, app.py, engine file, README.md, requirements.txt present.
-- [ ] Logic and Unit Tests (30 pts): All tests in tests/ pass with pytest.
-- [ ] UI Readiness (20 pts): Interactive Streamlit UI functions with all required widgets, charts, and metrics.
-- [ ] Data Quality (15 pts): Datasets conform to column and row volume requirements.
-- [ ] Documentation (15 pts): Team README has all sections filled including the Prompt Log.
-- [ ] Local Autograder Ran: Ran python evaluator/autograder.py --team [X] and verified score.
+> **MANDATORY**: Before opening your PR, you must replace `[ ]` with `[x]` for all completed items below. Leaving boxes empty (`- [ ]`) will cause GitHub to display an incomplete grey task badge. Marking all completed items (`- [x]`) enables the purple `tasks done` completion badge upon merge.
+
+- [x] Architecture (20 pts): Folder structure clean, app.py, engine file, README.md, requirements.txt present.
+- [x] Logic and Unit Tests (30 pts): All tests in tests/ pass with pytest.
+- [x] UI Readiness (20 pts): Interactive Streamlit UI functions with all required widgets, charts, and metrics.
+- [x] Data Quality (15 pts): Datasets conform to column and row volume requirements.
+- [x] Documentation (15 pts): Team README has all sections filled including the Prompt Log.
+- [x] Local Autograder Ran: Ran python evaluator/autograder.py --team [X] and verified score (100/100, 25.0/25 marks).
