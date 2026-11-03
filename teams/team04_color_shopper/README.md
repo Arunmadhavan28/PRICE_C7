@@ -4,9 +4,10 @@
 - Track: Visual Commerce and Color Matching
 - Application Name: Color-Palette Personal Shopper
 - Team Members:
-  - Member 1: [Full Name (@github_handle)]
-  - Member 2: [Full Name (@github_handle)]
-  - Member 3: [Full Name (@github_handle)]
+  - Member 1: Udaya Ritthi (@udayaritthi)
+  - Member 2: Nandhini (@nandhinisivakumar)
+  - Member 3: Vidhyasri (@vidhyasri2410)
+  - Member 5: Naga Vedhika (@nagavedhikab)
 
 ---
 
