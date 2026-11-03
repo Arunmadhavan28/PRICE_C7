@@ -7,10 +7,15 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from empathy_engine import (
     load_reviews,
     compute_emotion_distribution,
-    analyze_bulk_reviews
+    analyze_bulk_reviews,
+    generate_gemini_cx_summary
 )
 
 st.set_page_config(
@@ -131,3 +136,21 @@ for _, row in filtered_df.iterrows():
         <div style="font-size: 0.75em; color: #aaa;">Trigger Keywords: <code>{keywords_str}</code></div>
     </div>
     """, unsafe_allow_html=True)
+
+
+# Gemini AI Executive CX Insights
+st.markdown("---")
+st.subheader("Google Gemini AI Executive CX Insights")
+st.caption("Leverages Google Gemini LLM to synthesize customer friction root causes and prescribe operational action items.")
+
+gemini_key_input = st.sidebar.text_input(
+    "Gemini API Key (Optional)",
+    value=os.getenv("GEMINI_API_KEY", ""),
+    type="password",
+    help="Google Gemini API key for automated executive action planning."
+)
+
+if st.button("Generate Executive Action Plan with Gemini AI", type="primary"):
+    with st.spinner("Analyzing customer emotional trends with Gemini AI..."):
+        ai_summary = generate_gemini_cx_summary(metrics, reviews_to_analyze, api_key=gemini_key_input)
+        st.markdown(ai_summary)

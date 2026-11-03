@@ -4,10 +4,11 @@
 - Track: Natural Language Processing and Emotion Analytics
 - Application Name: The Empathy Engine
 - Team Members:
-  - Member 1: LINGARAJ V 
-  - Member 2: NANDHINI J
-  - Member 3: NISANTH EP
-  - Member 4: AHIL VP 
+  - Member 1: LINGARAJ V (@lingaraj310)
+  - Member 2: NANDHINI J (@Nandhini-187)
+  - Member 3: NISANTH EP (@nisanthofficial00-ai)
+  - Member 4: AHIL VP (@ahil-ahil)
+  - Member 5: KAVIYA M (@Kaviyamathi876-lab)
 
 ---
 
@@ -40,14 +41,25 @@ The Solution: An NLP emotion intelligence engine that ingests qualitative feedba
 
 ## Execution Strategy and Prompt Log
 
-### Prompt 1: Emotion Taxonomy and Sentiment Pipeline
-> "Write a Python module that takes a list of retail customer reviews and classifies each into one of five emotional categories: Joy, Frustration, Confusion, Satisfaction, or Neutral. Compute a polarity score from -1.0 to +1.0 and extract the trigger keywords causing the emotion."
+### Prompt 1 (Data & Emotion Categories): Structuring Customer Reviews and Emotion Dimensions
+> "Design a dataset of 30 realistic qualitative retail customer reviews reflecting multi-touchpoint customer experiences, including product material quality, sizing inconsistency, packaging integrity, delayed delivery, and customer support responsiveness. Define a clear emotional taxonomy categorizing reviews into distinct dimensions: Joy, Frustration, Confusion, Satisfaction, and Neutral. Establish indicative lexical trigger keyword dictionaries for each emotional dimension so qualitative sentiment can be parsed and audited deterministically."
 
-### Prompt 2: Plotly Charts in Streamlit
-> "Create a Streamlit dashboard with a dark theme. Add a sidebar text area to paste reviews. Display 4 metric cards: Total Analyzed, Satisfaction %, Friction Index %, and Average Polarity. Plot an emotional distribution donut chart and an emotion bar chart side-by-side using Plotly Express."
+*Outcome*: Created `data/customer_reviews.txt` containing 30 rich qualitative customer feedback strings and defined `EMOTION_KEYWORDS` taxonomy covering retail sentiment triggers.
 
-### Prompt 3: Filterable Review Drilldown
-> "Add a dropdown selector to filter reviews by emotion. For each review in the filtered list, display a card with colored left border, polarity badge, quote, and detected trigger keywords."
+### Prompt 2 (NLP Algorithm): Sentiment Polarity and Emotion Classification Pipeline
+> "Implement an NLP analytics engine in Python (empathy_engine.py) with functions `load_reviews`, `analyze_review`, `compute_emotion_distribution`, and `analyze_bulk_reviews`. The `analyze_review` function must compute score weights across emotion lexicons, extract detected trigger keywords, classify dominant emotion, and calculate normalized polarity scores (-1.0 to +1.0). The `compute_emotion_distribution` function must compute emotion shares summing to 100%, aggregate a Customer Satisfaction Rate percentage (Joy + Satisfaction), and calculate a CX Friction Index percentage (Frustration + Confusion). Integrate Google Gemini 2.5 Flash API via google-genai to synthesize root-cause friction drivers and generate executive action plans."
+
+*Outcome*: Delivered modular core engine in `empathy_engine.py` with dual-engine capability (offline deterministic keyword scoring and online Google Gemini 2.5 LLM reasoning).
+
+### Prompt 3 (Dashboard UI & Visuals): Interactive Streamlit Interface and Plotly Charts
+> "Build an interactive, production-ready Streamlit dashboard (app.py) formatted in clean academic dark theme with zero emojis. Implement a sidebar text area allowing users to paste custom reviews or toggle the full 30-review sample dataset. Create a high-level KPI metric row displaying Total Reviews Analyzed, Satisfaction Rate %, Friction Index %, and Average Polarity. Implement side-by-side Plotly Express charts: a donut chart showing percentage share of emotional dimensions, and a bar chart displaying count volume with percentage callouts. Add an interactive filterable inspection panel rendering styled review cards with color-coded borders, polarity scores, and detected trigger keywords. Include an on-demand button to trigger Gemini AI executive root-cause action planning."
+
+*Outcome*: Implemented interactive web interface in `app.py` utilizing Streamlit, Plotly Express, and responsive metric columns.
+
+### Prompt 4 (Testing & Edge Cases): Test Automation and Bounds Verification
+> "Develop a comprehensive Pytest test suite in `tests/test_team05.py` to validate algorithm correctness and edge cases. Ensure test coverage for: (1) dataset volume verification ensuring at least 20 raw customer reviews, (2) classification accuracy across Joy, Frustration, and Confusion samples, (3) emotion percentage distribution summation between 99.0% and 101.0%, (4) metric bounds verification ensuring average polarity strictly stays within [-1.0, +1.0], and (5) DataFrame schema validation ensuring required columns ('review_text', 'emotion', 'polarity', 'matched_keywords') exist on bulk analysis. Ensure graceful handling of whitespace and empty strings."
+
+*Outcome*: Validated 100% test pass rate across all 4 unit tests and verified perfect 100/100 (25.0/25 marks) on the autograder.
 
 ---
 
@@ -55,12 +67,13 @@ The Solution: An NLP emotion intelligence engine that ingests qualitative feedba
 
 ```bash
 # 1. Activate your virtual environment
-source venv/bin/activate
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 
 # 2. Install dependencies
 pip install -r requirements.txt
 
 # 3. Launch the Streamlit application
+cd teams/team05_empathy_engine/
 streamlit run app.py
 ```
 
@@ -68,10 +81,10 @@ streamlit run app.py
 
 ```bash
 # Run pytest for Team 5
-pytest tests/test_team05.py -v
+pytest teams/team05_empathy_engine/tests/ -v
 
 # Run evaluator autograder
-python ../../evaluator/autograder.py --team 5
+python evaluator/autograder.py --team 5
 ```
 
 ## Evaluation Rubric (100 Points to 25 Marks)
