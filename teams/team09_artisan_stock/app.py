@@ -1,7 +1,7 @@
 """
 Streamlit Web Application for Team 9: The Artisan Safety-Stock Planner.
 Visual Kanban inventory tracking, Plotly runway diagnostics, and automated 1-click purchase orders.
-Target Customer: Independent Makers, Artisans, and Boutique Workshop Owners.
+Designed for high readability, modern aesthetics, and seamless light/dark theme adaptation.
 """
 
 from pathlib import Path
@@ -24,72 +24,124 @@ from stock_engine import (
 )
 
 # ---------------------------------------------------------
-# Page Configuration & Modern Theme Styling
+# Page Configuration
 # ---------------------------------------------------------
 st.set_page_config(
-    page_title="Artisan Safety-Stock Planner | Retail AI",
+    page_title="Artisan Safety-Stock Planner",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Inject refined custom CSS for clean glassmorphism and high visual contrast
+# ---------------------------------------------------------
+# Modern, Adaptive CSS (Light & Dark Mode Friendly)
+# ---------------------------------------------------------
 st.markdown("""
 <style>
-    /* Metric Card Modernization */
+    /* Metric Card Polish - Adaptive to Light & Dark Theme */
     div[data-testid="stMetric"] {
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
-        border: 1px solid rgba(148, 163, 184, 0.15);
+        background-color: var(--secondary-background-color);
+        border: 1px solid rgba(148, 163, 184, 0.25);
         border-radius: 12px;
-        padding: 16px 20px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        padding: 18px 22px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        min-height: 110px;
     }
-    div[data-testid="stMetricLabel"] p {
-        font-size: 0.85rem !important;
+    div[data-testid="stMetricLabel"] > div > p {
+        font-size: 0.88rem !important;
         font-weight: 600 !important;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #94a3b8 !important;
+        letter-spacing: 0.04em;
+        opacity: 0.85;
+        white-space: nowrap !important;
+        overflow: visible !important;
     }
-    div[data-testid="stMetricValue"] div {
+    div[data-testid="stMetricValue"] > div {
         font-size: 1.85rem !important;
-        font-weight: 700 !important;
-        color: #f8fafc !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+    }
+    div[data-testid="stMetricDelta"] > div {
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
     }
 
-    /* Tab Styling */
+    /* Tab Header Polish */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
+        gap: 12px;
+        border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+        padding-bottom: 2px;
     }
     .stTabs [data-baseweb="tab"] {
         border-radius: 8px 8px 0px 0px;
-        padding: 10px 20px;
+        padding: 10px 22px;
         font-weight: 600;
+        font-size: 0.95rem;
     }
 
-    /* Custom Kanban Card Styling */
+    /* Universal Adaptive Kanban Card */
     .artisan-card {
-        background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+        background-color: var(--secondary-background-color);
+        border: 1px solid rgba(148, 163, 184, 0.25);
         border-radius: 12px;
-        padding: 18px;
+        padding: 18px 20px;
         margin-bottom: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .artisan-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     .status-badge {
         font-weight: 700;
         font-size: 0.72rem;
-        padding: 3px 10px;
-        border-radius: 12px;
-        letter-spacing: 0.04em;
+        padding: 4px 10px;
+        border-radius: 14px;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
+        color: #ffffff !important;
+        display: inline-block;
+    }
+    .category-pill {
+        font-size: 0.8rem;
+        font-weight: 500;
+        opacity: 0.75;
+    }
+    .card-title {
+        margin: 10px 0 8px 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    .card-body-text {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+        opacity: 0.9;
+    }
+    .card-footer-text {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        font-weight: 600;
+        opacity: 0.75;
+        margin-bottom: 4px;
+    }
+
+    /* Information Ribbon */
+    .summary-ribbon {
+        background-color: var(--secondary-background-color);
+        border-left: 4px solid #3b82f6;
+        border-radius: 8px;
+        padding: 12px 18px;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -111,7 +163,7 @@ except Exception as err:
 with st.sidebar:
     st.image("https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop&q=60", use_container_width=True)
     st.title("Artisan Studio Controls")
-    st.caption("Retail AI Inventory & Supply Chain Command Center")
+    st.caption("Inventory & Supply Chain Command Center")
 
     st.markdown("### 🎪 Demand Surge Simulator")
     st.info("Simulate upcoming craft fair pop-ups, holiday rushes, or seasonal demand spikes.")
@@ -173,67 +225,65 @@ items_needing_po = [e for e in evaluations if e["Status"] in ["CRITICAL", "WARNI
 # ---------------------------------------------------------
 st.title("The Artisan Safety-Stock Planner")
 st.markdown(
-    "**Intelligent visual Kanban inventory control, lead-time runway analytics, and autonomous purchase order generation for boutique artisans and makers.**"
+    "Visual Kanban inventory control, supplier lead-time runway analytics, and autonomous purchase order generation for boutique artisans."
 )
 
 # ---------------------------------------------------------
-# Executive KPI Metrics Row
+# 4 Spacious, Non-Truncated Executive KPI Cards
 # ---------------------------------------------------------
-m_col1, m_col2, m_col3, m_col4, m_col5, m_col6 = st.columns(6)
+kpi_col1, kpi_col2, kpi_col3, kpi_col4 = st.columns(4)
 
-with m_col1:
-    st.metric("Materials Tracked", f"{portfolio['total_materials']} SKUs", delta="Active Catalog")
+with kpi_col1:
+    st.metric(
+        label="Materials Tracked",
+        value=f"{portfolio['total_materials']} SKUs",
+        delta="Active Workshop Catalog"
+    )
 
-with m_col2:
+with kpi_col2:
     crit_count = portfolio['critical_count']
     st.metric(
-        "Critical Stockouts",
-        f"{crit_count} Alerts",
-        delta="Runway <= Lead Time",
+        label="Critical Stockouts",
+        value=f"{crit_count} Alert{'s' if crit_count != 1 else ''}",
+        delta="Runway ≤ Lead Time",
         delta_color="inverse" if crit_count > 0 else "normal"
     )
 
-with m_col3:
+with kpi_col3:
     warn_count = portfolio['warning_count']
     st.metric(
-        "Reorder Warnings",
-        f"{warn_count} Items",
-        delta="Stock <= ROP",
+        label="Reorder Warnings",
+        value=f"{warn_count} Item{'s' if warn_count != 1 else ''}",
+        delta="Stock ≤ Reorder Point",
         delta_color="inverse" if warn_count > 0 else "normal"
     )
 
-with m_col4:
+with kpi_col4:
     st.metric(
-        "Replenishment Capital",
-        f"${portfolio['total_po_capital']:,.2f}",
-        delta="30-Day Buffer PO"
+        label="Replenishment Capital",
+        value=f"${portfolio['total_po_capital']:,.2f}",
+        delta="To Restore 30-Day Buffer"
     )
 
-with m_col5:
-    st.metric(
-        "Current Asset Value",
-        f"${portfolio['total_asset_value']:,.2f}",
-        delta="On-Hand Inventory"
-    )
-
-with m_col6:
-    st.metric(
-        "Average Runway",
-        f"{portfolio['average_runway_days']} Days",
-        delta=f"Avg Risk: {portfolio['average_risk_score']}%"
-    )
-
-st.markdown("---")
+# Subtle secondary metrics summary ribbon
+st.markdown(f"""
+<div class="summary-ribbon">
+    <span>💼 <b>Current Asset Value:</b> ${portfolio['total_asset_value']:,.2f}</span>
+    <span>⏱️ <b>Average Studio Runway:</b> {portfolio['average_runway_days']} Days</span>
+    <span>⚡ <b>Active Demand Rate:</b> {surge_multiplier:.2f}x Normal Pace</span>
+    <span>🎯 <b>Average Portfolio Risk:</b> {portfolio['average_risk_score']}%</span>
+</div>
+""", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# Main Application Tabs
+# Main Application Tabs (Clean, Readable Labels)
 # ---------------------------------------------------------
 tab_kanban, tab_analytics, tab_simulator, tab_po, tab_data = st.tabs([
-    "🗂️ Visual Kanban Grid",
-    "📊 Runway Diagnostics & Charts",
-    "🧪 What-If Scenario Lab",
-    "📋 Autonomous Purchase Order",
-    "📦 Inventory Master Catalog"
+    "📋 Kanban Board",
+    "📊 Runway Charts",
+    "🎛️ What-If Simulator",
+    "📝 Purchase Orders",
+    "📦 Master Catalog"
 ])
 
 # ---------------------------------------------------------
@@ -241,60 +291,57 @@ tab_kanban, tab_analytics, tab_simulator, tab_po, tab_data = st.tabs([
 # ---------------------------------------------------------
 with tab_kanban:
     st.subheader("Visual Material Runway Kanban")
-    st.caption("Inventory health cards color-coded by supplier replenishment urgency against delivery lead times.")
+    st.caption("Cards are color-coded by replenishment urgency relative to vendor delivery lead times.")
 
     if not filtered_evals:
-        st.info("No materials match the selected filters. Reset sidebar filters to view inventory.")
+        st.info("No materials match the selected filters. Clear the filters in the sidebar to view all items.")
     else:
-        # Render responsive 3-column Kanban card grid
+        # Responsive 3-column Kanban card grid
         grid_cols = st.columns(3)
         for idx, mat in enumerate(filtered_evals):
             col = grid_cols[idx % 3]
             with col:
-                badge_bg = mat["Status_Color"]
-                badge_fg = "#ffffff" if mat["Status"] == "CRITICAL" else "#000000"
+                status_color = mat["Status_Color"]
                 runway = mat["Runway_Days"]
                 lead_time = mat["Lead_Time_Days"]
-
-                # Normalized health index (1.0 = runway comfortably exceeds 2.5x lead time)
                 health_ratio = min(1.0, max(0.0, runway / max(1.0, lead_time * 2.5)))
 
                 st.markdown(f"""
-                <div class="artisan-card" style="border-left: 6px solid {mat['Status_Color']};">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                        <span class="status-badge" style="background: {badge_bg}; color: {badge_fg};">
+                <div class="artisan-card" style="border-left: 6px solid {status_color};">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="status-badge" style="background-color: {status_color};">
                             {mat['Status']}
                         </span>
-                        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 500;">
+                        <span class="category-pill">
                             {mat['Category']}
                         </span>
                     </div>
-                    <h4 style="margin: 0 0 10px 0; color: #f8fafc; font-size: 1.05rem;">
+                    <div class="card-title">
                         {mat['Material_Name']}
-                    </h4>
-                    <div style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 12px;">
-                        Current Stock: <b style="color: #f1f5f9;">{mat['Current_Level']} units</b> | Unit Cost: <b>${mat['Unit_Cost']:.2f}</b><br>
-                        Daily Burn: <b>{mat['Daily_Burn_Rate']}/day</b> | Reorder Point (ROP): <b>{mat['Reorder_Point']}</b><br>
-                        Supplier Lead Time: <b>{mat['Lead_Time_Days']} days</b><br>
-                        Runway Days Remaining: <b style="color: {mat['Status_Color']}; font-size: 0.95rem;">{mat['Runway_Days']} days</b>
                     </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-bottom: 4px;">
-                        <span>Runway Health Index</span>
+                    <div class="card-body-text">
+                        <b>Current Stock:</b> {mat['Current_Level']} units &bull; <b>Cost:</b> ${mat['Unit_Cost']:.2f}<br>
+                        <b>Daily Burn:</b> {mat['Daily_Burn_Rate']}/day &bull; <b>Reorder Point (ROP):</b> {mat['Reorder_Point']}<br>
+                        <b>Supplier Lead Time:</b> {mat['Lead_Time_Days']} days<br>
+                        <b>Runway Days Remaining:</b> <span style="color: {status_color}; font-weight: 700; font-size: 0.95rem;">{mat['Runway_Days']} days</span>
+                    </div>
+                    <div class="card-footer-text">
+                        <span>Runway Health</span>
                         <span>Risk Score: {mat['Risk_Score']}%</span>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
 
                 st.progress(health_ratio)
-                st.caption(f"📅 Trigger: {mat['Upcoming_Events']} | 📧 {mat['Supplier_Contact']}")
-                st.markdown("<div style='margin-bottom: 16px;'></div>", unsafe_allow_html=True)
+                st.caption(f"📅 Trigger: {mat['Upcoming_Events']} &bull; 📧 {mat['Supplier_Contact']}")
+                st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # TAB 2: Runway Diagnostics & Interactive Visualizations
 # ---------------------------------------------------------
 with tab_analytics:
-    st.subheader("Visual Supply Chain & Runway Diagnostics")
-    st.caption("Interactive charts comparing material runway against vendor fulfillment lead times.")
+    st.subheader("Supply Chain Runway Diagnostics")
+    st.caption("Visual comparisons highlighting materials at risk of exhausting stock before supplier orders arrive.")
 
     c_chart1, c_chart2 = st.columns([3, 2])
 
@@ -303,17 +350,16 @@ with tab_analytics:
         chart_data = []
         for e in evaluations:
             chart_data.append({
-                "Material": e["Material_Name"],
+                "Material": e["Material_Name"][:22] + (".." if len(e["Material_Name"]) > 22 else ""),
                 "Runway_Days": e["Runway_Days"],
                 "Lead_Time_Days": e["Lead_Time_Days"],
-                "Status": e["Status"],
-                "Delta": e["Runway_Days"] - e["Lead_Time_Days"]
+                "Status": e["Status"]
             })
         cdf = pd.DataFrame(chart_data)
 
         fig_horizon = go.Figure()
         fig_horizon.add_trace(go.Bar(
-            name="Runway Days (Stock)",
+            name="Runway Days (Stock On-Hand)",
             x=cdf["Material"],
             y=cdf["Runway_Days"],
             marker_color=[
@@ -327,13 +373,14 @@ with tab_analytics:
             y=cdf["Lead_Time_Days"],
             mode="lines+markers",
             line=dict(color="#f43f5e", width=3, dash="dash"),
-            marker=dict(size=8, color="#ffffff")
+            marker=dict(size=8, color="#f43f5e")
         ))
         fig_horizon.update_layout(
-            title="Runway Days vs Supplier Lead Time (Items below red line face stockout)",
+            title="Runway Days vs Supplier Lead Time (Items below dashed red line risk stockout)",
             xaxis_tickangle=-45,
-            template="plotly_dark",
-            height=420,
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+            height=430,
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
             margin=dict(l=40, r=40, t=60, b=120)
         )
@@ -353,17 +400,21 @@ with tab_analytics:
                 names="Category",
                 values="Capital",
                 hole=0.45,
-                title="PO Capital Allocation by Category",
-                color_discrete_sequence=px.colors.sequential.Tealgrn
+                title="Replenishment Capital by Craft Category",
+                color_discrete_sequence=px.colors.qualitative.Prism
             )
-            fig_donut.update_layout(template="plotly_dark", height=420)
+            fig_donut.update_layout(
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
+                height=430
+            )
             st.plotly_chart(fig_donut, use_container_width=True)
         else:
-            st.success("All inventory is currently healthy! No replenishment capital required.")
+            st.success("🎉 All inventory levels are optimal! No replenishment capital currently needed.")
 
     # Scatter Bubble Chart: Burn Rate vs Current Level vs Lead Time
     st.markdown("### Stockout Vulnerability Matrix")
-    st.caption("Bubble size indicates Supplier Lead Time. Items in top-left with large bubbles represent highest operational risk.")
+    st.caption("Bubble size indicates Supplier Lead Time. SKUs in the upper-left represent the highest operational replenishment priority.")
 
     scat_df = pd.DataFrame(evaluations)
     fig_scatter = px.scatter(
@@ -375,17 +426,21 @@ with tab_analytics:
         hover_name="Material_Name",
         color_discrete_map={"CRITICAL": "#ef4444", "WARNING": "#f59e0b", "HEALTHY": "#10b981"},
         labels={"Current_Level": "Current Stock Level (Units)", "Daily_Burn_Rate": "Daily Burn Rate (Units/Day)"},
-        title="Burn Rate vs On-Hand Inventory (Bubble Size = Lead Time Days)"
+        title="Burn Rate vs On-Hand Inventory (Bubble Size = Supplier Lead Time Days)"
     )
-    fig_scatter.update_layout(template="plotly_dark", height=400)
+    fig_scatter.update_layout(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        height=400
+    )
     st.plotly_chart(fig_scatter, use_container_width=True)
 
 # ---------------------------------------------------------
 # TAB 3: Interactive What-If Scenario Lab
 # ---------------------------------------------------------
 with tab_simulator:
-    st.subheader("Interactive What-If Scenario Planner")
-    st.caption("Select any raw material and dynamically adjust lead times, burn rates, and buffers to predict stockout resilience.")
+    st.subheader("Interactive What-If Scenario Simulator")
+    st.caption("Adjust supplier lead times, burn rates, and buffer levels to forecast inventory resilience.")
 
     sim_col1, sim_col2 = st.columns([1, 1])
 
@@ -394,33 +449,35 @@ with tab_simulator:
         target_name = st.selectbox("Select Material to Simulate", material_names)
         target_row = raw_df[raw_df["Material_Name"] == target_name].iloc[0]
 
-        st.markdown(f"#### Modifying Parameters for: `{target_name}`")
+        st.markdown(f"**Adjusting parameters for:** `{target_name}`")
         sim_current = st.slider("Current Stock Level", 0.0, 500.0, float(target_row["Current_Level"]), 1.0)
         sim_lead = st.slider("Supplier Lead Time (Days)", 1.0, 30.0, float(target_row["Lead_Time_Days"]), 1.0)
         sim_burn = st.slider("Daily Burn Rate (Units/Day)", 0.1, 50.0, float(target_row["Daily_Burn_Rate"]), 0.5)
         sim_safety = st.slider("Safety Stock Buffer (Units)", 0.0, 150.0, float(target_row.get("Safety_Stock", 10.0)), 1.0)
 
     with sim_col2:
-        st.markdown("#### Real-Time Simulation Feedback")
+        st.markdown("**Real-Time Simulation Feedback**")
         sim_rop = calculate_safety_stock(sim_lead, sim_burn, sim_safety)
         sim_runway = calculate_runway_days(sim_current, sim_burn)
         sim_risk = calculate_stockout_risk_score(sim_current, sim_lead, sim_burn, sim_safety)
 
         if sim_runway <= sim_lead:
             sim_status = "CRITICAL"
-            sim_alert_fn = st.error
+            st.error(f"Simulated Inventory Status: **{sim_status}** (Stockout occurs before shipment arrives!)")
         elif sim_current <= sim_rop:
             sim_status = "WARNING"
-            sim_alert_fn = st.warning
+            st.warning(f"Simulated Inventory Status: **{sim_status}** (Stock level is at or below Reorder Point)")
         else:
             sim_status = "HEALTHY"
-            sim_alert_fn = st.success
+            st.success(f"Simulated Inventory Status: **{sim_status}** (Buffer is healthy)")
 
-        sim_alert_fn(f"Simulated Inventory Status: **{sim_status}**")
-
-        st.metric("Simulated Runway Days", f"{sim_runway:.1f} Days", delta=f"Lead Time: {sim_lead} Days")
-        st.metric("Calculated Reorder Point (ROP)", f"{sim_rop:.1f} Units", delta=f"Current: {sim_current} Units")
-        st.metric("Stockout Risk Score", f"{sim_risk:.1f}%", delta="Failure Probability")
+        r_col1, r_col2, r_col3 = st.columns(3)
+        with r_col1:
+            st.metric("Simulated Runway", f"{sim_runway:.1f} Days", delta=f"Lead: {sim_lead} Days")
+        with r_col2:
+            st.metric("Calculated ROP", f"{sim_rop:.1f} Units", delta=f"Current: {sim_current} Units")
+        with r_col3:
+            st.metric("Risk Score", f"{sim_risk:.1f}%", delta="Failure Probability")
 
         target_restore_stock = (30 * sim_burn) + sim_safety
         units_needed = max(0, int(np.ceil(target_restore_stock - sim_current)))
@@ -437,7 +494,7 @@ with tab_po:
     if not items_needing_po:
         st.success("🎉 All inventory levels are optimal! No materials currently meet the replenishment threshold.")
     else:
-        st.warning(f"⚠️ **{len(items_needing_po)} Materials** require immediate replenishment to prevent stockouts.")
+        st.warning(f"⚠️ **{len(items_needing_po)} Material{'s' if len(items_needing_po) != 1 else ''}** require replenishment to prevent stockouts.")
 
         po_table_df = generate_purchase_order_dataframe(items_needing_po)
         st.dataframe(po_table_df, use_container_width=True)
